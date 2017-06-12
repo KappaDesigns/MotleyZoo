@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const parts = require('./webpack.parts');
 const merge = require('webpack-merge');
+const glob = require('glob');
 
 const PATHS = {
 	app: path.join(__dirname, 'src'),
@@ -25,9 +26,16 @@ const commonConfig = merge([
 		],
 	},
 	parts.lintJS({include: PATHS.app}),
+	parts.lintCSS({ include: PATHS.app }),
 ]);
 
 const productionConfig = merge([
+	parts.extractCSS({
+		use: ['css-loader', 'sass-loader', parts.autoprefix()],
+	}),
+	parts.purifyCSS({
+		paths: glob.sync(`${PATHS.app}/**/*.js`, { nodir: true }),
+	}),
 ]);
 
 const developmentConfig = merge([
@@ -35,10 +43,11 @@ const developmentConfig = merge([
 		host: process.env.HOST,
 		port: process.env.PORT,
 	}),
+	parts.loadCSS(),
 ]);
 
 module.exports = (env) => {
-	if (env === 'production') {
+	if (env.target === 'production') {
 		return merge(commonConfig, productionConfig);
 	}
 	return merge(commonConfig, developmentConfig);

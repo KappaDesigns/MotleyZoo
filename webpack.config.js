@@ -39,11 +39,6 @@ const commonConfig = merge([
 
 const productionConfig = merge([
 	{
-		performance: {
-			hints: 'warning',
-			maxEntrypointSize: 200000,
-			maxAssetSize: 450000,
-		},
 		output: {
 			chunkFilename: '[name].[chunkhash:8].js',
 			filename: '[name].[chunkhash:8].js',
@@ -71,10 +66,10 @@ const productionConfig = merge([
 		},
 	}),
 	parts.extractCSS({
-		use: ['css-loader', 'sass-loader?sourceMap', parts.autoprefix()],
+		use: ['css-loader', parts.autoprefix(), 'sass-loader'],
 	}),
 	parts.purifyCSS({
-		paths: glob.sync(`${PATHS.app}/**/*.js`, { nodir: true }),
+		paths: glob.sync(`${PATHS.app}/**/*.html`, { nodir: true }),
 	}),
 	parts.extractBundles([
 		{

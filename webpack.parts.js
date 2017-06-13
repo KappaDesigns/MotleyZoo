@@ -1,3 +1,4 @@
+const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const PurifyCSSPlugin = require('purifycss-webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -42,13 +43,13 @@ exports.loadCSS = ({ include, exclude } = {}) => ({
 				test: /\.scss$/,
 				include,
 				exclude,
-				use: ['style-loader', 'css-loader?sourceMap', 'resolve-url-loader', 'sass-loader?sourceMap'],
+				use: ['style-loader', 'css-loader?sourceMap', 'sass-loader?sourceMap'],
 			},
 			{
 				test: /\.css$/,
 				include,
 				exclude,
-				use: ['style-loader', 'css-loader?sourceMap', 'resolve-url-loader'],
+				use: ['style-loader', 'css-loader?sourceMap'],
 			}
 		],
 	},
@@ -100,7 +101,11 @@ exports.autoprefix = () => ({
 
 exports.purifyCSS = ({ paths }) => ({
 	plugins: [
-		new PurifyCSSPlugin({ paths }),
+		new PurifyCSSPlugin({
+			styleExtensions: ['.css', '.scss'],
+      moduleExtensions: ['.html', '.js'],
+			paths,
+		}),
 	],
 });
 

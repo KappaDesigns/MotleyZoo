@@ -1,11 +1,86 @@
-body {
-	div {
-		text-align: center;
-		font-size: 36px;
+@import url('https://fonts.googleapis.com/css?family=Lobster+Two');
+
+.jumbotron {
+	z-index: -2;
+	position: relative;
+	font-family: 'Lobster Two', cursive;
+	width: inherit;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	background-color: black;
+	border-radius: 0;
+	.image-overlay {
+		background-attachment: fixed;
+		z-index: -1;
+		position: relative;
+		opacity: 0;
+		padding-top: 50px;
+		height: calc(100% - 50px);
 		width: 100%;
-		height: 50vh;
-		background-image: url('../../public/imgs/test.jpg');
+		background-image: url('../../public/imgs/blackdog.jpg');
+		background-size: contain;
 		background-repeat: no-repeat;
-		background-position: center;
 	}
+	.site-title {
+		opacity: 0.5;
+		transform: translateY(-50px);
+		margin-top: -70vh;
+		text-align: center;
+		font-size: 120px;
+		letter-spacing: 7px;
+		color: rgb(135, 135, 135);
+		font-weight: 200;
+		&:hover {
+			cursor: default;
+		}
+	}
+	@media all and (min-width: 780px) {
+		.site-title {
+			margin-top: -80vh;
+			text-align: right;
+			padding-top: 15%;
+			padding-right: 20%;
+			font-size: 150px;
+		}
+		.image-overlay {
+			height: 100%;
+			margin: 0;
+		}
+	}
+}
+
+.nav-bar {
+	width: 100%;
+	opacity: 0.25;
+	margin-top: -55px;
+	border-top: 5px solid rgb(29, 29, 29);
+	border-bottom: 5px solid rgb(29, 29, 29);
+	background-color: rgb(43, 43, 43);
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	height: auto;
+	.nav-link {
+		color: rgb(168, 168, 168);
+		transition: color 0.25s ease-in-out;
+		&:hover {
+			color: rgb(50, 198, 198);
+		}
+		.nav-icon {
+			display: none;
+			width: 25px;
+			height: 25px;
+			margin-right: 5px;
+		}
+		@media all and (min-width: 660px) {
+			.nav-icon {
+				display: inline-block;
+			}
+		}
+	}
+}
+
+.filler {
+	height: 10000px;
 }

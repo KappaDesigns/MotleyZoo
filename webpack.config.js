@@ -41,7 +41,7 @@ const productionConfig = merge([
 	{
 		performance: {
 			hints: 'warning',
-			maxEntrypointSize: 100000,
+			maxEntrypointSize: 200000,
 			maxAssetSize: 450000,
 		},
 		output: {
@@ -111,7 +111,6 @@ const developmentConfig = merge([
 		options: {
 			limit: 15000,
 			name: '[name].[ext]',
-			// publicPath: path.join(__dirname, 'public', 'imgs','/'),
 		},
 	}),
 	parts.loadCSS(),

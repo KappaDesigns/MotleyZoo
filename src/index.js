@@ -1,10 +1,11 @@
-import './css/bootstrap/grid.min.css';
+import './css/bootstrap/bootstrap.min.css';
 import './css/index.scss';
+import $ from 'jquery';
 
 function createComponent(text) {
+	$('.classy');
 	const element = document.createElement('div');
 	element.innerHTML = text;
-	element.className = 'test-component';
 	return element;
 }
 document.body.appendChild(createComponent('hello world'));

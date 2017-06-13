@@ -1,0 +1,2 @@
+webpackJsonp([1],{UBeP:function(){},lVK7:function(a,b,c){"use strict";Object.defineProperty(b,"__esModule",{value:!0});var d=c("tkm6"),e=c.n(d),f=c("UBeP"),g=c.n(f),h=c("7t+N"),i=c.n(h);document.body.appendChild(function(a){i()(".classy");var b=document.createElement("div");return b.innerHTML=a,b}("hello world"))},tkm6:function(){}},["lVK7"]);
+//# sourceMappingURL=app.ffc8c1cc.js.map

@@ -138,7 +138,7 @@ exports.loadImages = ({ include, exclude, options } = {}) => ({
 				exclude,
 				loaders: [
 					{
-						loader: 'url-loader?name=imgs/[name].[ext]',
+						loader: 'file-loader?name=imgs/[name].[ext]',
 						options,
 					},
 				],

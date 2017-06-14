@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster+Two');
+body {
+	font-family: 'Sofia', 'Gotham', sans-serif;
+}
 
 .jumbotron {
 	z-index: -2;
@@ -65,7 +68,7 @@
 		color: rgb(168, 168, 168);
 		transition: color 0.25s ease-in-out;
 		&:hover {
-			color: rgb(50, 198, 198);
+			color: teal;
 		}
 		.nav-icon {
 			display: none;
@@ -81,6 +84,118 @@
 	}
 }
 
-.filler {
-	height: 10000px;
+.animation-background {
+	background-color: rgb(0, 0, 0);
+}
+
+.animation-container {
+	padding-bottom: 100px;
+	.animation-part {
+		opacity: 0;
+		img {
+			display: block;
+			margin: 0px auto;
+			padding: 25px 0;
+			width: 200px;
+			height: 200px;
+		}
+	}
+	#animation-4 {
+		transform: translateY(0px);
+	}
+	.animation-arrow {
+		transform: rotateZ(90deg);
+	}
+	.what-we-do {
+		text-align: center;
+		color: rgb(230, 230, 230);
+	}
+}
+
+@media all and (min-width: 720px) {
+	.animation-container {
+		padding: 300px 0;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		.animation-part {
+			width: 33.3%;
+		}
+		#animation-1 {
+			transform: translateY(-300px);
+		}
+		#animation-2 {
+			transform: translateX(-30vw);
+			.animation-arrow {
+				transform: rotateZ(0deg);
+			}
+		}
+		#animation-3 {
+			transform: translateY(300px);
+		}
+		#animation-4 {
+			transform: translateY(300px);
+			width: 100%;
+			.what-we-do {
+				padding: 25px 0;
+				font-size: 48px;
+			}
+		}
+	}
+}
+
+.saved-container {
+	padding-top: 50px;
+	background-color: teal;
+	.heart-container {
+		height: 300px;
+		margin: 0 auto;
+		width: 300px;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-image: url('../../public/imgs/heart.svg');
+		.heart-info {
+			padding-top: 75px;
+			height: 100%;
+			width: 100%;
+			text-align: center;
+		}
+	}
+	.header {
+		text-align: center;
+		padding: 50px;
+		font-size: 40px;
+		font-weight: bolder;
+	}
+	.help-container {
+		margin: 0 auto;
+		width: 100%;
+		max-width: 1200px;
+		.help-col {
+			text-align: center;
+			img {
+				background-color: rgb(32, 32, 32);
+				padding: 25px;
+				border-radius: 25px;
+				display: block;
+				margin: 0 auto;
+				width: 250px;
+				height: 250px;
+			}
+			h3 {
+				margin-top: 25px;
+			}
+		}
+		.or-col {
+			h3 {
+				font-size: 40px;
+				padding: 25px 0;
+				font-weight: bolder;
+				text-align: center;
+			}
+			@media all and (min-width:780px) {
+				padding: 100px 0;
+			}
+		}
+	}
 }

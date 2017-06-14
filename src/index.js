@@ -4,8 +4,7 @@ import $ from 'jquery';
 
 const mobileAnimationWidth = 720;
 const navbarDisplacement = 55;
-const mobileTransitionHeight = 1;
-const desktopTransitionHeight = 1;
+const transitionHeight = 2;
 
 $(document).ready(() => {
 	const $backgroundImage = $('.image-overlay');
@@ -13,6 +12,7 @@ $(document).ready(() => {
 	const $navbar = $('.nav-bar');
 	const $animationContainer = $('.animation-container');
 
+	let hasColorChanged = false;
 
 	handleJumbotronAnimations(
 		$backgroundImage,
@@ -23,21 +23,30 @@ $(document).ready(() => {
 	$(window).scroll(() => {
 		handleNavbarPosition($navbar);
 		animateAboutUs($animationContainer);
+		if (!hasColorChanged) {
+			hasColorChanged = handleJumbotronColor($siteTitle);
+		}
 	});
 });
 
-function animateAboutUs(container) {
-	if (window.innerWidth < mobileAnimationWidth) {
-		let elems = Array.from(container.find('.animation-part'));
-		let values = elems.map((ele) => {
-			return $(ele).offset().top + $(ele).height() / mobileTransitionHeight;
+function handleJumbotronColor(siteTitle) {
+	if ($(window).scrollTop() >= 0 && $(window).scrollTop() <= window.innerHeight) {
+		siteTitle.css({
+			'transition':'color 2s ease-in-out',
+			'color':'rgb(73, 39, 0)',
 		});
+	}
+	return true;
+}
+
+function animateAboutUs(container) {
+	let elems = Array.from(container.find('.animation-part'));
+	let values = elems.map((ele) => {
+		return $(ele).offset().top + $(ele).height() / transitionHeight;
+	});
+	if (window.innerWidth < mobileAnimationWidth) {
 		handleMobileAnimation(elems, values);
 	} else {
-		let elems = Array.from(container.find('.animation-part'));
-		let values = elems.map((ele) => {
-			return $(ele).offset().top + $(ele).height() / desktopTransitionHeight;
-		});
 		handleDesktopAnimation(elems, values);
 	}
 }
@@ -45,72 +54,8 @@ function animateAboutUs(container) {
 function handleDesktopAnimation(elems, values) {
 	let scrollBottom = $(window).scrollTop() + window.innerHeight;
 	values.forEach((val, i) => {
-		const id = `#animation-${i + 1}`;
 		animateOpacity(elems[i], val, scrollBottom);
-		if (scrollBottom > val) {
-			handleFowardAnimation(id, i);
-		} else if (scrollBottom <= window.innerHeight + 100) {
-			handleResetAnimation(id, i);
-		}
 	});
-}
-
-function handleFowardAnimation(id, i) {
-	switch (i) {
-	case 0:
-		$(id).css({
-			'transition': 'transform 2s ease-in-out',
-			'transform': 'translateY(0px)',
-		});
-		break;
-	case 1:
-		$(id).css({
-			'transition': 'transform 2s ease-in-out',
-			'transform': 'translateX(0vw)',
-		});
-		break;
-	case 2:
-		$(id).css({
-			'transition': 'transform 2s ease-in-out',
-			'transform': 'translateY(0px)',
-		});
-		break;
-	case 3:
-		$(id).css({
-			'transition': 'transform 2s ease-in-out',
-			'transform': 'translateY(100px)',
-		});
-		break;
-	default:
-		break;
-	}
-}
-
-function handleResetAnimation(id, i) {
-	switch (i) {
-	case 0:
-		$(id).css({
-			'transform': 'translateY(-300px)',
-		});
-		break;
-	case 1:
-		$(id).css({
-			'transform': 'translateX(-30vw)',
-		});
-		break;
-	case 2:
-		$(id).css({
-			'transform': 'translateY(300px)',
-		});
-		break;
-	case 3:
-		$(id).css({
-			'transform': 'translateY(300px)',
-		});
-		break;
-	default:
-		break;
-	}
 }
 
 function handleMobileAnimation(elems, values) {
@@ -151,7 +96,7 @@ function handleJumbotronAnimations(backgroundImage, siteTitle, navbar) {
 }
 
 function handleNavbarPosition(navbar) {
-	if (window.innerHeight > 660) {
+	if (window.innerWidth > 660) {
 		if ($(window).scrollTop() > window.innerHeight - navbar.height()) {
 			navbar.css({
 				'position': 'fixed',

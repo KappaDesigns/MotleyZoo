@@ -3,6 +3,19 @@ body {
 	font-family: 'Sofia', 'Gotham', sans-serif;
 }
 
+.header {
+	text-align: center;
+	padding: 25px;
+	font-size: 40px;
+	font-weight: bolder;
+	margin: 0;
+}
+
+.important-header {
+	padding: 100px;
+	text-decoration: underline;
+}
+
 .jumbotron {
 	z-index: -2;
 	position: relative;
@@ -85,7 +98,7 @@ body {
 }
 
 .animation-background {
-	background-color: rgb(0, 0, 0);
+	background-color: rgb(199, 199, 199);
 }
 
 .animation-container {
@@ -102,19 +115,22 @@ body {
 	}
 	#animation-4 {
 		transform: translateY(0px);
+		text-align: center;
 	}
 	.animation-arrow {
 		transform: rotateZ(90deg);
 	}
 	.what-we-do {
+		font-size: 48px;
 		text-align: center;
-		color: rgb(230, 230, 230);
+		color: black;
 	}
 }
 
 @media all and (min-width: 720px) {
 	.animation-container {
 		padding: 300px 0;
+		height: 100vh;
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
@@ -144,29 +160,28 @@ body {
 	}
 }
 
+.heart-container {
+	height: 100vh;
+	margin: 0 auto;
+	width: 100%;
+	background-color: teal;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url('../../public/imgs/heart.svg');
+	.heart-info {
+		margin: 0 auto;
+		display: block;
+		font-size: calc(6vw + 20px);
+		padding-top: 25vh;
+		height: 100%;
+		width: 50%;
+		text-align: center;
+	}
+}
+
 .saved-container {
 	padding-top: 50px;
-	background-color: teal;
-	.heart-container {
-		height: 300px;
-		margin: 0 auto;
-		width: 300px;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-image: url('../../public/imgs/heart.svg');
-		.heart-info {
-			padding-top: 75px;
-			height: 100%;
-			width: 100%;
-			text-align: center;
-		}
-	}
-	.header {
-		text-align: center;
-		padding: 50px;
-		font-size: 40px;
-		font-weight: bolder;
-	}
+	background-color: rgb(58, 102, 92);
 	.help-container {
 		margin: 0 auto;
 		width: 100%;
@@ -179,8 +194,12 @@ body {
 				border-radius: 25px;
 				display: block;
 				margin: 0 auto;
-				width: 250px;
-				height: 250px;
+				width: 20vw;
+				height: 20vw;
+				min-width: 100px;
+				min-height: 100px;
+				max-width: 250px;
+				max-height: 250px;
 			}
 			h3 {
 				margin-top: 25px;
@@ -192,9 +211,37 @@ body {
 				padding: 25px 0;
 				font-weight: bolder;
 				text-align: center;
+				text-decoration: underline;
 			}
 			@media all and (min-width:780px) {
 				padding: 100px 0;
+			}
+		}
+	}
+}
+
+.learn-more-background {
+	padding: 50px 0;
+	background-color: black;
+	.learn-more-container {
+		color: white;
+		text-align: center;
+		.learn-more-icon {
+			max-width: 250px;
+			max-height: 250px;
+			margin-bottom: 50px;
+		}
+		.learn-more-button {
+			margin: 75px auto;
+			display: block;
+			width: 250px;
+			height: 50px;
+			background-color: teal;
+			text-align: center;
+			padding-top: 5px;
+			font-size: 26px;
+			&:hover {
+				cursor: pointer;
 			}
 		}
 	}

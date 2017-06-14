@@ -47,35 +47,70 @@ function handleDesktopAnimation(elems, values) {
 	values.forEach((val, i) => {
 		const id = `#animation-${i + 1}`;
 		animateOpacity(elems[i], val, scrollBottom);
-		switch (i) {
-		case 0:
-			$(id).css({
-				'transition': 'transform 2s ease-in-out',
-				'transform': 'translateY(0px)',
-			});
-			break;
-		case 1:
-			$(id).css({
-				'transition': 'transform 2s ease-in-out',
-				'transform': 'translateX(0vw)',
-			});
-			break;
-		case 2:
-			$(id).css({
-				'transition': 'transform 2s ease-in-out',
-				'transform': 'translateY(0px)',
-			});
-			break;
-		case 3:
-			$(id).css({
-				'transition': 'transform 2s ease-in-out',
-				'transform': 'translateY(200px)',
-			});
-			break;
-		default:
-			break;
+		if (scrollBottom > val) {
+			handleFowardAnimation(id, i);
+		} else if (scrollBottom <= window.innerHeight + 100) {
+			handleResetAnimation(id, i);
 		}
 	});
+}
+
+function handleFowardAnimation(id, i) {
+	switch (i) {
+	case 0:
+		$(id).css({
+			'transition': 'transform 2s ease-in-out',
+			'transform': 'translateY(0px)',
+		});
+		break;
+	case 1:
+		$(id).css({
+			'transition': 'transform 2s ease-in-out',
+			'transform': 'translateX(0vw)',
+		});
+		break;
+	case 2:
+		$(id).css({
+			'transition': 'transform 2s ease-in-out',
+			'transform': 'translateY(0px)',
+		});
+		break;
+	case 3:
+		$(id).css({
+			'transition': 'transform 2s ease-in-out',
+			'transform': 'translateY(100px)',
+		});
+		break;
+	default:
+		break;
+	}
+}
+
+function handleResetAnimation(id, i) {
+	switch (i) {
+	case 0:
+		$(id).css({
+			'transform': 'translateY(-300px)',
+		});
+		break;
+	case 1:
+		$(id).css({
+			'transform': 'translateX(-30vw)',
+		});
+		break;
+	case 2:
+		$(id).css({
+			'transform': 'translateY(300px)',
+		});
+		break;
+	case 3:
+		$(id).css({
+			'transform': 'translateY(300px)',
+		});
+		break;
+	default:
+		break;
+	}
 }
 
 function handleMobileAnimation(elems, values) {
@@ -116,15 +151,17 @@ function handleJumbotronAnimations(backgroundImage, siteTitle, navbar) {
 }
 
 function handleNavbarPosition(navbar) {
-	if ($(window).scrollTop() > window.innerHeight - navbar.height()) {
-		navbar.css({
-			'position': 'fixed',
-			'z-index': 58008,
-			'top': navbarDisplacement,
-		});
-	} else {
-		navbar.css({
-			'position': 'static',
-		});
+	if (window.innerHeight > 660) {
+		if ($(window).scrollTop() > window.innerHeight - navbar.height()) {
+			navbar.css({
+				'position': 'fixed',
+				'z-index': 58008,
+				'top': navbarDisplacement,
+			});
+		} else {
+			navbar.css({
+				'position': 'static',
+			});
+		}
 	}
 }

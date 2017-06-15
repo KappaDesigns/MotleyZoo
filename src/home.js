@@ -2,6 +2,7 @@ import './css/bootstrap/bootstrap.min.css';
 import './css/index.scss';
 import './css/home.scss';
 import $ from 'jquery';
+import { handleSiteTitleAnimation, handleNavbarAnimation, handleBackgroundAnimation } from './common';
 
 const mobileAnimationWidth = 720;
 const navbarDisplacement = 55;
@@ -81,19 +82,9 @@ function animateOpacity(elem, val, scrollBottom) {
 }
 
 function handleJumbotronAnimations(backgroundImage, siteTitle, navbar) {
-	backgroundImage.css({
-		'transition': 'opacity 2s ease-in-out',
-		'opacity': 1,
-	});
-	siteTitle.css({
-		'transition': 'opacity 2s ease-in-out, transform 2s ease-in-out',
-		'transform': 'translateY(50px)',
-		'opacity': 1,
-	});
-	navbar.css({
-		'transition':'opacity 0.5s ease-in-out',
-		'opacity': 1,
-	});
+	handleNavbarAnimation(navbar);
+	handleSiteTitleAnimation(siteTitle);
+	handleBackgroundAnimation(backgroundImage);
 }
 
 function handleNavbarPosition(navbar) {

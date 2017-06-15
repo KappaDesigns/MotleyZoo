@@ -1,0 +1,30 @@
+.nav-bar {
+	width: 100%;
+	opacity: 0.25;
+	margin-top: -55px;
+	border-top: 5px solid rgb(29, 29, 29);
+	border-bottom: 5px solid rgb(29, 29, 29);
+	background-color: rgb(43, 43, 43);
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	height: auto;
+	.nav-link {
+		color: rgb(168, 168, 168);
+		transition: color 0.25s ease-in-out;
+		&:hover {
+			color: teal;
+		}
+		.nav-icon {
+			display: none;
+			width: 25px;
+			height: 25px;
+			margin-right: 5px;
+		}
+		@media all and (min-width: 660px) {
+			.nav-icon {
+				display: inline-block;
+			}
+		}
+	}
+}

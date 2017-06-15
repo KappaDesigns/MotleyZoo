@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster+Two');
 @import './components/footer';
 @import './components/navbar';
+@import './components/buttons';
 
 .header {
 	text-align: center;
@@ -219,26 +220,6 @@
 
 .resource-icon {
 	padding-top: 75px;
-}
-
-.learn-more-button, .involvement-button, .resource-button {
-	margin: 75px auto;
-	display: block;
-	width: 250px;
-	height: 65px;
-	background-color: teal;
-	border-bottom: 5px solid rgb(7, 54, 54);
-	text-align: center;
-	padding: 10px 5px;
-	font-size: 26px;
-	color: white;
-	transition: color 0.5s ease-in-out, border-bottom 0.5s ease-in-out;
-	&:hover {
-		border-bottom: 0px solid transparent;
-		color:rgb(181, 181, 181);
-		cursor: pointer;
-		text-decoration: none;
-	}
 }
 
 .resource-container {

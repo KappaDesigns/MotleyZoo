@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster+Two');
 @import './components/footer';
 @import './components/navbar';
+@import './components/tab';
+@import './components/buttons';
 
 .header {
 	height: 100vh;
@@ -46,4 +48,91 @@
 			}
 		}
 	}
+}
+
+.mission-container {
+	// background-color: rgb(23, 23, 23);
+	.mission-title {
+		text-align: center;
+		padding-top: 50px;
+		font-size: 56px;
+		color: teal;
+	}
+	.mission-statement {
+		padding: 50px 0;
+		text-align: center;
+		line-height: 2;
+		font-size: 18px;
+	}
+}
+
+.what-we-do-container {
+	background-color: black;
+	text-align: center;
+	padding-bottom: 25px;
+	.goal {
+		text-align: center;
+		color: white;
+		padding: 25px 0;
+	}
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		li {
+			color: white;
+			margin: 10px;
+			padding: 5px;
+		}
+	}
+}
+
+.our-people {
+	background-color: black;
+	width: 100vw;
+	padding: 25px 0;
+	.people-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		.employee {
+			margin: 50px 4%;
+			width: 200px;
+			height: 300px;
+			.profile-pic {
+				width: 200px;
+				height: 200px;
+				border-radius: 50%;
+			}
+			.employee-name {
+				text-align: center;
+				margin-top: 15px;
+				color: rgb(196, 196, 196);
+			}
+		}
+		[id$="-3"],[id$="-4"],[id$="-5"],[id$="-6"] {
+			display: none;
+		}
+		@media all and (min-width: 585px) {
+			[id$="-3"] {
+				display: block;
+			}
+		}
+		@media all and (min-width: 1200px) {
+			.employee {
+				display: block;
+			}
+		}
+	}
+}
+
+.temp {
+	width: 100vw;
+	height: 100vh;
+}
+.white {
+	background-color: white;
+}
+.black {
+	background-color: black;
 }

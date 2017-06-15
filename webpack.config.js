@@ -94,6 +94,7 @@ const productionConfig = merge([
 		'process.env.NODE_ENV',
 		'production'
 	),
+	parts.copyPublic(),
 ]);
 
 const developmentConfig = merge([

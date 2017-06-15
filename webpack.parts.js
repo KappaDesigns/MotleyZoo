@@ -5,6 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const BabiliPlugin = require('babili-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackCopyPlugin = require('copy-webpack-plugin');
 const cssnano = require('cssnano');
 const webpack = require('webpack');
 
@@ -238,5 +239,16 @@ exports.page = ({
 			title,
 			chunks,
 		}),
+	],
+});
+
+exports.copyPublic = () => ({
+	plugins: [
+		new WebpackCopyPlugin([
+			{
+				from: path.join(__dirname, 'public'),
+				to: path.join(__dirname, 'build', 'public'),
+			},
+		]),
 	],
 });

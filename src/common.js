@@ -1,4 +1,6 @@
-// import $ from 'jquery';
+import $ from 'jquery';
+
+const navbarDisplacement = 55;
 
 function handleSiteTitleAnimation(siteTitle) {
 	siteTitle.css({
@@ -22,4 +24,25 @@ function handleBackgroundAnimation(backgroundImage) {
 	});
 }
 
-export { handleSiteTitleAnimation, handleNavbarAnimation, handleBackgroundAnimation };
+function handleNavbarPosition(navbar, bottom) {
+	if (window.innerWidth > 660) {
+		if ($(window).scrollTop() > bottom - navbar.height()) {
+			navbar.css({
+				'position': 'fixed',
+				'z-index': 58008,
+				'top': navbarDisplacement,
+			});
+		} else {
+			navbar.css({
+				'position': 'static',
+			});
+		}
+	}
+}
+
+export {
+	handleSiteTitleAnimation,
+	handleNavbarAnimation,
+	handleBackgroundAnimation,
+	handleNavbarPosition,
+};

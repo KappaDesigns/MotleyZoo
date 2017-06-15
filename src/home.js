@@ -2,10 +2,14 @@ import './css/bootstrap/bootstrap.min.css';
 import './css/index.scss';
 import './css/home.scss';
 import $ from 'jquery';
-import { handleSiteTitleAnimation, handleNavbarAnimation, handleBackgroundAnimation } from './common';
+import {
+	handleSiteTitleAnimation,
+	handleNavbarAnimation,
+	handleBackgroundAnimation,
+	handleNavbarPosition,
+} from './common';
 
 const mobileAnimationWidth = 720;
-const navbarDisplacement = 55;
 const transitionHeight = 2;
 
 $(document).ready(() => {
@@ -23,7 +27,7 @@ $(document).ready(() => {
 	);
 
 	$(window).scroll(() => {
-		handleNavbarPosition($navbar);
+		handleNavbarPosition($navbar, window.innerHeight);
 		animateAboutUs($animationContainer);
 		if (!hasColorChanged) {
 			hasColorChanged = handleJumbotronColor($siteTitle);
@@ -85,20 +89,4 @@ function handleJumbotronAnimations(backgroundImage, siteTitle, navbar) {
 	handleNavbarAnimation(navbar);
 	handleSiteTitleAnimation(siteTitle);
 	handleBackgroundAnimation(backgroundImage);
-}
-
-function handleNavbarPosition(navbar) {
-	if (window.innerWidth > 660) {
-		if ($(window).scrollTop() > window.innerHeight - navbar.height()) {
-			navbar.css({
-				'position': 'fixed',
-				'z-index': 58008,
-				'top': navbarDisplacement,
-			});
-		} else {
-			navbar.css({
-				'position': 'static',
-			});
-		}
-	}
 }

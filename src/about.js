@@ -2,7 +2,12 @@ import './css/bootstrap/bootstrap.min.css';
 import './css/index.scss';
 import './css/about.scss';
 import $ from 'jquery';
-import { handleSiteTitleAnimation, handleNavbarAnimation, handleBackgroundAnimation } from './common';
+import {
+	handleSiteTitleAnimation,
+	handleNavbarAnimation,
+	handleBackgroundAnimation,
+	handleNavbarPosition,
+} from './common';
 
 $(document).ready(() => {
 	let $siteTitle = $('.page-title');
@@ -11,6 +16,10 @@ $(document).ready(() => {
 	let $backgroundImage = $('.animal-image');
 
 	handleHeaderAnimations($siteTitle, $siteDesc, $navbar, $backgroundImage);
+
+	$(window).scroll(() => {
+		handleNavbarPosition($navbar, window.innerHeight / 2);
+	});
 });
 
 

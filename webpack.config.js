@@ -11,7 +11,12 @@ const PATHS = {
 	recordJSON: path.join(__dirname, 'build_info', 'records.json'),
 	HTML: {
 		home: path.join(__dirname, 'src', 'pages', 'index.html'),
+		about: path.join(__dirname, 'src', 'pages', 'about.html'),
 	},
+	JS: {
+		home: path.join(__dirname, 'src', 'home.js'),
+		about: path.join(__dirname, 'src', 'about.js'),
+	}
 };
 
 const commonConfig = merge([
@@ -117,9 +122,18 @@ module.exports = (env) => {
 			title: 'Motley Zoo: Home',
 			template: PATHS.HTML.home,
 			entry: {
-				app: PATHS.app,
+				home: PATHS.JS.home,
 			},
-			chunks: ['app', 'manifest', 'vendor'],
+			chunks: ['home', 'manifest', 'vendor'],
+		}),
+		parts.page({
+			title: 'Motley Zoo: About',
+			template: PATHS.HTML.about,
+			path: 'about',
+			entry: {
+				about: PATHS.JS.about,
+			},
+			chunks: ['about', 'manifest', 'vendor'],
 		}),
 	];
 	const config = env === 'production' ?

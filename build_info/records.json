@@ -390,6 +390,190 @@
           "0": 0
         }
       }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": "3IRH",
+          "node_modules/webpack/buildin/global.js": "DuR2",
+          "node_modules/lodash/lodash.js": "M4fF",
+          "node_modules/html-webpack-plugin/lib/loader.js!src/pages/index.html": "asZ9"
+        },
+        "usedIds": {
+          "3IRH": "3IRH",
+          "DuR2": "DuR2",
+          "M4fF": "M4fF",
+          "asZ9": "asZ9"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": "3IRH",
+          "node_modules/webpack/buildin/global.js": "DuR2",
+          "node_modules/lodash/lodash.js": "M4fF",
+          "node_modules/html-webpack-plugin/lib/loader.js!src/pages/about.html": "nRaA"
+        },
+        "usedIds": {
+          "3IRH": "3IRH",
+          "DuR2": "DuR2",
+          "M4fF": "M4fF",
+          "nRaA": "nRaA"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": "3IRH",
+          "node_modules/webpack/buildin/global.js": "DuR2",
+          "node_modules/lodash/lodash.js": "M4fF",
+          "node_modules/html-webpack-plugin/lib/loader.js!src/pages/index.html": "asZ9"
+        },
+        "usedIds": {
+          "3IRH": "3IRH",
+          "DuR2": "DuR2",
+          "M4fF": "M4fF",
+          "asZ9": "asZ9"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": "3IRH",
+          "node_modules/webpack/buildin/global.js": "DuR2",
+          "node_modules/lodash/lodash.js": "M4fF",
+          "node_modules/html-webpack-plugin/lib/loader.js!src/pages/index.html": "asZ9"
+        },
+        "usedIds": {
+          "3IRH": "3IRH",
+          "DuR2": "DuR2",
+          "M4fF": "M4fF",
+          "asZ9": "asZ9"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": "3IRH",
+          "node_modules/webpack/buildin/global.js": "DuR2",
+          "node_modules/lodash/lodash.js": "M4fF",
+          "node_modules/html-webpack-plugin/lib/loader.js!src/pages/index.html": "asZ9"
+        },
+        "usedIds": {
+          "3IRH": "3IRH",
+          "DuR2": "DuR2",
+          "M4fF": "M4fF",
+          "asZ9": "asZ9"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": "3IRH",
+          "node_modules/webpack/buildin/global.js": "DuR2",
+          "node_modules/lodash/lodash.js": "M4fF",
+          "node_modules/html-webpack-plugin/lib/loader.js!src/pages/index.html": "asZ9"
+        },
+        "usedIds": {
+          "3IRH": "3IRH",
+          "DuR2": "DuR2",
+          "M4fF": "M4fF",
+          "asZ9": "asZ9"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": "3IRH",
+          "node_modules/webpack/buildin/global.js": "DuR2",
+          "node_modules/lodash/lodash.js": "M4fF",
+          "node_modules/html-webpack-plugin/lib/loader.js!src/pages/index.html": "asZ9"
+        },
+        "usedIds": {
+          "3IRH": "3IRH",
+          "DuR2": "DuR2",
+          "M4fF": "M4fF",
+          "asZ9": "asZ9"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": "3IRH",
+          "node_modules/webpack/buildin/global.js": "DuR2",
+          "node_modules/lodash/lodash.js": "M4fF",
+          "node_modules/html-webpack-plugin/lib/loader.js!src/pages/index.html": "asZ9"
+        },
+        "usedIds": {
+          "3IRH": "3IRH",
+          "DuR2": "DuR2",
+          "M4fF": "M4fF",
+          "asZ9": "asZ9"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
     }
   ],
   "extract-text-webpack-plugin": [
@@ -1049,6 +1233,517 @@
           "0": 0
         }
       }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!src/css/bootstrap/bootstrap.min.css": "NGXD"
+        },
+        "usedIds": {
+          "FZ+f": "FZ+f",
+          "NGXD": "NGXD"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!src/css/index.scss": "9ZbE",
+          "node_modules/css-loader/lib/css-base.js": "FZ+f"
+        },
+        "usedIds": {
+          "9ZbE": "9ZbE",
+          "FZ+f": "FZ+f"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/blackdog.jpg": "0sCi",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!src/css/home.scss": "F1q2",
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/facebook.svg": "Iqbb",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/instagram.svg": "Mvv+",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/cart.svg": "OW2Y",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/heart.svg": "QYcq",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/twitter.svg": "W5dJ",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/youtube.svg": "ZLUk",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/pinterest.svg": "srgr"
+        },
+        "usedIds": {
+          "0sCi": "0sCi",
+          "F1q2": "F1q2",
+          "FZ+f": "FZ+f",
+          "Iqbb": "Iqbb",
+          "Mvv+": "Mvv+",
+          "OW2Y": "OW2Y",
+          "QYcq": "QYcq",
+          "W5dJ": "W5dJ",
+          "ZLUk": "ZLUk",
+          "srgr": "srgr"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!src/css/bootstrap/bootstrap.min.css": "NGXD"
+        },
+        "usedIds": {
+          "FZ+f": "FZ+f",
+          "NGXD": "NGXD"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!src/css/index.scss": "9ZbE",
+          "node_modules/css-loader/lib/css-base.js": "FZ+f"
+        },
+        "usedIds": {
+          "9ZbE": "9ZbE",
+          "FZ+f": "FZ+f"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/blackdog.jpg": "0sCi",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!src/css/home.scss": "F1q2",
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/facebook.svg": "Iqbb",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/instagram.svg": "Mvv+",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/cart.svg": "OW2Y",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/heart.svg": "QYcq",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/twitter.svg": "W5dJ",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/youtube.svg": "ZLUk",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/pinterest.svg": "srgr"
+        },
+        "usedIds": {
+          "0sCi": "0sCi",
+          "F1q2": "F1q2",
+          "FZ+f": "FZ+f",
+          "Iqbb": "Iqbb",
+          "Mvv+": "Mvv+",
+          "OW2Y": "OW2Y",
+          "QYcq": "QYcq",
+          "W5dJ": "W5dJ",
+          "ZLUk": "ZLUk",
+          "srgr": "srgr"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!src/css/bootstrap/bootstrap.min.css": "NGXD"
+        },
+        "usedIds": {
+          "FZ+f": "FZ+f",
+          "NGXD": "NGXD"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!src/css/index.scss": "9ZbE",
+          "node_modules/css-loader/lib/css-base.js": "FZ+f"
+        },
+        "usedIds": {
+          "9ZbE": "9ZbE",
+          "FZ+f": "FZ+f"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/blackdog.jpg": "0sCi",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!src/css/home.scss": "F1q2",
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/facebook.svg": "Iqbb",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/instagram.svg": "Mvv+",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/cart.svg": "OW2Y",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/heart.svg": "QYcq",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/twitter.svg": "W5dJ",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/youtube.svg": "ZLUk",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/pinterest.svg": "srgr"
+        },
+        "usedIds": {
+          "0sCi": "0sCi",
+          "F1q2": "F1q2",
+          "FZ+f": "FZ+f",
+          "Iqbb": "Iqbb",
+          "Mvv+": "Mvv+",
+          "OW2Y": "OW2Y",
+          "QYcq": "QYcq",
+          "W5dJ": "W5dJ",
+          "ZLUk": "ZLUk",
+          "srgr": "srgr"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!src/css/bootstrap/bootstrap.min.css": "NGXD"
+        },
+        "usedIds": {
+          "FZ+f": "FZ+f",
+          "NGXD": "NGXD"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!src/css/index.scss": "9ZbE",
+          "node_modules/css-loader/lib/css-base.js": "FZ+f"
+        },
+        "usedIds": {
+          "9ZbE": "9ZbE",
+          "FZ+f": "FZ+f"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/blackdog.jpg": "0sCi",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!src/css/home.scss": "F1q2",
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/facebook.svg": "Iqbb",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/instagram.svg": "Mvv+",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/cart.svg": "OW2Y",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/heart.svg": "QYcq",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/twitter.svg": "W5dJ",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/youtube.svg": "ZLUk",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/pinterest.svg": "srgr"
+        },
+        "usedIds": {
+          "0sCi": "0sCi",
+          "F1q2": "F1q2",
+          "FZ+f": "FZ+f",
+          "Iqbb": "Iqbb",
+          "Mvv+": "Mvv+",
+          "OW2Y": "OW2Y",
+          "QYcq": "QYcq",
+          "W5dJ": "W5dJ",
+          "ZLUk": "ZLUk",
+          "srgr": "srgr"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!src/css/bootstrap/bootstrap.min.css": "NGXD"
+        },
+        "usedIds": {
+          "FZ+f": "FZ+f",
+          "NGXD": "NGXD"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!src/css/index.scss": "9ZbE",
+          "node_modules/css-loader/lib/css-base.js": "FZ+f"
+        },
+        "usedIds": {
+          "9ZbE": "9ZbE",
+          "FZ+f": "FZ+f"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/blackdog.jpg": "0sCi",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!src/css/home.scss": "F1q2",
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/facebook.svg": "Iqbb",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/instagram.svg": "Mvv+",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/cart.svg": "OW2Y",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/heart.svg": "QYcq",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/twitter.svg": "W5dJ",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/youtube.svg": "ZLUk",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/pinterest.svg": "srgr"
+        },
+        "usedIds": {
+          "0sCi": "0sCi",
+          "F1q2": "F1q2",
+          "FZ+f": "FZ+f",
+          "Iqbb": "Iqbb",
+          "Mvv+": "Mvv+",
+          "OW2Y": "OW2Y",
+          "QYcq": "QYcq",
+          "W5dJ": "W5dJ",
+          "ZLUk": "ZLUk",
+          "srgr": "srgr"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!src/css/bootstrap/bootstrap.min.css": "NGXD"
+        },
+        "usedIds": {
+          "FZ+f": "FZ+f",
+          "NGXD": "NGXD"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!src/css/index.scss": "9ZbE",
+          "node_modules/css-loader/lib/css-base.js": "FZ+f"
+        },
+        "usedIds": {
+          "9ZbE": "9ZbE",
+          "FZ+f": "FZ+f"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/blackdog.jpg": "0sCi",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!src/css/home.scss": "F1q2",
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/facebook.svg": "Iqbb",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/instagram.svg": "Mvv+",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/cart.svg": "OW2Y",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/heart.svg": "QYcq",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/twitter.svg": "W5dJ",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/youtube.svg": "ZLUk",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/pinterest.svg": "srgr"
+        },
+        "usedIds": {
+          "0sCi": "0sCi",
+          "F1q2": "F1q2",
+          "FZ+f": "FZ+f",
+          "Iqbb": "Iqbb",
+          "Mvv+": "Mvv+",
+          "OW2Y": "OW2Y",
+          "QYcq": "QYcq",
+          "W5dJ": "W5dJ",
+          "ZLUk": "ZLUk",
+          "srgr": "srgr"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!src/css/bootstrap/bootstrap.min.css": "NGXD"
+        },
+        "usedIds": {
+          "FZ+f": "FZ+f",
+          "NGXD": "NGXD"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!src/css/index.scss": "9ZbE",
+          "node_modules/css-loader/lib/css-base.js": "FZ+f"
+        },
+        "usedIds": {
+          "9ZbE": "9ZbE",
+          "FZ+f": "FZ+f"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/blackdog.jpg": "0sCi",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!src/css/home.scss": "F1q2",
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/facebook.svg": "Iqbb",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/instagram.svg": "Mvv+",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/cart.svg": "OW2Y",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/heart.svg": "QYcq",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/twitter.svg": "W5dJ",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/youtube.svg": "ZLUk",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/pinterest.svg": "srgr"
+        },
+        "usedIds": {
+          "0sCi": "0sCi",
+          "F1q2": "F1q2",
+          "FZ+f": "FZ+f",
+          "Iqbb": "Iqbb",
+          "Mvv+": "Mvv+",
+          "OW2Y": "OW2Y",
+          "QYcq": "QYcq",
+          "W5dJ": "W5dJ",
+          "ZLUk": "ZLUk",
+          "srgr": "srgr"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
     }
   ],
   "modules": {
@@ -1076,7 +1771,17 @@
       "node_modules/extract-text-webpack-plugin/loader.js??ref--6-0!node_modules/style-loader/index.js!node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js??ref--6-3!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js??ref--1!src/css/index.scss": "UBeP",
       "node_modules/extract-text-webpack-plugin/loader.js??ref--5-0!node_modules/style-loader/index.js!node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js??ref--5-3!node_modules/sass-loader/lib/loader.js!src/css/bootstrap/bootstrap.min.css": "tkm6",
       "node_modules/file-loader/index.js??ref--4-0!public/imgs/blackdog.jpg": "0sCi",
-      "node_modules/file-loader/index.js??ref--4-0!public/imgs/heart.svg": "QYcq"
+      "node_modules/file-loader/index.js??ref--4-0!public/imgs/heart.svg": "QYcq",
+      "node_modules/babel-loader/lib/index.js??ref--3!node_modules/eslint-loader/index.js!src/home.js": "Ey7U",
+      "node_modules/file-loader/index.js??ref--4-0!public/imgs/facebook.svg": "Iqbb",
+      "node_modules/file-loader/index.js??ref--4-0!public/imgs/instagram.svg": "Mvv+",
+      "node_modules/file-loader/index.js??ref--4-0!public/imgs/cart.svg": "OW2Y",
+      "node_modules/file-loader/index.js??ref--4-0!public/imgs/twitter.svg": "W5dJ",
+      "node_modules/file-loader/index.js??ref--4-0!public/imgs/youtube.svg": "ZLUk",
+      "node_modules/extract-text-webpack-plugin/loader.js??ref--6-0!node_modules/style-loader/index.js!node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js??ref--6-3!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js??ref--1!src/css/home.scss": "hcFs",
+      "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{}!src/css/home.scss": "qONk",
+      "node_modules/file-loader/index.js??ref--4-0!public/imgs/pinterest.svg": "srgr",
+      "node_modules/babel-loader/lib/index.js??ref--3!node_modules/eslint-loader/index.js!src/about.js": "x5KR"
     },
     "usedIds": {
       "7t+N": "7t+N",
@@ -1095,7 +1800,17 @@
       "x3R7": "x3R7",
       "/5uN": "/5uN",
       "QAjt": "QAjt",
-      "QYcq": "QYcq"
+      "QYcq": "QYcq",
+      "Ey7U": "Ey7U",
+      "Iqbb": "Iqbb",
+      "Mvv+": "Mvv+",
+      "OW2Y": "OW2Y",
+      "W5dJ": "W5dJ",
+      "ZLUk": "ZLUk",
+      "hcFs": "hcFs",
+      "qONk": "qONk",
+      "srgr": "srgr",
+      "x5KR": "x5KR"
     }
   },
   "chunks": {
@@ -1103,13 +1818,16 @@
       "vendor": 0,
       "app": 1,
       "manifest": 2,
-      "another": 3
+      "another": 3,
+      "home": 3,
+      "about": 4
     },
     "byBlocks": {},
     "usedIds": {
       "0": 0,
-      "1": 1,
-      "2": 2
+      "2": 2,
+      "3": 3,
+      "4": 4
     }
   },
   "html-webpack-plugin for \"another/index.html\"": [
@@ -1126,6 +1844,123 @@
           "DuR2": "DuR2",
           "M4fF": "M4fF",
           "a/t9": "a/t9"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    }
+  ],
+  "html-webpack-plugin for \"about/index.html\"": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": "3IRH",
+          "node_modules/webpack/buildin/global.js": "DuR2",
+          "node_modules/lodash/lodash.js": "M4fF",
+          "node_modules/html-webpack-plugin/lib/loader.js!src/pages/about.html": "nRaA"
+        },
+        "usedIds": {
+          "3IRH": "3IRH",
+          "DuR2": "DuR2",
+          "M4fF": "M4fF",
+          "nRaA": "nRaA"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": "3IRH",
+          "node_modules/webpack/buildin/global.js": "DuR2",
+          "node_modules/lodash/lodash.js": "M4fF",
+          "node_modules/html-webpack-plugin/lib/loader.js!src/pages/about.html": "nRaA"
+        },
+        "usedIds": {
+          "3IRH": "3IRH",
+          "DuR2": "DuR2",
+          "M4fF": "M4fF",
+          "nRaA": "nRaA"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": "3IRH",
+          "node_modules/webpack/buildin/global.js": "DuR2",
+          "node_modules/lodash/lodash.js": "M4fF",
+          "node_modules/html-webpack-plugin/lib/loader.js!src/pages/about.html": "nRaA"
+        },
+        "usedIds": {
+          "3IRH": "3IRH",
+          "DuR2": "DuR2",
+          "M4fF": "M4fF",
+          "nRaA": "nRaA"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": "3IRH",
+          "node_modules/webpack/buildin/global.js": "DuR2",
+          "node_modules/lodash/lodash.js": "M4fF",
+          "node_modules/html-webpack-plugin/lib/loader.js!src/pages/about.html": "nRaA"
+        },
+        "usedIds": {
+          "3IRH": "3IRH",
+          "DuR2": "DuR2",
+          "M4fF": "M4fF",
+          "nRaA": "nRaA"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": "3IRH",
+          "node_modules/webpack/buildin/global.js": "DuR2",
+          "node_modules/lodash/lodash.js": "M4fF",
+          "node_modules/html-webpack-plugin/lib/loader.js!src/pages/about.html": "nRaA"
+        },
+        "usedIds": {
+          "3IRH": "3IRH",
+          "DuR2": "DuR2",
+          "M4fF": "M4fF",
+          "nRaA": "nRaA"
         }
       },
       "chunks": {

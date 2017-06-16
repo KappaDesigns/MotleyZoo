@@ -1,4 +1,6 @@
 .tab {
+	position: relative;
+	z-index: 1;
 	margin-bottom: 5px;
 	text-align: center;
 	width: 100%;
@@ -40,4 +42,8 @@
 		border-bottom: 50px solid black;
 		color: white;
 	}
+}
+
+.tab-transparent {
+	background-color: transparent;
 }

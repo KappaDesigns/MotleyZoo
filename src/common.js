@@ -27,8 +27,6 @@ const subMenuEntries = [
 const navbarDisplacement = 55;
 const navbarMobileWidth = 660;
 const navbarZ = 58008;
-const navbarSubMenuLinks = createSubMenuMap(subMenuEntries);
-console.log(navbarSubMenuLinks);
 
 //navbar css when fixed after scrolling past point
 const navbarFixedCSS = {
@@ -41,21 +39,6 @@ const navbarFixedCSS = {
 const navbarStaticCSS = {
 	'position': 'static',
 };
-
-$(document).ready(() => {
-	const $navLinks = $('.nav-link');
-	$navLinks.mouseenter((e) => {
-		let $child = $(e.target);
-		let $subBar = $('.sub-bar');
-		displaySubmenu($child, $subBar);
-	});
-	$navLinks.mouseleave(() => {
-		let $subBar = $('.sub-bar');
-		hideSubmenu($subBar);
-	});
-});
-
-//COMMON ANIMATION HANDLERS
 
 //animate site title in header
 function handleSiteTitleAnimation(siteTitle) {
@@ -87,36 +70,166 @@ function handleNavbarPosition(navbar, bottom) {
 	}
 }
 
-function displaySubmenu(mainLink, subBar) {
+$(document).ready(() => {
+	const navbarSubMenuLinks = createSubMenuMap(subMenuEntries);
+	const $navLinks = $('.nav-link');
+	const $navbar = $('.nav-bar');
+	if (window.innerWidth > navbarMobileWidth) {
+		handleNavbarDesktop($navLinks, $navbar, navbarSubMenuLinks);
+	} else {
+		handleNavbarMobile($navLinks, navbarSubMenuLinks);
+	}
+	$(window).resize(() => {
+		$('.active').removeClass('active');
+		$('.sub-bar').remove();
+		$navLinks.unbind('click').unbind('mouseenter');
+		if (window.innerWidth > navbarMobileWidth) {
+			handleNavbarDesktop($navLinks, $navbar, navbarSubMenuLinks);
+		} else {
+			handleNavbarMobile($navLinks, navbarSubMenuLinks);
+		}
+	});
+});
+
+function handleNavbarMobile(navLinks, navbarSubMenuLinks) {
+	navLinks.click((e) => {
+		$('.active').removeClass('active');
+		e.preventDefault();
+		let $child = $(e.target);
+		$child.addClass('active');
+		let subBar = $('.sub-bar');
+		if (subMenuExists(subBar)) {
+			hideSubmenu(subBar, true);
+			rebindClick(subBar, navbarSubMenuLinks);
+		}
+		setTimeout(function () {
+			displaySubmenu($child, $child, navbarSubMenuLinks, true);
+		}, 100);
+	});
+}
+
+function rebindClick(subBar, navbarSubMenuLinks) {
+	subBar.parent().on('click', (e) => {
+		$('.active').removeClass('active');
+		e.preventDefault();
+		let $child = $(e.target);
+		$child.addClass('active');
+		let subBar = $('.sub-bar');
+		if (subMenuExists(subBar)) {
+			hideSubmenu(subBar, true);
+			rebindClick(subBar, navbarSubMenuLinks);
+		}
+		setTimeout(function () {
+			displaySubmenu($child, $child, navbarSubMenuLinks, true);
+		}, 100);
+	});
+}
+
+function handleNavbarDesktop(navLinks, navbar, navbarSubMenuLinks) {
+	navLinks.mouseenter((e) => {
+		let $child = $(e.target);
+		let subBar = $('.sub-bar');
+		if (subMenuExists(subBar)) {
+			hideSubmenu(subBar, false);
+		}
+		setTimeout(function () {
+			displaySubmenu($child, navbar, navbarSubMenuLinks, false);
+		}, 100);
+	});
+}
+
+function displaySubmenu(mainLink, appendEle, linkMap, isMobile) {
+	let componentString = getSubmenu(mainLink, linkMap);
+	appendSubmenu(appendEle, componentString, (subBar) => {
+		if (isMobile) {
+			addMobileLeaveListener(appendEle);
+			animateSubMenu(subBar, 'auto', isMobile);
+		} else {
+			addLeaveListener(subBar);
+			animateSubMenu(subBar, 55, isMobile);
+		}
+	});
+}
+
+function addMobileLeaveListener(appendEle) {
+	appendEle.unbind('click');
+}
+
+function getSubmenu(mainLink, linkMap) {
 	let path = mainLink.data('link');
-	let links = navbarSubMenuLinks.get(path);
+	let links = linkMap.get(path);
 	if (links && links.length != 0) {
-		// let components = getNavbarComponents(path, links);
-		// let componentString = stringifyComponents(components);
-		animateOpacity(subBar, 1, 1);
-		animate(subBar, 'height', '55px', 1, {
-			transitionType: 'linear',
-		});
+		let components = getNavbarComponents(path, links);
+		return `<div class="sub-bar">${stringifyComponents(components)}</div>`;
 	}
 }
 
-function hideSubmenu(subBar) {
-	animateOpacity(subBar, 0, 1);
+function appendSubmenu(ele, componentString, next) {
+	if (componentString) {
+		ele.append(componentString);
+		let interval = setInterval(() => {
+			let subBar = $('.sub-bar');
+			if (subMenuExists(subBar)) {
+				clearInterval(interval);
+				next(subBar);
+			}
+		}, 10);
+	}
+}
+
+function animateSubMenu(subBar, height, isMobile) {
+	let time = isMobile ? 1000 : 500;
+	let opacityTime = isMobile ? 2 : 1;
+	animateOpacity(subBar, 1, time / opacityTime / 1000);
+	animate(subBar, 'height', height, time / 1000, {
+		transitionType: 'linear',
+	});
+}
+
+function addLeaveListener(subBar) {
+	subBar.mouseleave((e) => {
+		let $target = $(e.target);
+		if ($target.is('div')) {
+			hideSubmenu($(e.target));
+		}
+	});
+}
+
+function hideSubmenu(subBar, isMobile) {
+	let time = isMobile ? 750 : 100;
+	animateOpacity(subBar, 0, time / 1000);
 	animate(subBar, 'height', '0', 1, {
 		transitionType: 'linear',
 	});
+	setTimeout(() => {
+		subBar.remove();
+	}, time / 1000);
+
+}
+
+function subMenuExists(subBar) {
+	return Array.from(subBar).length == 0 ? false : true;
 }
 
 function getNavbarComponents(path, links) {
 	return links.map((link, i) => {
 		return (
-			`<a href="/${path}/${link}" id="nav-link-${i+1}" class="nav-link"><i class="fa fa-paw nav-icon" aria-hidden="true"></i>${link}</a>`
+			`<a href="${getLink(path, link)}" id="nav-link-${i+1}" class="nav-link"><i class="fa fa-paw nav-icon" aria-hidden="true"></i>${link}</a>`
 		);
 	});
 }
 
-function stringifyComponents(components) {
+function getLink(path, link) {
+	path = path.toLowerCase();
+	link = link.toLowerCase();
+	link = link.replace(/\s+/g, '-');
+	return `/${path}/${link}`;
+}
 
+function stringifyComponents(components) {
+	return components.reduce((string, component) => {
+		return string + component;
+	});
 }
 
 function createSubMenuMap(subMenuMap) {
@@ -174,8 +287,9 @@ function getTransitionStr(transitions) {
 
 // returns an array of all transitions on an element
 function getTransition(elem) {
-	if ($(elem).css('transition').length > 0) {
-		return $(elem).css('transition').split(',');
+	let transitions = $(elem).css('transition');
+	if (transitions && transitions.length > 0) {
+		return transitions.split(',');
 	}
 	return [];
 }

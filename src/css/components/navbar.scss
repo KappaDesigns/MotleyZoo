@@ -14,7 +14,7 @@
 	}
 	.sub-bar {
 		background-color: rgb(75, 75, 75);
-		@media all and (min-width: 660px) {
+		@media all and (min-width: 780px) {
 			background-color: rgb(43, 43, 43);
 			position: absolute;
 		}
@@ -46,7 +46,7 @@
 			margin-right: 5px;
 		}
 	}
-	@media all and (min-width: 660px) {
+	@media all and (min-width: 780px) {
 		.nav-link {
 			display: inline-block;
 			width: auto;

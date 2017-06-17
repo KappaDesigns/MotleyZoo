@@ -25,7 +25,7 @@ const subMenuEntries = [
 
 //removing magic numbers from handling navbar animation
 const navbarDisplacement = 55;
-const navbarMobileWidth = 660;
+const navbarMobileWidth = 780;
 const navbarZ = 58008;
 
 //navbar css when fixed after scrolling past point

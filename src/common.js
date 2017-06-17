@@ -100,24 +100,6 @@ function handleNavbarMobile(navLinks, navbarSubMenuLinks) {
 		let subBar = $('.sub-bar');
 		if (subMenuExists(subBar)) {
 			hideSubmenu(subBar, true);
-			rebindClick(subBar, navbarSubMenuLinks);
-		}
-		setTimeout(function () {
-			displaySubmenu($child, $child, navbarSubMenuLinks, true);
-		}, 100);
-	});
-}
-
-function rebindClick(subBar, navbarSubMenuLinks) {
-	subBar.parent().on('click', (e) => {
-		$('.active').removeClass('active');
-		e.preventDefault();
-		let $child = $(e.target);
-		$child.addClass('active');
-		let subBar = $('.sub-bar');
-		if (subMenuExists(subBar)) {
-			hideSubmenu(subBar, true);
-			rebindClick(subBar, navbarSubMenuLinks);
 		}
 		setTimeout(function () {
 			displaySubmenu($child, $child, navbarSubMenuLinks, true);
@@ -139,10 +121,9 @@ function handleNavbarDesktop(navLinks, navbar, navbarSubMenuLinks) {
 }
 
 function displaySubmenu(mainLink, appendEle, linkMap, isMobile) {
-	let componentString = getSubmenu(mainLink, linkMap);
+	let componentString = getSubmenu(mainLink, linkMap, isMobile);
 	appendSubmenu(appendEle, componentString, (subBar) => {
 		if (isMobile) {
-			addMobileLeaveListener(appendEle);
 			animateSubMenu(subBar, 'auto', isMobile);
 		} else {
 			addLeaveListener(subBar);
@@ -151,16 +132,12 @@ function displaySubmenu(mainLink, appendEle, linkMap, isMobile) {
 	});
 }
 
-function addMobileLeaveListener(appendEle) {
-	appendEle.unbind('click');
-}
-
-function getSubmenu(mainLink, linkMap) {
+function getSubmenu(mainLink, linkMap, isMobile) {
 	let path = mainLink.data('link');
 	let links = linkMap.get(path);
 	if (links && links.length != 0) {
 		let components = getNavbarComponents(path, links);
-		return `<div class="sub-bar">${stringifyComponents(components)}</div>`;
+		return `<div class="sub-bar">${getHeadPathLink(isMobile, path)}${stringifyComponents(components)}</div>`;
 	}
 }
 
@@ -222,8 +199,18 @@ function getNavbarComponents(path, links) {
 function getLink(path, link) {
 	path = path.toLowerCase();
 	link = link.toLowerCase();
+	path = path.replace(/\s+/g, '-');
 	link = link.replace(/\s+/g, '-');
 	return `/${path}/${link}`;
+}
+
+function getHeadPathLink(isMobile, path) {
+	if (isMobile) {
+		path = path.toLowerCase();
+		path = path.replace(/\s+/g, '-');
+		return `/${path}`;
+	}
+	return '';
 }
 
 function stringifyComponents(components) {

@@ -93,18 +93,56 @@ $(document).ready(() => {
 
 function handleNavbarMobile(navLinks, navbarSubMenuLinks) {
 	navLinks.click((e) => {
-		$('.active').removeClass('active');
-		e.preventDefault();
 		let $child = $(e.target);
-		$child.addClass('active');
 		let subBar = $('.sub-bar');
+
+		$('.active').removeClass('active');
+		$child.addClass('active');
+
+		if (shouldPreventDefault($child, navbarSubMenuLinks)) {
+			e.preventDefault();
+		}
+
 		if (subMenuExists(subBar)) {
 			hideSubmenu(subBar, true);
+			rebindClick(subBar, navbarSubMenuLinks);
+		}
+
+		setTimeout(function () {
+			displaySubmenu($child, $child, navbarSubMenuLinks, true);
+		}, 100);
+	});
+}
+
+function rebindClick(subBar, navbarSubMenuLinks) {
+	subBar.parent().on('click', (e) => {
+		let $child = $(e.target);
+		let subBar = $('.sub-bar');
+
+		$('.active').removeClass('active');
+		$child.addClass('active');
+
+		if (shouldPreventDefault($child, navbarSubMenuLinks)) {
+			e.preventDefault();
+		}
+
+		if (subMenuExists(subBar)) {
+			hideSubmenu(subBar, true);
+			rebindClick(subBar, navbarSubMenuLinks);
 		}
 		setTimeout(function () {
 			displaySubmenu($child, $child, navbarSubMenuLinks, true);
 		}, 100);
 	});
+}
+
+function shouldPreventDefault(child, navbarSubMenuLinks) {
+	let key = child.data('link');
+	let array = navbarSubMenuLinks.get(key);
+	if (array) {
+		return array.length > 0;
+	}
+	return false;
 }
 
 function handleNavbarDesktop(navLinks, navbar, navbarSubMenuLinks) {
@@ -124,12 +162,17 @@ function displaySubmenu(mainLink, appendEle, linkMap, isMobile) {
 	let componentString = getSubmenu(mainLink, linkMap, isMobile);
 	appendSubmenu(appendEle, componentString, (subBar) => {
 		if (isMobile) {
+			addMobileLeaveListener(appendEle);
 			animateSubMenu(subBar, 'auto', isMobile);
 		} else {
 			addLeaveListener(subBar);
 			animateSubMenu(subBar, 55, isMobile);
 		}
 	});
+}
+
+function addMobileLeaveListener(appendEle) {
+	appendEle.unbind('click');
 }
 
 function getSubmenu(mainLink, linkMap, isMobile) {
@@ -199,16 +242,16 @@ function getNavbarComponents(path, links) {
 function getLink(path, link) {
 	path = path.toLowerCase();
 	link = link.toLowerCase();
-	path = path.replace(/\s+/g, '-');
 	link = link.replace(/\s+/g, '-');
 	return `/${path}/${link}`;
 }
 
 function getHeadPathLink(isMobile, path) {
 	if (isMobile) {
+		let text = path;
 		path = path.toLowerCase();
 		path = path.replace(/\s+/g, '-');
-		return `/${path}`;
+		return `<a href="${path}" id="nav-link-${0}" class="nav-link"><i class="fa fa-paw nav-icon" aria-hidden="true"></i>${text}</a>`;
 	}
 	return '';
 }

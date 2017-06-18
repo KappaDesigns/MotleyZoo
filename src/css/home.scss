@@ -21,65 +21,25 @@
 	background-image: url('../../public/imgs/blackdog.jpg');
 }
 
-.animation-background {
+.before-after-background {
 	background-color: rgb(31, 31, 31);
-}
-
-.animation-container {
-	padding-bottom: 100px;
-	.animation-part {
+	padding: 50px 0;
+	.before, .after {
 		opacity: 0;
-		img {
-			display: block;
-			margin: 0px auto;
-			padding: 25px 0;
-			width: 200px;
-			height: 200px;
-		}
+		transform: translateY(-25px);
+		padding: 35px 50px;
+		width: 100%;
+		height: 100%;
 	}
-	#animation-4 {
-		transform: translateY(0px);
+	.header {
+		padding: 35px 10px;
 		text-align: center;
-	}
-	.animation-arrow {
-		transform: rotateZ(90deg);
-	}
-	.what-we-do {
-		font-size: 48px;
-		text-align: center;
-		color: black;
-	}
-}
-
-@media all and (min-width: 720px) {
-	.animation-container {
-		padding: 300px 0;
-		height: 100vh;
-		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
-		.animation-part {
-			width: 33.3%;
-		}
-		#animation-1 {
-			// transform: translateY(-300px);
-		}
-		#animation-2 {
-			// transform: translateX(-30vw);
-			.animation-arrow {
-				transform: rotateZ(0deg);
-			}
-		}
-		#animation-3 {
-			// transform: translateY(300px);
-		}
-		#animation-4 {
-			// transform: translateY(300px);
-			width: 100%;
-			.what-we-do {
-				padding: 25px 0;
-				font-size: 48px;
-			}
+		color: white;
+		font-size: 56px;
+		transition: all 0.5s ease;
+		text-shadow: -2px 2px teal;
+		&:hover {
+			text-shadow: 0px 0px teal;
 		}
 	}
 }
@@ -102,6 +62,7 @@
 	background-color: teal;
 	background-position: center;
 	background-repeat: no-repeat;
+	background-attachment: fixed;
 	background-image: url('../../public/imgs/heart.svg');
 	.heart-info {
 		position: relative;
@@ -117,7 +78,8 @@
 .saved-container {
 	padding-top: 50px;
 	height: 100vh;
-	background-color: rgb(58, 102, 92);
+	max-height: 800px;
+	background-image: url('../../public/imgs/diamonpattern.jpg');
 	padding-bottom: 50px;
 	.header {
 		font-size: 70px;
@@ -232,6 +194,7 @@
 .resource-container {
 	background-color: black;
 	.resource-header {
+		padding-bottom: 35px;
 		text-align: center;
 		color: white;
 	}

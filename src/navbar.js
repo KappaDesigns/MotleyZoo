@@ -27,22 +27,14 @@ const subMenuEntries = [
 	},
 ];
 
-const navbarMobileWidth = 780;
-const tabletWidth = 992;
+const navbarMobileWidth = 768;
+const tabletWidth = 1024;
 
 $(document).ready(() => {
 	const navbarSubMenuLinks = createSubMenuMap(subMenuEntries);
 	const $navLinks = $('.nav-link');
 	const $navbar = $('.nav-bar');
 	applyNavbarHandler($navLinks, $navbar, navbarSubMenuLinks);
-
-	$(document).mousemove((e) => {
-		if (e.clientY < $navbar.offset().top) {
-			let subBar = $('.sub-bar');
-			let isMobile = getWindowType();
-			hideSubmenu(subBar, isMobile);
-		}
-	});
 
 	$(window).resize(() => {
 		$('.active').removeClass('active');
@@ -53,18 +45,10 @@ $(document).ready(() => {
 	});
 });
 
-function getWindowType() {
-	if (window.innerWidth > navbarMobileWidth) {
-		return false;
-	} else {
-		return true;
-	}
-}
-
 function applyNavbarHandler($navLinks, $navbar, navbarSubMenuLinks) {
 	if (window.innerWidth > tabletWidth) {
 		handleNavbarDesktop($navLinks, $navbar, navbarSubMenuLinks);
-	} else if (window.innerWidth > navbarMobileWidth && window.innerWidth < tabletWidth) {
+	} else if (window.innerWidth >= navbarMobileWidth && window.innerWidth <= tabletWidth) {
 		handleNavbarTablet($navLinks, $navbar, navbarSubMenuLinks);
 	} else {
 		handleNavbarMobile($navLinks, navbarSubMenuLinks);
@@ -85,7 +69,6 @@ function handleNavbarMobile(navLinks, navbarSubMenuLinks) {
 
 		if (subMenuExists(subBar)) {
 			hideSubmenu(subBar, true);
-			rebindClick(subBar, navbarSubMenuLinks);
 		}
 
 		setTimeout(function () {
@@ -94,38 +77,7 @@ function handleNavbarMobile(navLinks, navbarSubMenuLinks) {
 	});
 }
 
-function rebindClick(subBar, navbarSubMenuLinks, navbar) {
-	subBar.parent().on('click', (e) => {
-		let $child = ensureIsNavlink($(e.target));
-		let subBar = $('.sub-bar');
 
-		if(!navbar) {
-			$('.active').removeClass('active');
-			$child.addClass('active');
-		}
-
-		if (shouldPreventDefault($child, navbarSubMenuLinks)) {
-			e.preventDefault();
-		}
-
-		if (subMenuExists(subBar)) {
-			if (navbar) {
-				hideSubmenu(subBar, false);
-			} else {
-				hideSubmenu(subBar, true);
-			}
-			rebindClick(subBar, navbarSubMenuLinks);
-		}
-
-		setTimeout(function () {
-			if (navbar) {
-				displaySubmenu($child, navbar, navbarSubMenuLinks, false);
-			} else {
-				displaySubmenu($child, $child, navbarSubMenuLinks, true);
-			}
-		}, 100);
-	});
-}
 
 function shouldPreventDefault(child, navbarSubMenuLinks) {
 	let key = child.data('link');
@@ -158,7 +110,6 @@ function handleNavbarTablet(navLinks, navbar, navbarSubMenuLinks) {
 		}
 		if (subMenuExists(subBar)) {
 			hideSubmenu(subBar, false);
-			rebindClick(subBar, navbarSubMenuLinks, navbar, null);
 		}
 		setTimeout(function () {
 			displaySubmenu($child, navbar, navbarSubMenuLinks, null);
@@ -169,19 +120,15 @@ function handleNavbarTablet(navLinks, navbar, navbarSubMenuLinks) {
 function displaySubmenu(mainLink, appendEle, linkMap, isMobile) {
 	let componentString = getSubmenu(mainLink, linkMap, isMobile);
 	appendSubmenu(appendEle, componentString, (subBar) => {
-		if (isMobile || isMobile === null) {
-			isMobile = true;
-			addMobileLeaveListener(appendEle);
+		if (isMobile === null) {
+			animateSubMenu(subBar, 55, false);
+		} else if (isMobile) {
 			animateSubMenu(subBar, 'auto', isMobile);
 		} else {
 			addLeaveListener(subBar);
 			animateSubMenu(subBar, 55, isMobile);
 		}
 	});
-}
-
-function addMobileLeaveListener(appendEle) {
-	appendEle.unbind('click');
 }
 
 function getSubmenu(mainLink, linkMap, isMobile) {
@@ -209,8 +156,9 @@ function appendSubmenu(ele, componentString, next) {
 function animateSubMenu(subBar, height, isMobile) {
 	let time = isMobile ? 1000 : 500;
 	let opacityTime = isMobile ? 2 : 1;
+	let heightTime = isMobile ? 1 : 2;
 	animateOpacity(subBar, 1, time / opacityTime / 1000);
-	animate(subBar, 'height', height, time / 1000, {
+	animate(subBar, 'height', height, time / heightTime / 1000, {
 		transitionType: 'linear',
 	});
 }
@@ -231,7 +179,7 @@ function hideSubmenu(subBar, isMobile) {
 		transitionType: 'linear',
 	});
 	setTimeout(() => {
-		subBar.remove();
+		$('.sub-bar').remove();
 	}, time / 1000);
 
 }

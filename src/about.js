@@ -2,6 +2,7 @@ import './css/bootstrap/bootstrap.min.css';
 import './css/index.scss';
 import './css/about.scss';
 import $ from 'jquery';
+
 import {
 	handleSiteTitleAnimation,
 	handleNavbarAnimation,
@@ -11,17 +12,23 @@ import {
 	animateTranslateY,
 } from './common';
 
+// import {
+// 	render as renderMasonry,
+// } from './masonry';
+
 const headerSizeRatio = window.innerHeight / 2;
 const employeeScrollRatio = 4;
 
 $(document).ready(() => {
-	let $siteTitle = $('.sub-page-title');
-	let $siteDesc = $('.page-desc');
-	let $navbar = $('.nav-bar');
-	let $backgroundImage = $('.animal-image');
-	let $employeeContainer = $('.our-people');
+	const $siteTitle = $('.sub-page-title');
+	const $siteDesc = $('.page-desc');
+	const $navbar = $('.nav-bar');
+	const $backgroundImage = $('.animal-image');
+	const $employeeContainer = $('.our-people');
+	// const $sponsorContainer = $('.sponsors-container');
 
 	handleHeaderAnimations($siteTitle, $siteDesc, $navbar, $backgroundImage);
+	// renderMasonry($sponsorContainer);
 
 	$(window).scroll(() => {
 		let scrollBottom = $(window).scrollTop() + window.innerHeight;

@@ -61,13 +61,22 @@ function animate(elem, property, value, duration, options) {
 	}
 
 	let transitions = getTransition(elem);
-	transitions.push(`${property} ${duration}s ${transitionType}`);
+	addTransition(`${property} ${duration}s ${transitionType}`, transitions);
 
 	let css = {};
 	css['transition'] = getTransitionStr(transitions),
 	css[property] = value;
 
 	$(elem).css(css);
+}
+
+function addTransition(str, transitions) {
+	let check = transitions.filter((transition) => {
+		return transition == str;
+	});
+	if (check.length == 0) {
+		transitions.push(str);
+	}
 }
 
 //function to simplify animating opacity

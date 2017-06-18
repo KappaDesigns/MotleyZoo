@@ -15,7 +15,8 @@
 	.sub-bar {
 		background-color: rgb(75, 75, 75);
 		@media all and (min-width: 780px) {
-			background-color: rgb(43, 43, 43);
+			background-color: rgb(29, 29, 29);
+			border-bottom: 5px solid rgb(43, 53, 54);
 			position: absolute;
 		}
 		opacity: 0;

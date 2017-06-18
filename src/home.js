@@ -1,19 +1,18 @@
 import './css/bootstrap/bootstrap.min.css';
 import './css/index.scss';
 import './css/home.scss';
+
 import $ from 'jquery';
+
 import {
 	handleSiteTitleAnimation,
 	handleNavbarAnimation,
 	handleBackgroundAnimation,
 	handleNavbarPosition,
 	animateOpacity,
+	animateTranslateY,
 	animate,
 } from './common';
-
-//general const to remove magic numbers
-const mobileAnimationWidth = 720;
-const transitionHeight = 2;
 
 // once all html has loaded begin animations
 // ensures that all elements are mounted
@@ -21,7 +20,6 @@ $(document).ready(() => {
 	const $backgroundImage = $('.animal-image');
 	const $siteTitle = $('.site-title');
 	const $navbar = $('.nav-bar');
-	const $animationContainer = $('.animation-container');
 
 	let hasColorChanged = false;
 
@@ -33,7 +31,7 @@ $(document).ready(() => {
 
 	$(window).scroll(() => {
 		handleNavbarPosition($navbar, window.innerHeight);
-		animateAboutUs($animationContainer);
+		animateAboutUs();
 
 		if (!hasColorChanged) {
 			hasColorChanged = handleJumbotronColor($siteTitle);
@@ -54,40 +52,18 @@ function handleJumbotronColor(siteTitle) {
 }
 
 // animates about us based of if mobile or desktop animation
-function animateAboutUs(container) {
-	let elems = Array.from(container.find('.animation-part'));
-	let values = elems.map((ele) => {
-		return $(ele).offset().top + $(ele).height() / transitionHeight;
-	});
-	if (window.innerWidth < mobileAnimationWidth) {
-		handleMobileAnimation(elems, values);
-	} else {
-		handleDesktopAnimation(elems, values);
+function animateAboutUs() {
+	let before = $('.before').find('img');
+	let after = $('.after').find('img');
+	let scrollBottom = $(window).scrollTop() + window.innerHeight;
+	if (scrollBottom > after.offset().top + after.height()) {
+		animateTranslateY(after.parent(), '0px', 2);
+		animateOpacity(after.parent(), 1, 2);
 	}
-}
-
-//desktop animation for about us section
-function handleDesktopAnimation(elems, values) {
-	let scrollBottom = $(window).scrollTop() + window.innerHeight;
-	values.forEach((val, i) => {
-		if (scrollBottom > val) {
-			animateOpacity(elems[i], 1, 1);
-		} else {
-			animateOpacity(elems[i], 0, 1);
-		}
-	});
-}
-
-//mobile animation for about us section
-function handleMobileAnimation(elems, values) {
-	let scrollBottom = $(window).scrollTop() + window.innerHeight;
-	values.forEach((val, i) => {
-		if (scrollBottom > val) {
-			animateOpacity(elems[i], 1, 1);
-		} else {
-			animateOpacity(elems[i], 0, 1);
-		}
-	});
+	if (scrollBottom > before.offset().top + before.height()) {
+		animateOpacity(before.parent(), 1, 2);
+		animateTranslateY(before.parent(), '0px', 2);
+	}
 }
 
 // handles all animations within the jumbotron

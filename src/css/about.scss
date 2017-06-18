@@ -12,7 +12,10 @@
 }
 
 .our-mission {
-	background-color: peru;
+	background-image: url('https://ahredchair.com/sites/default/files/styles/banner__home/public/ah-16-creatingsuccessfornonprofits-slider.jpg?itok=bY_zDUkG');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	margin-bottom: -70px;
 	padding-bottom: 70px;
 	.mission-container {
@@ -106,6 +109,15 @@
 .our-sponsors {
 	width: 100%;
 	height: 100vh;
+	.masonry {
+		display: flex;
+		flex-wrap: wrap;
+		.masonry-container {
+			background-color: red;
+			margin: 15px;
+			padding: 5px;
+		}
+	}
 }
 
 .temp {

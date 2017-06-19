@@ -175,6 +175,13 @@
 	width: 150px;
 	height: 150px;
 	@media all and (min-width: 1220px) {
+		width: 250px;
+		height: 250px;
+	}
+}
+
+.resource-icon {
+	@media all and (min-width: 1220px) {
 		width: 300px;
 		height: 300px;
 	}

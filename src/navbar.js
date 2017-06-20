@@ -1,4 +1,6 @@
 import $ from 'jquery';
+import './css/components/navbar.scss';
+
 import {
 	animateOpacity,
 	animate,

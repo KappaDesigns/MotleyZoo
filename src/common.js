@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import './navbar';
 
 //removing magic numbers from handling navbar animation
 const navbarDisplacement = 55;

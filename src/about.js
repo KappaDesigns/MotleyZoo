@@ -1,3 +1,4 @@
+import './navbar';
 import './css/bootstrap/bootstrap.min.css';
 import './css/index.scss';
 import './css/about.scss';

@@ -27,6 +27,7 @@
   "homepage": "https://github.com/KappaDesigns/MotleyZoo#readme",
   "devDependencies": {
     "autoprefixer": "^7.1.1",
+    "axios": "^0.16.2",
     "babel-core": "^6.25.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.0.0",

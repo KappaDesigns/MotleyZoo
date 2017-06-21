@@ -71,7 +71,8 @@ function animate(elem, property, value, duration, options) {
 
 function addTransition(str, transitions) {
 	let check = transitions.filter((transition) => {
-		return transition == str;
+		
+		return transition.trim() == str;
 	});
 	if (check.length == 0) {
 		transitions.push(str);

@@ -36,12 +36,12 @@ $(document).ready(() => {
 		handleNavbarPosition($navbar, headerSizeRatio);
 
 		animateContainer($employeeContainer, scrollBottom, '.employee', (child) => {
-			animateOpacity(child, 1, 1);
-			animateTranslateY(child, '100px', 1.5);
+			animateOpacity(child, 1, '1s');
+			animateTranslateY(child, '100px', '1.5s');
 		});
 
 		animateContainer($sponsorContainer, scrollBottom, '.sponsor', (child) => {
-			animateOpacity(child, 1, 1);
+			animateOpacity(child, 1, '1s');
 		});
 	});
 
@@ -54,32 +54,37 @@ $(document).ready(() => {
 
 function addSponsorListeners(sponsors) {
 	const $overlays = $('.overlay');
-	animateOpacity($overlays, 0, 0.5);
-	animate($overlays, 'margin-top', 0, 0.5);
+	animateOpacity($overlays, 0, '0.5s');
+	animate($overlays, 'margin-top', 0, '0.5s');
 	if (window.innerWidth > 960) {
 		addDesktopSponsorListeners(sponsors);
 	} else {
-		addMobileSponsorListeners(sponsors);
+		addDesktopSponsorListeners(sponsors);
+		// addMobileSponsorListeners(sponsors);
 	}
 }
 
-function addMobileSponsorListeners(sponsors) {
-	sponsors.click((e) => {
-		const $overlays = $('.overlay');
-		animateOpacity($overlays, 0, 0.5);
-		animate($overlays, 'margin-top', 0, 0.5);
-
-		let $overlay = $(e.target).find('.overlay');
-		animateOpacity($overlay, 1, 0.5);
-		animate($overlay, 'margin-top', -($overlay.height()), 0.5);
-	});
-}
+// function addMobileSponsorListeners(sponsors) {
+// 	sponsors.click((e) => {
+// 		const $overlays = $('.overlay');
+// 		animateOpacity($overlays, 0, 0.5);
+// 		animate($overlays, 'margin-top', 0, 0.5);
+//
+// 		let $overlay = $(e.target).find('.overlay');
+// 		animateOpacity($overlay, 1, 0.5);
+// 		animate($overlay, 'margin-top', -($overlay.height()), 0.5);
+// 	});
+// }
 
 function addDesktopSponsorListeners(sponsors) {
 	sponsors.mouseenter((e) => {
 		let $overlay = $(e.target).find('.overlay');
-		animateOpacity($overlay, 1, 0.5);
-		animate($overlay, 'margin-top', -($overlay.height()), 0.5);
+		console.log($overlay);
+		if ($overlay.is('p')) {
+			$overlay = $overlay.parent();
+		}
+		animateOpacity($overlay, 1, '0.5s');
+		animate($overlay, 'margin-top', -($overlay.height()), '0.5s');
 	});
 	sponsors.mouseleave((e) => {
 		let $overlay = $(e.target);
@@ -88,8 +93,8 @@ function addDesktopSponsorListeners(sponsors) {
 		} else {
 			$overlay = $(e.target).parent();
 		}
-		animateOpacity($overlay, 0, 0.5);
-		animate($overlay, 'margin-top', 0, 0.5);
+		animateOpacity($overlay, 0, '0.5s');
+		animate($overlay, 'margin-top', 0, '0.5s');
 	});
 }
 

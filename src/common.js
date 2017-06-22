@@ -19,18 +19,18 @@ const navbarStaticCSS = {
 
 //animate site title in header
 function handleSiteTitleAnimation(siteTitle) {
-	animateOpacity(siteTitle, 1, 2);
-	animateTranslateY(siteTitle, '50px', 2);
+	animateOpacity(siteTitle, 1, '2s');
+	animateTranslateY(siteTitle, '50px', '2s');
 }
 
 //animate navbar in header
 function handleNavbarAnimation(navbar) {
-	animateOpacity(navbar, 1, 0.5);
+	animateOpacity(navbar, 1, '0.5s');
 }
 
 //animate animal image in header
 function handleBackgroundAnimation(backgroundImage) {
-	animateOpacity(backgroundImage, 1, 2);
+	animateOpacity(backgroundImage, 1, '2s');
 }
 
 //animate navbar when scrolling
@@ -55,27 +55,33 @@ function handleNavbarPosition(navbar, bottom) {
 // object on the property transitionType
 function animate(elem, property, value, duration, options) {
 	let transitionType = 'ease-in-out';
+	let delay = '0s';
 	if (options) {
-		transitionType = options.transitionType;
+		if (options.hasOwnProperty('transitionType')) {
+			transitionType = options.transitionType;
+		}
 	}
 
 	let transitions = getTransition(elem);
-	addTransition(`${property} ${duration}s ${transitionType}`, transitions);
+	let transitionObj = createTransitionObj(property, duration, transitionType, delay);
+	addTransition(transitions, transitionObj);
 
 	let css = {};
-	css['transition'] = getTransitionStr(transitions),
 	css[property] = value;
-
+	css['transition'] = getTransitionStr(transitions),
 	$(elem).css(css);
 }
 
-function addTransition(str, transitions) {
-	let check = transitions.filter((transition) => {
-		
-		return transition.trim() == str;
+function addTransition(transitions, obj) {
+	let found = false;
+	transitions.forEach((transition) => {
+		if (transition.name == obj.name) {
+			found = true;
+			transition = obj;
+		}
 	});
-	if (check.length == 0) {
-		transitions.push(str);
+	if (!found) {
+		transitions.push(obj);
 	}
 }
 
@@ -92,21 +98,42 @@ function animateTranslateY(elem, dY, duration) {
 // returns a string that is compossed of transitions
 // passed through a transitions array
 function getTransitionStr(transitions) {
-	return transitions.reduce((str, transition, i) => {
-		return str +=
-		i > 0 ?
-			', ' + transition :
-			transition;
+	let str = transitions.reduce((x, transition) => {
+		// console.log(transition);
+		return x + `${transition.name} ${transition.duration} ${transition.effect} ${transition.delay}, `;
 	}, '');
+	return str.substring(0, str.length - 2);
 }
 
 // returns an array of all transitions on an element
 function getTransition(elem) {
 	let transitions = $(elem).css('transition');
-	if (transitions && transitions.length > 0) {
-		return transitions.split(',');
+	if (transitions == 'all 0s ease 0s') {
+		transitions = [];
 	}
-	return [];
+	if (transitions && transitions.length > 1) {
+		transitions = transitions.split(', ');
+	}
+	let data = transitions.map((transition) => {
+		transition = transition.split(' ');
+		return createTransitionObj(transition);
+	});
+	// console.log(data);
+	return data;
+}
+
+function createTransitionObj(parts) {
+	let a = parts;
+	let params = Array.from(arguments);
+	if (params.length > 1) {
+		a = params;
+	}
+	return {
+		name: a[0],
+		duration: a[1] !== undefined ? a[1] : '0s',
+		effect: a[2] !== undefined ? a[2] : 'linear',
+		delay: a[3] !== undefined ? a[3] : '0s',
+	};
 }
 
 //export all common funcs

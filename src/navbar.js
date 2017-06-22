@@ -159,8 +159,8 @@ function animateSubMenu(subBar, height, isMobile) {
 	let time = isMobile ? 1000 : 500;
 	let opacityTime = isMobile ? 2 : 1;
 	let heightTime = isMobile ? 1 : 2;
-	animateOpacity(subBar, 1, time / opacityTime / 1000);
-	animate(subBar, 'height', height, time / heightTime / 1000, {
+	animateOpacity(subBar, 1, `${time / opacityTime / 1000}s`);
+	animate(subBar, 'height', height, `${time / heightTime / 1000}s`, {
 		transitionType: 'linear',
 	});
 }
@@ -176,8 +176,8 @@ function addLeaveListener(subBar) {
 
 function hideSubmenu(subBar, isMobile) {
 	let time = isMobile ? 750 : 100;
-	animateOpacity(subBar, 0, time / 1000);
-	animate(subBar, 'height', '0', 1, {
+	animateOpacity(subBar, 0, `${time / 1000}s`);
+	animate(subBar, 'height', '0', '1s', {
 		transitionType: 'linear',
 	});
 	setTimeout(() => {

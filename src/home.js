@@ -46,7 +46,7 @@ $(document).ready(() => {
 // animates the jumbotron color on scroll
 function handleJumbotronColor(siteTitle) {
 	if ($(window).scrollTop() >= 0 && $(window).scrollTop() <= window.innerHeight) {
-		animate(siteTitle, 'color', 'rgb(73, 39, 0)', 2);
+		animate(siteTitle, 'color', 'rgb(255, 255, 255)', '2s');
 	}
 	return true;
 }
@@ -57,12 +57,12 @@ function animateAboutUs() {
 	let after = $('.after').find('img');
 	let scrollBottom = $(window).scrollTop() + window.innerHeight;
 	if (scrollBottom > after.offset().top + after.height()) {
-		animateTranslateY(after.parent(), '0px', 2);
-		animateOpacity(after.parent(), 1, 2);
+		animateTranslateY(after.parent(), '0px', '2s');
+		animateOpacity(after.parent(), 1, '2s');
 	}
 	if (scrollBottom > before.offset().top + before.height()) {
-		animateOpacity(before.parent(), 1, 2);
-		animateTranslateY(before.parent(), '0px', 2);
+		animateOpacity(before.parent(), 1, '2s');
+		animateTranslateY(before.parent(), '0px', '2s');
 	}
 }
 

@@ -53,9 +53,6 @@ $(document).ready(() => {
 });
 
 function addSponsorListeners(sponsors) {
-	const $overlays = $('.overlay');
-	animateOpacity($overlays, 0, '0.5s');
-	animate($overlays, 'margin-top', 0, '0.5s');
 	if (window.innerWidth > 960) {
 		addDesktopSponsorListeners(sponsors);
 	} else {
@@ -79,22 +76,33 @@ function addSponsorListeners(sponsors) {
 function addDesktopSponsorListeners(sponsors) {
 	sponsors.mouseenter((e) => {
 		let $overlay = $(e.target).find('.overlay');
-		console.log($overlay);
 		if ($overlay.is('p')) {
 			$overlay = $overlay.parent();
 		}
+		$overlay.show();
 		animateOpacity($overlay, 1, '0.5s');
 		animate($overlay, 'margin-top', -($overlay.height()), '0.5s');
 	});
 	sponsors.mouseleave((e) => {
 		let $overlay = $(e.target);
-		if ($overlay.prop('class') == 'sponsor') {
+		let cls = $overlay.prop('class');
+		if (cls == 'sponsor') {
 			$overlay = $(e.target).find('.overlay');
-		} else {
+		} else if (cls != 'overlay') {
 			$overlay = $(e.target).parent();
 		}
+		$overlay.hide();
 		animateOpacity($overlay, 0, '0.5s');
-		animate($overlay, 'margin-top', 0, '0.5s');
+		animate($overlay, 'margin-top', '0px', '0.5s');
+	});
+
+	sponsors.click((e) => {
+		let elem = $(e.target);
+		while(elem.prop('class') != 'sponsor') {
+			elem = elem.parent();
+		}
+		let url = elem.data('link');
+		window.location.href = url;
 	});
 }
 

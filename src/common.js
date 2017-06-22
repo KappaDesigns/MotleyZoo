@@ -108,17 +108,17 @@ function getTransitionStr(transitions) {
 // returns an array of all transitions on an element
 function getTransition(elem) {
 	let transitions = $(elem).css('transition');
+	// console.log(transitions);
 	if (transitions == 'all 0s ease 0s') {
 		transitions = [];
 	}
-	if (transitions && transitions.length > 1) {
+	if (transitions && transitions.length > 0) {
 		transitions = transitions.split(', ');
 	}
 	let data = transitions.map((transition) => {
 		transition = transition.split(' ');
 		return createTransitionObj(transition);
 	});
-	// console.log(data);
 	return data;
 }
 

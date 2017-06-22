@@ -119,8 +119,8 @@
 			justify-content: center;
 			display: flex;
 			.sponsor {
-				opacity: 0.5;
 				display: none;
+				opacity: 0.5;
 				height: 0;
 				width: 100%;
 				text-align: center;
@@ -134,33 +134,32 @@
 					transform: scale(1.05);
 				}
 				.overlay {
+					display: none;
 					opacity: 0;
+					background-color: rgba(255, 255, 255, 0.77);
+					.sponsor-title {
+						padding: 15px 25px;
+					}
 					.sponsor-about {
-						height: 500px;
-						background-color: rgba(255, 255, 255, 0.77);
-						display: block;
-						@media all and (min-width: 600px) {
-							height: 100%;
+						padding: 0px 15px;
+						height: 100%;
+						display: none;
+						@media all and (min-width: 700px) {
+							display: block;
 						}
 					}
 				}
 			}
-
-			[id*='1'], [id*='5'] {
+			[id*="1"], [id*="4"] {
 				display: block;
 			}
-			@media all and (min-width: 600px) {
-				[id*="2"], [id*="6"] {
+			@media all and (min-width: 700px) {
+				[id*="2"], [id*="5"] {
 					display: block;
 				}
 			}
-			@media all and (min-width: 900px) {
-				[id*="3"], [id*="7"] {
-					display: block;
-				}
-			}
-			@media all and (min-width: 1100px) {
-				[id*="4"], [id*="8"] {
+			@media all and (min-width: 1200px) {
+				[id*="3"], [id*="6"] {
 					display: block;
 				}
 			}

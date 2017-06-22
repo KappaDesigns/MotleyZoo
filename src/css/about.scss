@@ -227,7 +227,7 @@
 					}
 					.sponsor-about {
 						padding: 0px 15px;
-						height: 20%;
+						height: 100%;
 						display: none;
 						@media all and (min-width: 900px) {
 							display: block;
@@ -246,6 +246,14 @@
 			@media all and (min-width: 1200px) {
 				[id*="3"], [id*="6"] {
 					display: block;
+				}
+				.sponsor-about {
+					font-size: 1vw;
+				}
+			}
+			@media all and (min-width: 1500px) {
+				.sponsor-about {
+					font-size: 16px;
 				}
 			}
 		}

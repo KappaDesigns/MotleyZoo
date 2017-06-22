@@ -36,17 +36,20 @@ $(document).ready(() => {
 
 	handleHeaderAnimations($siteTitle, $siteDesc, $navbar, $backgroundImage);
 	addSponsorListeners($sponsors);
-	displayYoutubeVideos($videoContainer);
+	displayYoutubeVideos($videoContainer, () => {
+		$(window).scroll(() => {
+			let scrollBottom = $(window).scrollTop() + window.innerHeight;
+			animateContainer($employeeContainer, scrollBottom, '.employee', (child) => {
+				animateOpacity(child, 1, '1s');
+				animateTranslateY(child, '100px', '1.5s');
+			});
+		});
+	});
 	handleVideoView($flexButtons, $videoContainer, $livestreamContainer);
 
 	$(window).scroll(() => {
 		let scrollBottom = $(window).scrollTop() + window.innerHeight;
 		handleNavbarPosition($navbar, headerSizeRatio);
-
-		animateContainer($employeeContainer, scrollBottom, '.employee', (child) => {
-			animateOpacity(child, 1, '1s');
-			animateTranslateY(child, '100px', '1.5s');
-		});
 
 		animateContainer($sponsorContainer, scrollBottom, '.sponsor', (child) => {
 			animateOpacity(child, 1, '1s');
@@ -191,7 +194,7 @@ function sizeSponsorImages($sponsors) {
 	});
 }
 
-function displayYoutubeVideos($videoContainer) {
+function displayYoutubeVideos($videoContainer, next) {
 	axios.get(youtubeURL)
 		.then((res) => {
 			return res.data;
@@ -222,6 +225,7 @@ function displayYoutubeVideos($videoContainer) {
 				if (Array.from($videoContainer.children()).length > 0) {
 					clearInterval(timer);
 					addLoadHandlers($videoContainer);
+					next();
 				}
 			}, 10);
 		});

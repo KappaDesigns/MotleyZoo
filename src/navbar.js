@@ -101,6 +101,24 @@ function handleNavbarDesktop(navLinks, navbar, navbarSubMenuLinks) {
 			displaySubmenu($child, navbar, navbarSubMenuLinks, false);
 		}, 100);
 	});
+
+	$(document).mousemove((e) => {
+		let subBar = $('.sub-bar');
+		let $target = $(e.target);
+		if ($target.is('i')) {
+			$target = $target.parent();
+		}
+		let cls = $target.prop('class');
+		if (cls == 'nav-link') {
+			$target = $target.parent();
+		}
+		cls = $target.prop('class');
+		if (Array.from(subBar).length > 0) {
+			if (cls != 'main-bar' && cls != 'sub-bar') {
+				hideSubmenu(subBar, false);
+			}
+		}
+	});
 }
 
 function handleNavbarTablet(navLinks, navbar, navbarSubMenuLinks) {

@@ -17,3 +17,22 @@
 		text-decoration: none;
 	}
 }
+
+.active {
+	color:rgb(181, 181, 181);
+	border-bottom: 0px solid transparent;
+}
+
+.flex-btns {
+	margin: 0 auto;
+	display: flex;
+	width: 525px;
+	@media all and (max-width: 525px) {
+		padding-top: 25px;
+		width: 200px;
+		* {
+			margin: 5px auto;
+		}
+		flex-wrap: wrap;
+	}
+}

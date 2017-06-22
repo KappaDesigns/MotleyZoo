@@ -207,9 +207,16 @@ function displayYoutubeVideos($videoContainer) {
 			}, []);
 		})
 		.then((videos) => {
-			let str = videos.reduce((x, video) => {
-				return x + `<div data-id="${video.id}" class="video"><h6 class="title">${video.title}</h6><img src="${video.thumbnail}" class="thumbnail"/><img src="../public/imgs/youtube.svg" alt="play icon" class="icon"/></div>`;
+			let str = videos.reduce((x, video, i) => {
+				return x + `<div data-id="${video.id}" id="video-${i+1}" class="video">`+
+											`<h6 class="title">${video.title}</h6>`+
+											`<img src="${video.thumbnail}" class="thumbnail"/>`+
+											'<img src="../public/imgs/youtube.svg" alt="play icon" class="icon"/>'+
+										'</div>';
 			}, '');
+			str += '<div class="btn-container">'+
+								'<a href="../about/our_pets" class="motley-btn-main">See All Pets</a>'+
+							'</div>';
 			$videoContainer.append(str);
 			let timer = setInterval(function () {
 				if (Array.from($videoContainer.children()).length > 0) {
@@ -222,6 +229,7 @@ function displayYoutubeVideos($videoContainer) {
 
 function addLoadHandlers(container) {
 	let videos = Array.from(container.children());
+	videos = videos.slice(0,-1);
 	videos.forEach((video) => {
 		$(video).click((e) => {
 			let $target = $(e.target);

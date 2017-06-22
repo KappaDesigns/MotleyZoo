@@ -64,9 +64,13 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+		.btn-container {
+			width: 100vw;
+		}
 		.video {
 			position: relative;
 			margin: 15px;
+			display: none;
 			.title {
 				text-align: center;
 				padding: 5px 0;
@@ -96,6 +100,24 @@
 				.thumbnail {
 					filter: grayscale(0%);
 				}
+			}
+		}
+		[id*="1"], [id*="2"] {
+			display: block;
+		}
+		@media all and (min-width: 1087px) {
+			[id*="3"], [id*="4"] {
+				display: block;
+			}
+		}
+		@media all and (min-width: 1200px) {
+			[id*="5"], [id*="6"] {
+				display: block;
+			}
+		}
+		@media all and (min-width: 2105px) {
+			[id*="7"], [id*="8"] {
+				display: block;
 			}
 		}
 	}

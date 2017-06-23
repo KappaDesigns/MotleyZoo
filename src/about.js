@@ -93,7 +93,20 @@ function addSponsorListeners(sponsors) {
 
 function addMobileSponsorListeners(sponsors) {
 	sponsors.click((e) => {
-		showSponsor(e);
+		const $overlay = $(e.target).find('.overlay');
+		if ($(e.target).prop('class') == 'sponsor') {
+			const $sponsors = Array.from($('.overlay'));
+			$sponsors.forEach((sponsor) => {
+				hideSponsor({
+					target: $(sponsor),
+				});
+			});
+			
+			showSponsor(e);
+			$overlay.data('clicked', 'true');
+		} else {
+			gotoSponsor(e);
+		}
 	});
 }
 
@@ -104,7 +117,6 @@ function addDesktopSponsorListeners(sponsors) {
 }
 
 function gotoSponsor(e) {
-	console.log(e);
 	let elem = $(e.target);
 	while(elem.prop('class') != 'sponsor') {
 		elem = elem.parent();

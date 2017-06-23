@@ -92,23 +92,8 @@ function addSponsorListeners(sponsors) {
 }
 
 function addMobileSponsorListeners(sponsors) {
-	let secondClick = false;
 	sponsors.click((e) => {
-		let $overlay = $(e.target).find('.overlay');
-		if ($overlay.is('p')) {
-			$overlay = $overlay.parent();
-		}
-		if (!secondClick) {
-			showSponsor(e);
-		} else {
-			let sponsors = Array.from($('.sponsor'));
-			sponsors.forEach((sponsor) => {
-				hideSponsor({
-					target: sponsor,
-				});
-			});
-			gotoSponsor(e);
-		}
+		showSponsor(e);
 	});
 }
 

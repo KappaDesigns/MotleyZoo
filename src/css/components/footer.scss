@@ -90,5 +90,8 @@
 				background-image: url('../../public/imgs/cart.svg');
 			}
 		}
+		[class*="col"] {
+			padding-bottom: 30px;
+		}
 	}
 }

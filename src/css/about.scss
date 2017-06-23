@@ -35,19 +35,36 @@
 }
 
 .what-we-do-container {
+	text-transform: capitalize;
 	background-color: black;
-	text-align: center;
 	padding-bottom: 25px;
-	.goal {
-		text-align: center;
-		color: white;
-		padding: 25px 0;
+	font-size: 18px;
+	text-align: center;
+	@media all and (min-width: 768px) {
+		text-align: left;
+		.desc {
+			font-size: 24px;
+		}
 	}
-	ul {
-		padding: 0;
-		margin: 0;
-		list-style: none;
+	.goal {
+		font-size: 40px;
+		text-align: center;
+		color: teal;
+		padding: 35px 0;
+		text-transform: capitalize;
+		font-weight: bolder;
+		@media all and (min-width: 768px) {
+			font-size: 56px;
+		}
+	}
+	.desc {
+		color: white;
+		font-size: 18px;
+	}
+	.list {
+		font-size: 14px;
 		li {
+			text-align: left;
 			color: white;
 			margin: 10px;
 			padding: 5px;
@@ -234,6 +251,24 @@
 						}
 					}
 				}
+			}
+			#sponsor-1 {
+				background-image: url('../../public/imgs/logo-1.jpg');
+			}
+			#sponsor-2 {
+				background-image: url('../../public/imgs/logo-2.jpg');
+			}
+			#sponsor-3 {
+				background-image: url('../../public/imgs/logo-3.png');
+			}
+			#sponsor-4 {
+				background-image: url('../../public/imgs/logo-4.jpg');
+			}
+			#sponsor-5 {
+				background-image: url('../../public/imgs/logo-5.png');
+			}
+			#sponsor-6 {
+				background-image: url('../../public/imgs/logo-6.jpg');
 			}
 			[id*="1"], [id*="4"] {
 				display: block;

@@ -7,8 +7,7 @@
 	<body>
 		<div class="sub-page-header page-header jumbotron">
 			<div class="animal-image"></div>
-			<h1 class="sub-page-title">About Us</h1>
-			<h3 class="page-desc">The <b>Rock Star</b> Animal Shelter</h3>
+			<h1 class="sub-page-title">Contact Us</h1>
 		</div>
 		<div class="nav-bar">
 			<div class="main-bar">
@@ -31,6 +30,36 @@
 					<i class="fa fa-paw nav-icon" aria-hidden="true"></i>Contact
 				</a>
 			</div>
+		</div>
+		<div class="form-container">
+			<div class="form-part container">
+				<h1 class="email-us">Email Us</h1>
+				<form class="form" action="https://formspree.io/your@email.com"
+      	method="POST">
+			    <!-- <label for="name">Full Name</label> -->
+					<input
+						class="input" id="name" placeholder="Full Name..."
+						type="text" name="name"
+					>
+					<!-- <label for="category">Category</label> -->
+					<div id="category" class="category-selector">
+						<span class="category">General</span>
+					</div>
+					<!-- <label for="reply">Email</label> -->
+			    <input
+						class="input" id="reply" placeholder="Your Email..."
+						type="email" name="_replyto"
+					>
+					<!-- <label for="subject">Subject</label> -->
+					<input
+						class="input" id="subject" placeholder="Subject..."
+						type="email" name="_subject"
+					>
+					<textarea class="text" name="message" placeholder="Message..."></textarea>
+			    <input class="submit motley-btn-main" id="submit" type="submit" value="Send">
+				</form>
+			</div>
+			<div class="voicemail"></div>
 		</div>
 		<footer class="motley-footer">
 			<div class="footer-container container">

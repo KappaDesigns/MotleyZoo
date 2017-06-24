@@ -14,10 +14,9 @@ import {
 
 $(document).ready(() => {
 	const $siteTitle = $('.sub-page-title');
-	const $siteDesc = $('.page-desc');
 	const $navbar = $('.nav-bar');
 	const $backgroundImage = $('.animal-image');
-	handleHeaderAnimations($siteTitle, $siteDesc, $navbar, $backgroundImage);
+	handleHeaderAnimations($siteTitle, $navbar, $backgroundImage);
 
 	$(window).scroll(() => {
 		handleNavbarPosition($navbar, headerSizeRatio);
@@ -28,9 +27,8 @@ $(document).ready(() => {
 	});
 });
 
-function handleHeaderAnimations(siteTitle, siteDesc, navbar, backgroundImage) {
+function handleHeaderAnimations(siteTitle, navbar, backgroundImage) {
 	handleBackgroundAnimation(backgroundImage);
 	handleSiteTitleAnimation(siteTitle);
-	handleSiteTitleAnimation(siteDesc);
 	handleNavbarAnimation(navbar);
 }

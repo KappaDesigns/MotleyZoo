@@ -2,9 +2,88 @@
 @import "index";
 @import './components/footer';
 @import './components/header';
+@import './components/buttons';
 
 .page-header {
 	.animal-image {
 		background-image: url('../../public/imgs/blackcat.jpg');
+	}
+}
+
+.form-container {
+	background-color: rgb(61, 61, 61);
+	padding-top: 50px;
+	height: auto;
+	.container {
+		max-width: 900px;
+	}
+	.form-part {
+		::-webkit-input-placeholder {
+			color: white;
+		}
+		::-moz-placeholder {
+			color: white;
+		}
+		:-ms-input-placeholder {
+			color: white;
+		}
+		:-moz-placeholder {
+			color: white;
+		}
+		.email-us {
+			color: teal;
+			text-decoration: underline;
+			text-align: center;
+			font-size: 56px;
+		}
+		.form {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			.input, .category-selector, .text {
+				width: 100%;
+				color: white;
+				border: 2px solid rgb(47, 47, 47);
+				background-color: rgb(91, 91, 91);
+				padding: 10px 5px;
+				margin: 15px auto;
+				transition: all 0.5s linear;
+			}
+			.input, .text {
+				&:hover {
+					border: 2px solid rgb(74, 74, 74);
+				}
+				&:focus {
+					outline: none;
+					border: 2px solid white;
+				}
+			}
+			.text {
+				padding: 5px;
+				height: 300px;
+			}
+			.category-selector {
+				text-align: center;
+				padding: 10px 0;
+				&:hover {
+					border: 2px solid rgb(74, 74, 74);
+					cursor: pointer;
+				}
+			}
+			.submit {
+				border-top: none;
+				border-left: none;
+				border-right: none;
+			}
+			@media all and (min-width: 755px) {
+				#category {
+					width: 49%;
+					margin-left: 2%;
+				}
+				#name {
+					width: 49%;
+				}
+			}
+		}
 	}
 }

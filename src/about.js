@@ -36,6 +36,7 @@ $(document).ready(() => {
 
 	handleHeaderAnimations($siteTitle, $siteDesc, $navbar, $backgroundImage);
 	addSponsorListeners($sponsors);
+	handleVideoView($flexButtons, $videoContainer, $livestreamContainer);
 	displayYoutubeVideos($videoContainer, () => {
 		$(window).scroll(() => {
 			let scrollBottom = $(window).scrollTop() + window.innerHeight;
@@ -45,7 +46,6 @@ $(document).ready(() => {
 			});
 		});
 	});
-	handleVideoView($flexButtons, $videoContainer, $livestreamContainer);
 
 	$(window).scroll(() => {
 		let scrollBottom = $(window).scrollTop() + window.innerHeight;
@@ -101,7 +101,7 @@ function addMobileSponsorListeners(sponsors) {
 					target: $(sponsor),
 				});
 			});
-			
+
 			showSponsor(e);
 			$overlay.data('clicked', 'true');
 		} else {

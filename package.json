@@ -14,7 +14,7 @@
     "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --env development\"",
     "build": "webpack --env production",
     "deploy": "npm run build && git add ./build && git commit -m \"pushing to test server\" && git push origin `git subtree split --prefix build master`:gh-pages --force",
-		"deploy:force-push": "git push origin `git subtree split --prefix build master`:gh-pages --force"
+    "deploy:force-push": "git push origin `git subtree split --prefix build master`:gh-pages --force"
   },
   "repository": {
     "type": "git",

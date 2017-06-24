@@ -12,10 +12,12 @@ const PATHS = {
 	HTML: {
 		home: path.join(__dirname, 'src', 'pages', 'index.html'),
 		about: path.join(__dirname, 'src', 'pages', 'about.html'),
+		contact: path.join(__dirname, 'src', 'pages', 'contact.html'),
 	},
 	JS: {
 		home: path.join(__dirname, 'src', 'home.js'),
 		about: path.join(__dirname, 'src', 'about.js'),
+		contact: path.join(__dirname, 'src', 'contact.js')
 	}
 };
 
@@ -135,6 +137,15 @@ module.exports = (env) => {
 				about: PATHS.JS.about,
 			},
 			chunks: ['about', 'manifest', 'vendor'],
+		}),
+		parts.page({
+			title: 'Motley Zoo: Contact',
+			template: PATHS.HTML.contact,
+			path: 'contact',
+			entry: {
+				contact: PATHS.JS.contact,
+			},
+			chunks: ['contact', 'manifest', 'vendor'],
 		}),
 	];
 	const config = env === 'production' ?

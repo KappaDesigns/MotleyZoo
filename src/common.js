@@ -17,6 +17,37 @@ const navbarStaticCSS = {
 	'position': 'static',
 };
 
+$(document).ready(() => {
+	const $donate = $('.motley-donate-btn');
+	handleDonateButton($donate);
+	$(window).resize(() => {
+		handleDonateButton($donate);
+	});
+});
+
+//handle donation button click events
+function handleDonateButton(donateButton) {
+	if (window.innerWidth > 768) {
+		donateButton.click(() => {
+			let path = window.location.pathname.split('/')[2] == 'MotleyZoo' ?
+				window.location.host + '/MotleyZoo' :
+				window.location.host;
+			window.location.href = 'http://' + path + '/donate';
+		});
+	} else {
+		donateButton.click(() => {
+			if (donateButton.css('transform') == 'matrix(1, 0, 0, 1, 0, 0)') {
+				let path = window.location.pathname.split('/')[2] == 'MotleyZoo' ?
+					window.location.host + '/MotleyZoo' :
+					window.location.host;
+				window.location.href = 'http://' + path + '/donate';
+			} else {
+				animate(donateButton, 'transform', 'translateX(0)', '0.5s');
+			}
+		});
+	}
+}
+
 //animate site title in header
 function handleSiteTitleAnimation(siteTitle) {
 	animateOpacity(siteTitle, 1, '2s');

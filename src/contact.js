@@ -50,6 +50,7 @@ function handleDesktopCategoryDropdown(categorySelector) {
 	const $input = $('.category-input');
 	const $text = categorySelector.find('.category-data');
 	const $list = categorySelector.find('.category-list');
+	$input.val($text.text());
 	const $categories = $list.find('li');
 	categorySelector.mouseenter(() => {
 		$list.css({

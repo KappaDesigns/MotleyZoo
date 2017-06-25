@@ -4,6 +4,18 @@
 @import './components/header';
 @import './components/buttons';
 
+.hidden-input {
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	visibility: none;
+	color: 0;
+	background-color: transparent;
+	border: none;
+}
+
 .page-header {
 	.animal-image {
 		background-image: url('../../public/imgs/blackcat.jpg');
@@ -19,16 +31,16 @@
 	}
 	.form-part {
 		::-webkit-input-placeholder {
-			color: white;
+			color: rgba(255, 255, 255, 0.8);
 		}
 		::-moz-placeholder {
-			color: white;
+			color: rgba(255, 255, 255, 0.8);
 		}
 		:-ms-input-placeholder {
-			color: white;
+			color: rgba(255, 255, 255, 0.8);
 		}
 		:-moz-placeholder {
-			color: white;
+			color: rgba(255, 255, 255, 0.8);
 		}
 		.email-us {
 			color: teal;
@@ -48,17 +60,6 @@
 				padding: 10px 5px;
 				margin: 15px auto;
 				transition: all 0.5s linear;
-			}
-			.hidden-input {
-				width: 0;
-				height: 0;
-				position: absolute;
-				top: 0;
-				left: 0;
-				visibility: none;
-				color: 0;
-				background-color: transparent;
-				border: none;
 			}
 			.input, .text {
 				&:hover {

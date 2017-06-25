@@ -48,3 +48,32 @@
 		flex-wrap: wrap;
 	}
 }
+
+.motley-donate-btn {
+	transform: translateX(85px);
+	position: fixed;
+	bottom: 75px;
+	right: 0;
+	z-index: 1000000000;
+	width: 125px;
+	height: 45px;
+	text-align: center;
+	padding-left: 5px;
+	background-color: rgb(254, 245, 27);
+	display: flex;
+	transition: all 0.5s linear;
+	i {
+		padding-top: 5px;
+		transition: all 0.5s linear;
+	}
+	span {
+		padding: 10px 10px;
+	}
+	&:hover {
+		transform: translateX(0);
+		i {
+			color: rgb(203, 20, 20);
+		}
+		cursor: pointer;
+	}
+}

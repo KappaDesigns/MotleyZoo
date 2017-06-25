@@ -47,6 +47,7 @@ function handleCategoryDropdown(categorySelector) {
 }
 
 function handleDesktopCategoryDropdown(categorySelector) {
+	const $input = $('.category-input');
 	const $text = categorySelector.find('.category-data');
 	const $list = categorySelector.find('.category-list');
 	const $categories = $list.find('li');
@@ -69,10 +70,12 @@ function handleDesktopCategoryDropdown(categorySelector) {
 		animate($list, 'max-height', '0', '0.5s');
 		let text = $(e.target).text();
 		$text.text(text);
+		$input.val(text);
 	});
 }
 
 function handleMobileCategoryDropdown(categorySelector) {
+	const $input = $('.category-input');
 	const $text = categorySelector.find('.category-data');
 	const $list = categorySelector.find('.category-list');
 	categorySelector.click(() => {
@@ -89,6 +92,7 @@ function handleMobileCategoryDropdown(categorySelector) {
 			}, 500);
 			let text = $(e.target).text();
 			$text.text(text);
+			$input.val(text);
 		}
 	});
 }

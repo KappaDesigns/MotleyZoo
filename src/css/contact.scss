@@ -49,6 +49,17 @@
 				margin: 15px auto;
 				transition: all 0.5s linear;
 			}
+			.hidden-input {
+				width: 0;
+				height: 0;
+				position: absolute;
+				top: 0;
+				left: 0;
+				visibility: none;
+				color: 0;
+				background-color: transparent;
+				border: none;
+			}
 			.input, .text {
 				&:hover {
 					border: 2px solid rgb(74, 74, 74);

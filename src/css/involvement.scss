@@ -2,12 +2,15 @@
 @import "index";
 @import './components/footer';
 @import './components/header';
+@import './components/buttons';
 
 .page-header {
 	.animal-image {
 		background-image: url('../../public/imgs/blackcat.jpg');
 	}
 }
+
+
 
 .adopt-container {
 	background-color: rgb(70, 70, 70);
@@ -17,5 +20,25 @@
 		font-size: 56px;
 		padding: 60px;
 		text-align: center;
+	}
+	.scroll-container {
+		width: 100%;
+		overflow-x: scroll;
+		.carousel-container {
+			height: auto;
+			display: flex;
+			.slide {
+				height: 300px;
+				width: 300px;
+				margin-right: 10px;
+				background-color: red;
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+		}
+	}
+	.flex-btns {
+		width: 100%;
+		max-width: 1200px;
 	}
 }

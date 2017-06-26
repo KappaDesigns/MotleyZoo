@@ -13,7 +13,7 @@ const PATHS = {
 		home: path.join(__dirname, 'src', 'pages', 'index.html'),
 		about: path.join(__dirname, 'src', 'pages', 'about.html'),
 		contact: path.join(__dirname, 'src', 'pages', 'contact.html'),
-		contact: path.join(__dirname, 'src', 'pages', 'involvement.html'),
+		involvement: path.join(__dirname, 'src', 'pages', 'involvement.html'),
 	},
 	JS: {
 		home: path.join(__dirname, 'src', 'home.js'),
@@ -154,7 +154,7 @@ module.exports = (env) => {
 			template: PATHS.HTML.involvement,
 			path: 'involvement',
 			entry: {
-				contact: PATHS.JS.involvement,
+				involvement: PATHS.JS.involvement,
 			},
 			chunks: ['involvement', 'manifest', 'vendor'],
 		}),

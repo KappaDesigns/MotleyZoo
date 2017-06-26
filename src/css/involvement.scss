@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster+Two');
+@import "index";
+@import './components/footer';
+@import './components/header';
+
+.page-header {
+	.animal-image {
+		background-image: url('../../public/imgs/blackcat.jpg');
+	}
+}
+
+.adopt-container {
+	background-color: rgb(70, 70, 70);
+	height: 100vh;
+	.adopt-title {
+		color: white;
+		font-size: 56px;
+		padding: 60px;
+		text-align: center;
+	}
+}

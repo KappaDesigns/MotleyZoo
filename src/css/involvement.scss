@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster+Two');
+@import "index";
+@import './components/footer';
+@import './components/header';
+@import './components/buttons';
+@import './components/loader';
+
+.page-header {
+	.animal-image {
+		background-image: url('../../public/imgs/blackcat.jpg');
+	}
+}
+
+.adopt-container {
+	background-color: rgb(57, 57, 57);
+	height: auto;
+	padding-bottom: 200px;
+	.adopt-title {
+		color: white;
+		font-size: 56px;
+		padding: 60px;
+		text-align: center;
+	}
+	.scroll-container {
+		width: 100%;
+		background-color: rgb(46, 46, 46);
+		border-top: 4px solid rgb(74, 74, 74);
+		border-bottom: 4px solid rgb(74, 74, 74);
+		overflow-x: scroll;
+		padding: 10px 0;
+		cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+		&:active {
+	    cursor: grabbing;
+	    cursor: -moz-grabbing;
+	    cursor: -webkit-grabbing;
+		}
+		&::-webkit-scrollbar {
+    	display: none;
+		}
+		.carousel-container {
+			height: auto;
+			display: flex;
+			justify-content: center;
+			.slide {
+				height: 300px;
+				width: 300px;
+				margin-right: 10px;
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			.loader {
+				color: white;
+			}
+		}
+	}
+	.flex-btns {
+		width: 100%;
+		max-width: 1200px;
+	}
+}

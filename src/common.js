@@ -1,4 +1,6 @@
 import $ from 'jquery';
+import axios from 'axios';
+const petangoURL = 'https://crossorigin.me/http://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimals.aspx?species=All&sex=A&agegroup=All&onhold=A&orderby=ID&colnum=3&AuthKey=4blm62x1v45atcg3s05c1f5jclaov1j8p6n50d85jve44b6bp8';
 
 //removing magic numbers from handling navbar animation
 const navbarDisplacement = 55;
@@ -167,6 +169,48 @@ function createTransitionObj(parts) {
 	};
 }
 
+//api call to petangoURL
+
+function getPets(next) {
+	axios.get(petangoURL)
+		.then((res) => {
+			return res.data;
+		})
+		.then((html) => {
+			return Array.from($($(html)[20]).find('.list-table').find('tbody').find('tr'));
+		})
+		.then((rows) => {
+			return rows.reduce((x, row) => {
+				const cells = Array.from($(row).find('td'));
+				cells.forEach((cell) => {
+					x.push(cell);
+				});
+				return x;
+			}, []);
+		})
+		.then((cells) => {
+			return cells.filter((cell) => {
+				return $(cell).children().length > 0;
+			});
+		})
+		.then((cells) => {
+			return cells.reduce((x, cell) => {
+				x.push({
+					name: $(cell).find('.list-animal-name').text(),
+					species: $(cell).find('.list-anima-species').text(),
+					sex: $(cell).find('.list-animal-sexSN').text(),
+					breed: $(cell).find('.list-animal-breed').text(),
+					age: $(cell).find('.list-animal-age').text(),
+					img: $(cell).find('img').prop('src'),
+				});
+				return x;
+			}, []);
+		})
+		.then((data) => {
+			next(data);
+		});
+}
+
 //export all common funcs
 export {
 	handleSiteTitleAnimation,
@@ -176,4 +220,5 @@ export {
 	animateOpacity,
 	animateTranslateY,
 	animate,
+	getPets,
 };

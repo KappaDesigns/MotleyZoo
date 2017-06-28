@@ -62,3 +62,82 @@
 		max-width: 1200px;
 	}
 }
+
+.volunteer {
+	background-color: white;
+	padding: 45px 0;
+	.volunteer-container {
+		.volunteer-header {
+			text-align: center;
+		}
+		.opportunity {
+			.opportunity-img {
+				display: block;
+				width: 400px;
+				height: auto;
+				margin: 25px auto;
+				max-width: 100%;
+			}
+			.opportunity-title {
+				text-align: center;
+			}
+		}
+	}
+}
+
+.donate {
+	padding: 45px 0;
+	color: white;
+	background-color: black;
+	#wishlist {
+		.wishlist-header {
+			font-weight: bolder;
+			text-align: center;
+		}
+		.wishlist {
+			margin: 0;
+			padding: 10px 0;
+			border-bottom: 2px solid white;
+			.wishlist-item {
+				margin: 10px 0;
+				text-align: center;
+				list-style: none;
+			}
+		}
+		.mail-title {
+			padding: 15px 0;
+			text-align: center;
+		}
+		.mailing-address {
+			padding: 10px 0;
+			padding-top: 20px;
+			line-height: 2.0;
+			text-align: center;
+		}
+	}
+	#donate {
+		padding: 25px 0;
+		border-top: 2px solid white;
+		text-align: center;
+		.donate-title {
+			color: rgb(196, 196, 196);
+		}
+		.donate-goal {
+			padding: 10px 0;
+			font-size: 72px;
+			i {
+				color: rgb(22, 138, 48);
+			}
+		}
+		@media all and (min-width: 768px) {
+			padding: 0;
+			border-top: none;
+		}
+	}
+}
+
+.animals {
+	padding: 45px 0;
+	background-color: white;
+	text-align: center;
+}

@@ -14,12 +14,14 @@ const PATHS = {
 		about: path.join(__dirname, 'src', 'pages', 'about.html'),
 		contact: path.join(__dirname, 'src', 'pages', 'contact.html'),
 		involvement: path.join(__dirname, 'src', 'pages', 'involvement.html'),
+		nunu: path.join(__dirname, 'src', 'pages', 'nunu.html'),
 	},
 	JS: {
 		home: path.join(__dirname, 'src', 'home.js'),
 		about: path.join(__dirname, 'src', 'about.js'),
 		contact: path.join(__dirname, 'src', 'contact.js'),
-		involvement: path.join(__dirname, 'src', 'involvement.js')
+		involvement: path.join(__dirname, 'src', 'involvement.js'),
+		nunu: path.join(__dirname, 'src', 'nunu.js'),
 	},
 };
 
@@ -157,6 +159,20 @@ module.exports = (env) => {
 				involvement: PATHS.JS.involvement,
 			},
 			chunks: ['involvement', 'manifest', 'vendor'],
+		}),
+		parts.page({
+			title: 'Motley Zoo: Nunu', //change the title to match the title of the page
+			template: PATHS.HTML.nunu, //change the template to match PATHS.HTML.nameofyourpage
+
+			// Also if the page is a subpage of another page make sure that it is prefixed by the parent page eg.
+			// path: 'about/people'
+			path: 'nunu', //change the path to what the url should be realtive to the page here it is localhost:8080/about
+			entry: {
+
+			nunu: PATHS.JS.nunu, // <- change that to the path of your js file e.x PATHS.JS.nameofyourpage
+			},
+
+			chunks: ['nunu', 'manifest', 'vendor'],
 		}),
 	];
 	const config = env === 'production' ?

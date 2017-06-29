@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster+Two');
+@import "index";
+@import './components/tab';
+@import './components/buttons';
+@import './components/header';
+@import './components/footer';
+
+.page-header {
+	.animal-image {
+		background-image: url('../../public/imgs/blackcat.jpg');
+	}
+}

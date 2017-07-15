@@ -16,16 +16,8 @@ const subMenuEntries = [
 		subPaths: ['What We Do', 'People', 'Rescues'],
 	},
 	{
-		link: 'events',
-		subPaths: ['What We Do', 'People'],
-	},
-	{
 		link: 'resources',
 		subPaths: ['What We Do'],
-	},
-	{
-		link: 'contact',
-		subPaths: [],
 	},
 ];
 

@@ -121,6 +121,9 @@
 				background-color: white;
 				height: 20px;
 				border-radius: 100%;
+				&:hover {
+					cursor: pointer;
+				}
 			}
 			.active {
 				border: 2px solid rgb(143, 143, 143);

@@ -14,12 +14,14 @@ const PATHS = {
 		about: path.join(__dirname, 'src', 'pages', 'about.html'),
 		contact: path.join(__dirname, 'src', 'pages', 'contact.html'),
 		involvement: path.join(__dirname, 'src', 'pages', 'involvement.html'),
+		events: path.join(__dirname, 'src', 'pages', 'events.html'),
 	},
 	JS: {
 		home: path.join(__dirname, 'src', 'home.js'),
 		about: path.join(__dirname, 'src', 'about.js'),
 		contact: path.join(__dirname, 'src', 'contact.js'),
 		involvement: path.join(__dirname, 'src', 'involvement.js'),
+		events: path.join(__dirname, 'src', 'events.js'),
 	},
 };
 
@@ -157,6 +159,15 @@ module.exports = (env) => {
 				involvement: PATHS.JS.involvement,
 			},
 			chunks: ['involvement', 'manifest', 'vendor'],
+		}),
+		parts.page({
+			title: 'Motley Zoo: Events',
+			template: PATHS.HTML.events,
+			path: 'events',
+			entry: {
+				events: PATHS.JS.events,
+			},
+			chunks: ['events', 'manifest', 'vendor'],
 		}),
 	];
 	const config = env === 'production' ?

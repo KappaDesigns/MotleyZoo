@@ -14,9 +14,9 @@
     "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --env development\"",
     "build": "webpack --env production",
     "deploy": "npm run build && npm run deploy:git && npm run deploy:force-push && npm run deploy:clean",
-		"deploy:git": "git add ./build && git commit -m \"pushing to test server\"",
+    "deploy:git": "git add ./build && git commit -m \"pushing to test server\"",
     "deploy:force-push": "git push origin `git subtree split --prefix build master`:gh-pages --force",
-		"deploy:clean": "git add build_info/records.json && git commit -m \"push build records\" && git push"
+    "deploy:clean": "git add build_info/records.json && git commit -m \"push build records\" && git push"
   },
   "repository": {
     "type": "git",
@@ -58,6 +58,7 @@
     "karma-webpack": "^2.0.3",
     "mocha": "^3.4.2",
     "mocha-loader": "^1.1.1",
+    "moment": "^2.18.1",
     "node-sass": "^4.5.3",
     "nodemon": "^1.11.0",
     "optimize-css-assets-webpack-plugin": "^2.0.0",

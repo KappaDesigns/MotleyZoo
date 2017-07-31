@@ -140,9 +140,8 @@ function getTransitionStr(transitions) {
 
 // returns an array of all transitions on an element
 function getTransition(elem) {
-	let transitions = $(elem).css('transition');
-	// console.log(transitions);
-	if (transitions == 'all 0s ease 0s') {
+	let transitions = $(elem).css('transition') ;
+	if (!transitions || transitions == 'all 0s ease 0s') {
 		transitions = [];
 	}
 	if (transitions && transitions.length > 0) {

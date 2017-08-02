@@ -173,8 +173,7 @@ function sizeSponsorImages($sponsors) {
 	let sponsors = Array.from($sponsors);
 
 	sponsors.forEach((sponsor) => {
-		let url = $(sponsor).css('background-image').substring(5, $(sponsor).css('background-image').length);
-		url = url.substring(0, url.length - 2);
+		let url = $(sponsor).css('background-image').substring(5, $(sponsor).css('background-image').length - 2);
 		let img = new Image();
 		img.src = url;
 

@@ -56,11 +56,11 @@ function animateAboutUs() {
 	let before = $('.before').find('img');
 	let after = $('.after').find('img');
 	let scrollBottom = $(window).scrollTop() + window.innerHeight;
-	if (scrollBottom > after.offset().top + after.height()) {
+	if (scrollBottom > (after.offset().top + after.height()) / 2) {
 		animateTranslateY(after.parent(), '0px', '2s');
 		animateOpacity(after.parent(), 1, '2s');
 	}
-	if (scrollBottom > before.offset().top + before.height()) {
+	if (scrollBottom > (before.offset().top + before.height())/ 2) {
 		animateOpacity(before.parent(), 1, '2s');
 		animateTranslateY(before.parent(), '0px', '2s');
 	}

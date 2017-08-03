@@ -88,10 +88,13 @@
 			margin: 15px;
 			display: none;
 			.title {
+				max-width: 100%;
 				text-align: center;
 				padding: 5px 0;
 			}
 			.thumbnail {
+				display: block;
+				margin: 0 auto;
 				max-width: 100%;
 				transform: filter 1s ease;
 				filter: grayscale(100%);

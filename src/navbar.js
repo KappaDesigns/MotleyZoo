@@ -132,12 +132,12 @@ function displaySubmenu(mainLink, appendEle, linkMap, isMobile) {
 	let componentString = getSubmenu(mainLink, linkMap, isMobile);
 	appendSubmenu(appendEle, componentString, (subBar) => {
 		if (isMobile === null) {
-			animateSubMenu(subBar, 55, false);
+			animateSubMenu(subBar, 40, false);
 		} else if (isMobile) {
 			animateSubMenu(subBar, 'auto', isMobile);
 		} else {
 			addLeaveListener(subBar);
-			animateSubMenu(subBar, 55, isMobile);
+			animateSubMenu(subBar, 40, isMobile);
 		}
 	});
 }

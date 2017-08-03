@@ -3,7 +3,7 @@ import axios from 'axios';
 const petangoURL = 'https://crossorigin.me/http://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimals.aspx?species=All&sex=A&agegroup=All&onhold=A&orderby=ID&colnum=3&AuthKey=4blm62x1v45atcg3s05c1f5jclaov1j8p6n50d85jve44b6bp8';
 
 //removing magic numbers from handling navbar animation
-const navbarDisplacement = 55;
+const navbarDisplacement = 40;
 const navbarMobileWidth = 780;
 const navbarZ = 58008;
 

@@ -3,8 +3,8 @@ import './css/bootstrap/bootstrap.min.css';
 import './css/contact.scss';
 import $ from 'jquery';
 
-const headerSizeRatio = window.innerHeight / 2;
-
+const headerSizeRatio = window.innerHeight;
+	
 import {
 	handleSiteTitleAnimation,
 	handleNavbarAnimation,
@@ -14,7 +14,7 @@ import {
 } from './common';
 
 $(document).ready(() => {
-	const $siteTitle = $('.sub-page-title');
+	const $siteTitle = $('.site-title');
 	const $navbar = $('.nav-bar');
 	const $backgroundImage = $('.animal-image');
 	const $categorySelector = $('.category-selector');
@@ -81,7 +81,7 @@ function handleMobileCategoryDropdown(categorySelector) {
 	const $list = categorySelector.find('.category-list');
 	categorySelector.click(() => {
 		$list.show();
-		setTimeout(function () {
+		setTimeout(function() {
 			animate($list, 'max-height', '100vh', '0.5s');
 		}, 10);
 	});

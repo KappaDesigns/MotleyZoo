@@ -4,7 +4,7 @@ import './css/events.scss';
 import $ from 'jquery';
 import moment from 'moment';
 
-const headerSizeRatio = window.innerHeight / 2;
+const headerSizeRatio = window.innerHeight;
 
 const state = {
 	index: 0,
@@ -18,7 +18,7 @@ import {
 } from './common';
 
 $(document).ready(() => {
-	const $siteTitle = $('.sub-page-title');
+	const $siteTitle = $('.site-title');
 	const $navbar = $('.nav-bar');
 	const $backgroundImage = $('.animal-image');
 

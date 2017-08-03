@@ -5,6 +5,7 @@
 	text-align: center;
 	width: 100%;
 	margin: 0 auto;
+	z-index: 100;
 	.tab-text {
 		margin: 0 auto;
 		display: block;
@@ -12,26 +13,28 @@
 		border-left: 20px solid transparent;
 		border-right: 20px solid transparent;
 		height: 0;
-		width: 175px;
+		width: 250px;
 		span {
+			font-weight: bolder;
+			font-size: 22px;
 			text-align: center;
 			display: block;
 			padding-top: 10px;
 		}
 	}
 	.white {
-		border-bottom: 50px solid white;
+		border-bottom: 30px solid white;
 		color: black;
 	}
 	.black {
-		border-bottom: 50px solid black;
+		border-bottom: 30px solid black;
 		color: white;
 	}
 }
 .tab-white {
 	background-color: black;
 	.tab-text {
-		border-bottom: 50px solid white;
+		border-bottom: 30px solid white;
 		color: black;
 	}
 }
@@ -39,7 +42,7 @@
 .tab-black {
 	background-color: white;
 	.tab-text {
-		border-bottom: 50px solid black;
+		border-bottom: 30px solid black;
 		color: white;
 	}
 }

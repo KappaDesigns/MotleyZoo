@@ -6,19 +6,18 @@ import {
 	animate,
 } from './common';
 
-const subMenuEntries = [
-	{
-		link: 'about',
-		subPaths: ['What We Do', 'People', 'Rescues', 'Sponsors'],
-	},
-	{
-		link: 'involvement',
-		subPaths: ['What We Do', 'People', 'Rescues'],
-	},
-	{
-		link: 'resources',
-		subPaths: ['What We Do'],
-	},
+const subMenuEntries = [{
+	link: 'about',
+	subPaths: ['What We Do', 'People', 'Sponsors'],
+},
+{
+	link: 'involvement',
+	subPaths: ['Individual', 'Corporate'],
+},
+{
+	link: 'resources',
+	subPaths: ['What We Do'],
+},
 ];
 
 const navbarMobileWidth = 768;
@@ -65,7 +64,7 @@ function handleNavbarMobile(navLinks, navbarSubMenuLinks) {
 			hideSubmenu(subBar, true);
 		}
 
-		setTimeout(function () {
+		setTimeout(function() {
 			displaySubmenu($child, $child, navbarSubMenuLinks, true);
 		}, 100);
 	});
@@ -89,7 +88,7 @@ function handleNavbarDesktop(navLinks, navbar, navbarSubMenuLinks) {
 		if (subMenuExists(subBar)) {
 			hideSubmenu(subBar, false);
 		}
-		setTimeout(function () {
+		setTimeout(function() {
 			displaySubmenu($child, navbar, navbarSubMenuLinks, false);
 		}, 100);
 	});
@@ -123,7 +122,7 @@ function handleNavbarTablet(navLinks, navbar, navbarSubMenuLinks) {
 		if (subMenuExists(subBar)) {
 			hideSubmenu(subBar, false);
 		}
-		setTimeout(function () {
+		setTimeout(function() {
 			displaySubmenu($child, navbar, navbarSubMenuLinks, null);
 		}, 100);
 	});
@@ -203,7 +202,7 @@ function subMenuExists(subBar) {
 function getNavbarComponents(path, links) {
 	return links.map((link, i) => {
 		return (
-			`<a href="${getLink(path, link)}" id="nav-link-${i+1}" class="nav-link"><i class="fa fa-paw nav-icon" aria-hidden="true"></i>${link}</a>`
+			`<a href="${getLink(path, link)}" id="nav-link-${i+1}" class="nav-link"> ${link}</a>`
 		);
 	});
 }
@@ -220,7 +219,7 @@ function getHeadPathLink(isMobile, path) {
 		let text = path;
 		path = path.toLowerCase();
 		path = path.replace(/\s+/g, '-');
-		return `<a href="${path}" id="nav-link-${0}" class="nav-link"><i class="fa fa-paw nav-icon" aria-hidden="true"></i>${text}</a>`;
+		return `<a href="${path}" id="nav-link-${0}" class="nav-link"> ${text}</a>`;
 	}
 	return '';
 }

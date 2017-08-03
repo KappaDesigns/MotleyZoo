@@ -18,12 +18,11 @@ import {
 
 
 
-const headerSizeRatio = window.innerHeight / 2;
+const headerSizeRatio = window.innerHeight;
 const scrollRatio = 4;
 
 $(document).ready(() => {
-	const $siteTitle = $('.sub-page-title');
-	const $siteDesc = $('.page-desc');
+	const $siteTitle = $('.site-title');
 	const $navbar = $('.nav-bar');
 	const $backgroundImage = $('.animal-image');
 	const $employeeContainer = $('.our-people');
@@ -34,7 +33,7 @@ $(document).ready(() => {
 	const $flexButtons = $('.flex-btns');
 	sizeSponsorImages($sponsors);
 
-	handleHeaderAnimations($siteTitle, $siteDesc, $navbar, $backgroundImage);
+	handleHeaderAnimations($siteTitle, $navbar, $backgroundImage);
 	addSponsorListeners($sponsors);
 	handleVideoView($flexButtons, $videoContainer, $livestreamContainer);
 	displayYoutubeVideos($videoContainer, () => {
@@ -162,10 +161,9 @@ function animateContainer(container, scrollBottom, selector, animations) {
 	}
 }
 
-function handleHeaderAnimations(siteTitle, siteDesc, navbar, backgroundImage) {
+function handleHeaderAnimations(siteTitle, navbar, backgroundImage) {
 	handleBackgroundAnimation(backgroundImage);
 	handleSiteTitleAnimation(siteTitle);
-	handleSiteTitleAnimation(siteDesc);
 	handleNavbarAnimation(navbar);
 }
 

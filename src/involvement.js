@@ -11,10 +11,10 @@ import {
 	getPets,
 } from './common';
 
-const headerSizeRatio = window.innerHeight / 2;
+const headerSizeRatio = window.innerHeight;
 
 $(document).ready(() => {
-	const $siteTitle = $('.sub-page-title');
+	const $siteTitle = $('.site-title');
 	const $navbar = $('.nav-bar');
 	const $backgroundImage = $('.animal-image');
 	const carousel = $('.carousel-container');

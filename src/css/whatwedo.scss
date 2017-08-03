@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster+Two');
+@import "index";
+@import './components/tab';
+@import './components/buttons';
+@import './components/header';
+@import './components/footer';
+
+.page-header {
+	.animal-image {
+		background-image: url('/blackcat.jpg');
+	}
+}
+
+.what-we-do-background {
+	background-image: url("/guitarplayer.jpg");
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	text-align: center;
+	text-transform: capitalize;
+	.what-we-do-container {
+		padding-top: 23vh;
+		.desc {
+			line-height: 200%;
+			width: 100%;
+			background: black;
+			color: white;
+			text-align: center;
+			margin: 0 auto;
+			@media all and (min-width: 760px) {
+				max-width: 700px;
+			}
+		}
+	}
+}
+
+.philosophy-background, .perspective-background {
+	.philosophy-container, .perspective-container {
+		.title {
+			text-align: center;
+			padding: 50px 0;
+		}
+		.info {
+			padding: 25px;
+			margin: 0;
+			text-align: center;
+		}
+	}
+}
+
+.perspective-background {
+	background-color: black;
+	.perspective-container {
+		padding-bottom: 25px;
+	}
+	.info, .title {
+		color: white;
+	}
+}

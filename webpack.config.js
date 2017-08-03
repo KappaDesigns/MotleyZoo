@@ -14,14 +14,16 @@ const PATHS = {
         about: path.join(__dirname, 'src', 'pages', 'about.html'),
         contact: path.join(__dirname, 'src', 'pages', 'contact.html'),
         involvement: path.join(__dirname, 'src', 'pages', 'involvement.html'),
-        events: path.join(__dirname, 'src', 'pages', 'events.html'),
+		events: path.join(__dirname, 'src', 'pages', 'events.html'),
+		whatWeDo: path.join(__dirname, 'src', 'pages', 'whatWeDo.html'),
     },
     JS: {
         home: path.join(__dirname, 'src', 'home.js'),
         about: path.join(__dirname, 'src', 'about.js'),
         contact: path.join(__dirname, 'src', 'contact.js'),
         involvement: path.join(__dirname, 'src', 'involvement.js'),
-        events: path.join(__dirname, 'src', 'events.js'),
+		events: path.join(__dirname, 'src', 'events.js'),
+		whatWeDo: path.join(__dirname, 'src', 'whatWeDo.js'),
     },
 };
 
@@ -164,6 +166,15 @@ module.exports = (env) => {
                 events: PATHS.JS.events,
             },
             chunks: ['events', 'manifest', 'vendor'],
+		}),
+		parts.page({
+            title: 'Motley Zoo: What We Do',
+            template: PATHS.HTML.whatWeDo,
+            path: 'about/what-we-do',
+            entry: {
+                whatWeDo: PATHS.JS.whatWeDo,
+            },
+            chunks: ['whatWeDo', 'manifest', 'vendor'],
         }),
     ];
     const config = env === 'production' ?

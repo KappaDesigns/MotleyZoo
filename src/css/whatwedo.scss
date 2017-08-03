@@ -12,7 +12,7 @@
 }
 
 .what-we-do-background {
-	background-image: url("https://stunningartprints.files.wordpress.com/2013/06/rory-gallagher.jpg");
+	background-image: url("/guitarplayer.jpg");
 	background-position: center top;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -32,5 +32,29 @@
 				max-width: 700px;
 			}
 		}
+	}
+}
+
+.philosophy-background, .perspective-background {
+	.philosophy-container, .perspective-container {
+		.title {
+			text-align: center;
+			padding: 50px 0;
+		}
+		.info {
+			padding: 25px;
+			margin: 0;
+			text-align: center;
+		}
+	}
+}
+
+.perspective-background {
+	background-color: black;
+	.perspective-container {
+		padding-bottom: 25px;
+	}
+	.info, .title {
+		color: white;
 	}
 }

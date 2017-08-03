@@ -3,7 +3,7 @@ import './css/bootstrap/bootstrap.min.css';
 import './css/whatwedo.scss';
 import $ from 'jquery';
 
-const headerSizeRatio = window.innerHeight / 2;
+const headerSizeRatio = window.innerHeight;
 
 import {
 	handleSiteTitleAnimation,
@@ -13,7 +13,7 @@ import {
 } from './common';
 
 $(document).ready(() => {
-	const $siteTitle = $('.sub-page-title');
+	const $siteTitle = $('.site-title');
 	const $navbar = $('.nav-bar');
 	const $backgroundImage = $('.animal-image');
 

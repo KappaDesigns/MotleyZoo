@@ -10,3 +10,27 @@
 		background-image: url('/blackcat.jpg');
 	}
 }
+
+.what-we-do-background {
+	background-image: url("https://stunningartprints.files.wordpress.com/2013/06/rory-gallagher.jpg");
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	text-align: center;
+	text-transform: capitalize;
+	.what-we-do-container {
+		padding-top: 23vh;
+		.desc {
+			line-height: 200%;
+			width: 100%;
+			background: black;
+			color: white;
+			text-align: center;
+			margin: 0 auto;
+			@media all and (min-width: 760px) {
+				max-width: 700px;
+			}
+		}
+	}
+}

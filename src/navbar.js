@@ -147,6 +147,7 @@ function getSubmenu(mainLink, linkMap, isMobile) {
 	let links = linkMap.get(path);
 	if (links && links.length != 0) {
 		let components = getNavbarComponents(path, links);
+		console.log(components);
 		return `<div class="sub-bar">${getHeadPathLink(isMobile, path)}${stringifyComponents(components)}</div>`;
 	}
 }
@@ -211,7 +212,7 @@ function getLink(path, link) {
 	path = path.toLowerCase();
 	link = link.toLowerCase();
 	link = link.replace(/\s+/g, '-');
-	return `/${path}/${link}`;
+	return `../${path}/${link}`;
 }
 
 function getHeadPathLink(isMobile, path) {

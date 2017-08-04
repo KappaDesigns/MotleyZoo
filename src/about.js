@@ -31,6 +31,8 @@ $(document).ready(() => {
 	const $videoContainer = $('.video-container');
 	const $livestreamContainer = $('.livestream-container');
 	const $flexButtons = $('.flex-btns');
+	let hasColorChanged = false;
+
 	sizeSponsorImages($sponsors);
 
 	handleHeaderAnimations($siteTitle, $navbar, $backgroundImage);
@@ -53,6 +55,10 @@ $(document).ready(() => {
 		animateContainer($sponsorContainer, scrollBottom, '.sponsor', (child) => {
 			animateOpacity(child, 1, '1s');
 		});
+
+		if (!hasColorChanged) {
+			hasColorChanged = handleJumbotronColor($siteTitle);
+		}
 	});
 
 	$(window).resize(() => {
@@ -61,6 +67,13 @@ $(document).ready(() => {
 		addSponsorListeners($sponsors);
 	});
 });
+
+function handleJumbotronColor(siteTitle) {
+	if ($(window).scrollTop() >= 0 && $(window).scrollTop() <= window.innerHeight) {
+		animate(siteTitle, 'color', 'rgb(255, 255, 255)', '2s');
+	}
+	return true;
+}
 
 function handleVideoView(flexButtons, videoContainer, livestreamContainer) {
 	const [ btn1, btn2 ] = Array.from(flexButtons.children());

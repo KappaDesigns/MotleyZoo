@@ -12,6 +12,29 @@
 	}
 }
 
+.art-background {
+	height: 100vh;
+	background-image: url('https://3.bp.blogspot.com/-d8wb_RgG7MY/WJWtDRmhEAI/AAAAAAAAIF4/Cg2k92ctgHgXwkwAk9k9TLg5piBmVyEXwCEw/s1600/036.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	.container {
+		padding-top: 20vh;
+		.comment {
+			text-transform: capitalize;
+			line-height: 200%;
+			width: 100%;
+			background: black;
+			color: white;
+			text-align: center;
+			margin: 0 auto;
+			@media all and (min-width: 760px) {
+				max-width: 700px;
+			}
+		}
+	}
+}
+
 .adopt-container {
 	background-color: rgb(57, 57, 57);
 	height: auto;

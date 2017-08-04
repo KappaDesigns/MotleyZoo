@@ -9,6 +9,29 @@
 	background-image: url('../../public/imgs/blackcat2.jpg');
 }
 
+.art-background {
+	height: 100vh;
+	background-image: url('http://www.mrnobodyart.com/photos/Gallery/paul%20mccartney.JPG');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	.container {
+		padding-top: 40vh;
+		.comment {
+			text-transform: capitalize;
+			line-height: 200%;
+			width: 100%;
+			background: black;
+			color: white;
+			text-align: center;
+			margin: 0 auto;
+			@media all and (min-width: 760px) {
+				max-width: 700px;
+			}
+		}
+	}
+}
+
 .featured-events-container, .event-background {
 	.event {
 		color: rgb(255, 255, 255);

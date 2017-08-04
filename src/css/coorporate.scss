@@ -10,3 +10,48 @@
 		background-image: url('../../public/imgs/blackcat.jpg');
 	}
 }
+
+.art-background {
+	height: 100vh;
+	background-image: url('http://orig15.deviantart.net/c596/f/2012/135/f/6/f6e06fec26016f9a3371a07a510161cc-d4zv2x8.jpg');
+	background-size: cover;
+	background-position: center top;
+	background-repeat: no-repeat;
+	.container {
+		padding-top: 20vh;
+		.desc {
+			text-transform: capitalize;
+			line-height: 200%;
+			width: 100%;
+			background: black;
+			color: white;
+			text-align: center;
+			margin: 0 auto;
+			@media all and (min-width: 760px) {
+				max-width: 700px;
+			}
+		}
+	}
+}
+
+.help-background, .other-background {
+	.help-container, .other-container {
+		padding-bottom: 25px;
+		.title {
+			text-align: center;
+			padding: 50px 0;
+		}
+		.info {
+			padding: 25px;
+			margin: 0;
+			text-align: center;
+		}
+	}
+}
+
+.other-background {
+	background-color: black;
+	.info, .title {
+		color: white;
+	}
+}

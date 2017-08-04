@@ -1,6 +1,6 @@
 import './navbar';
 import './css/bootstrap/bootstrap.min.css';
-import './css/individual.scss';
+import './css/coorporate.scss';
 import $ from 'jquery';
 
 const headerSizeRatio = window.innerHeight;

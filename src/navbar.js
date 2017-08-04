@@ -12,7 +12,7 @@ const subMenuEntries = [{
 },
 {
 	link: 'involvement',
-	subPaths: ['Individual', 'Corporate'],
+	subPaths: ['Individual', 'Coorporate'],
 },
 {
 	link: 'resources',

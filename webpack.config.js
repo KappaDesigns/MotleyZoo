@@ -16,6 +16,8 @@ const PATHS = {
 		involvement: path.join(__dirname, 'src', 'pages', 'involvement.html'),
 		events: path.join(__dirname, 'src', 'pages', 'events.html'),
 		whatWeDo: path.join(__dirname, 'src', 'pages', 'whatWeDo.html'),
+		individual: path.join(__dirname, 'src', 'pages', 'individual.html'),
+		coorporate: path.join(__dirname, 'src', 'pages', 'coorporate.html'),
 	},
 	JS: {
 		home: path.join(__dirname, 'src', 'home.js'),
@@ -24,10 +26,13 @@ const PATHS = {
 		involvement: path.join(__dirname, 'src', 'involvement.js'),
 		events: path.join(__dirname, 'src', 'events.js'),
 		whatWeDo: path.join(__dirname, 'src', 'whatWeDo.js'),
+		individual: path.join(__dirname, 'src', 'individual.js'),
+		coorporate: path.join(__dirname, 'src', 'coorporate.js'),
 	},
 };
 
-const commonConfig = merge([{
+const commonConfig = merge([
+	{
 		output: {
 			path: PATHS.build,
 			filename: '[name].js',
@@ -49,7 +54,8 @@ const commonConfig = merge([{
 	parts.loadJS({ include: PATHS.app }),
 ]);
 
-const productionConfig = merge([{
+const productionConfig = merge([
+	{
 		output: {
 			chunkFilename: '[name].[chunkhash:8].js',
 			filename: '[name].[chunkhash:8].js',
@@ -82,7 +88,8 @@ const productionConfig = merge([{
 	parts.purifyCSS({
 		paths: glob.sync(`${PATHS.app}/**/*.html`, { nodir: true }),
 	}),
-	parts.extractBundles([{
+	parts.extractBundles([
+		{
 			name: 'vendor',
 			minChunks: ({ resource }) => (
 				resource &&
@@ -102,7 +109,8 @@ const productionConfig = merge([{
 	parts.copyPublic(),
 ]);
 
-const developmentConfig = merge([{
+const developmentConfig = merge([
+	{
 		output: {
 			devtoolModuleFilenameTemplate: 'webpack:///[absolute-resource-path]',
 		},
@@ -175,6 +183,24 @@ module.exports = (env) => {
 				whatWeDo: PATHS.JS.whatWeDo,
 			},
 			chunks: ['whatWeDo', 'manifest', 'vendor'],
+		}),
+		parts.page({
+			title: 'Motley Zoo: Individual Opportunity',
+			template: PATHS.HTML.individual,
+			path: 'individual',
+			entry: {
+				individual: PATHS.JS.individual,
+			},
+			chunks: ['individual', 'manifest', 'vendor'],
+		}),
+		parts.page({
+			title: 'Motley Zoo: Coorporate Opportunity',
+			template: PATHS.HTML.coorporate,
+			path: 'coorporate',
+			entry: {
+				coorporate: PATHS.JS.coorporate,
+			},
+			chunks: ['coorporate', 'manifest', 'vendor'],
 		}),
 	];
 	const config = env === 'production' ?

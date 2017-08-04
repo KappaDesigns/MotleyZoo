@@ -12,12 +12,12 @@ const webpack = require('webpack');
 exports.devServer = ({ host, port } = {}) => ({
 	devServer: {
 		historyApiFallback: true,
-		stats: "errors-only",
+		stats: 'errors-only',
 		host,
 		port,
 		overlay: {
 			errors: true,
-			warnings: true
+			warnings: true,
 		},
 	},
 });
@@ -58,37 +58,35 @@ exports.loadCSS = ({ include, exclude } = {}) => ({
 
 
 exports.extractCSS = ({ include, exclude, use }) => {
-  const plugin = new ExtractTextPlugin({
-    filename: '[name].[contenthash:8].css',
-  });
+	const plugin = new ExtractTextPlugin({
+		filename: '[name].[contenthash:8].css',
+	});
 
-  return {
-    module: {
-      rules: [
-        {
-          test: /\.css$/,
-          include,
-          exclude,
-
-          use: plugin.extract({
-            use,
-            fallback: 'style-loader',
-          }),
-        },
+	return {
+		module: {
+			rules: [
 				{
-					test: /\.scss$/,
+					test: /\.css$/,
 					include,
 					exclude,
-
 					use: plugin.extract({
 						use,
 						fallback: 'style-loader',
 					}),
 				},
-      ],
-    },
-    plugins: [ plugin ],
-  };
+				{
+					test: /\.scss$/,
+					include,
+					exclude,
+					use: plugin.extract({
+						use,
+						fallback: 'style-loader',
+					}),
+				},
+			],
+		},
+		plugins: [ plugin ],
+	};
 };
 
 exports.autoprefix = () => ({
@@ -104,7 +102,7 @@ exports.purifyCSS = ({ paths }) => ({
 	plugins: [
 		new PurifyCSSPlugin({
 			styleExtensions: ['.css', '.scss'],
-      moduleExtensions: ['.html', '.js'],
+			moduleExtensions: ['.html', '.js'],
 			paths,
 		}),
 	],
@@ -200,7 +198,7 @@ exports.minifyJavascript = () => ({
 	plugins: [
 		new BabiliPlugin(),
 	],
-})
+});
 
 exports.minifyCSS = ({ options }) => ({
 	plugins: [
@@ -208,9 +206,9 @@ exports.minifyCSS = ({ options }) => ({
 			cssProcessor: cssnano,
 			cssProcessorOptions: options,
 			canPrint: false,
-		})
-	]
-})
+		}),
+	],
+});
 
 exports.setFreeVariable = (key, value) => {
 	const env = {};

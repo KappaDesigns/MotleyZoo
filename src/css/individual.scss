@@ -10,3 +10,48 @@
 		background-image: url('../../public/imgs/blackcat.jpg');
 	}
 }
+
+.art-background {
+	height: 100vh;
+	background-image: url('https://s-media-cache-ak0.pinimg.com/originals/87/6e/fc/876efc0d3d2c459ee367f908b3caf5fd.jpg');
+	background-size: cover;
+	background-position: center top;
+	background-repeat: no-repeat;
+	.container {
+		padding-top: 20vh;
+		.comment {
+			text-transform: capitalize;
+			line-height: 200%;
+			width: 100%;
+			background: black;
+			color: white;
+			text-align: center;
+			margin: 0 auto;
+			@media all and (min-width: 760px) {
+				max-width: 700px;
+			}
+		}
+	}
+}
+
+.help-background, .other-background {
+	.help-container, .other-container {
+		padding-bottom: 25px;
+		.title {
+			text-align: center;
+			padding: 50px 0;
+		}
+		.info {
+			padding: 25px;
+			margin: 0;
+			text-align: center;
+		}
+	}
+}
+
+.other-background {
+	background-color: black;
+	.info, .title {
+		color: white;
+	}
+}

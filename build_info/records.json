@@ -2253,6 +2253,29 @@
           "0": 0
         }
       }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": "3IRH",
+          "node_modules/webpack/buildin/global.js": "DuR2",
+          "node_modules/lodash/lodash.js": "M4fF",
+          "node_modules/html-webpack-plugin/lib/loader.js!src/pages/index.html": "asZ9"
+        },
+        "usedIds": {
+          "3IRH": "3IRH",
+          "DuR2": "DuR2",
+          "M4fF": "M4fF",
+          "asZ9": "asZ9"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
     }
   ],
   "extract-text-webpack-plugin": [
@@ -13964,6 +13987,326 @@
           "0": 0
         }
       }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!src/css/bootstrap/bootstrap.min.css": "NGXD"
+        },
+        "usedIds": {
+          "FZ+f": "FZ+f",
+          "NGXD": "NGXD"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/blackdog.jpg": "0sCi",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!src/css/home.scss": "F1q2",
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/facebook.svg": "Iqbb",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/instagram.svg": "Mvv+",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/cart.svg": "OW2Y",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/heart.svg": "QYcq",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/twitter.svg": "W5dJ",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/youtube.svg": "ZLUk",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/pinterest.svg": "srgr",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/diamonpattern.jpg": "w0Lq"
+        },
+        "usedIds": {
+          "0sCi": "0sCi",
+          "F1q2": "F1q2",
+          "FZ+f": "FZ+f",
+          "Iqbb": "Iqbb",
+          "Mvv+": "Mvv+",
+          "OW2Y": "OW2Y",
+          "QYcq": "QYcq",
+          "W5dJ": "W5dJ",
+          "ZLUk": "ZLUk",
+          "srgr": "srgr",
+          "w0Lq": "w0Lq"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!src/css/components/navbar.scss": "f+pV"
+        },
+        "usedIds": {
+          "FZ+f": "FZ+f",
+          "f+pV": "f+pV"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/logo-1.jpg": "+erI",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!src/css/about.scss": "Doqa",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/logo-2.jpg": "ETMM",
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/logo-4.jpg": "GOmk",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/facebook.svg": "Iqbb",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/logo-6.jpg": "KGhe",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/instagram.svg": "Mvv+",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/logo-5.png": "NZhU",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/cart.svg": "OW2Y",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/twitter.svg": "W5dJ",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/youtube.svg": "ZLUk",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/blackcat.jpg": "g50Y",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/pinterest.svg": "srgr",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/logo-3.png": "xBdg"
+        },
+        "usedIds": {
+          "+erI": "+erI",
+          "Doqa": "Doqa",
+          "ETMM": "ETMM",
+          "FZ+f": "FZ+f",
+          "GOmk": "GOmk",
+          "Iqbb": "Iqbb",
+          "KGhe": "KGhe",
+          "Mvv+": "Mvv+",
+          "NZhU": "NZhU",
+          "OW2Y": "OW2Y",
+          "W5dJ": "W5dJ",
+          "ZLUk": "ZLUk",
+          "g50Y": "g50Y",
+          "srgr": "srgr",
+          "xBdg": "xBdg"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/facebook.svg": "Iqbb",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/instagram.svg": "Mvv+",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/cart.svg": "OW2Y",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/twitter.svg": "W5dJ",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!src/css/contact.scss": "Z/kI",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/youtube.svg": "ZLUk",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/blackcat.jpg": "g50Y",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/pinterest.svg": "srgr"
+        },
+        "usedIds": {
+          "FZ+f": "FZ+f",
+          "Iqbb": "Iqbb",
+          "Mvv+": "Mvv+",
+          "OW2Y": "OW2Y",
+          "W5dJ": "W5dJ",
+          "Z/kI": "Z/kI",
+          "ZLUk": "ZLUk",
+          "g50Y": "g50Y",
+          "srgr": "srgr"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/facebook.svg": "Iqbb",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/instagram.svg": "Mvv+",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!src/css/involvement.scss": "O0dL",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/cart.svg": "OW2Y",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/twitter.svg": "W5dJ",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/youtube.svg": "ZLUk",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/blackcat.jpg": "g50Y",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/pinterest.svg": "srgr"
+        },
+        "usedIds": {
+          "FZ+f": "FZ+f",
+          "Iqbb": "Iqbb",
+          "Mvv+": "Mvv+",
+          "O0dL": "O0dL",
+          "OW2Y": "OW2Y",
+          "W5dJ": "W5dJ",
+          "ZLUk": "ZLUk",
+          "g50Y": "g50Y",
+          "srgr": "srgr"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/facebook.svg": "Iqbb",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/instagram.svg": "Mvv+",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/cart.svg": "OW2Y",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/twitter.svg": "W5dJ",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/youtube.svg": "ZLUk",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/blackcat.jpg": "g50Y",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/pinterest.svg": "srgr",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!src/css/events.scss": "xSOc"
+        },
+        "usedIds": {
+          "FZ+f": "FZ+f",
+          "Iqbb": "Iqbb",
+          "Mvv+": "Mvv+",
+          "OW2Y": "OW2Y",
+          "W5dJ": "W5dJ",
+          "ZLUk": "ZLUk",
+          "g50Y": "g50Y",
+          "srgr": "srgr",
+          "xSOc": "xSOc"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/facebook.svg": "Iqbb",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/instagram.svg": "Mvv+",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/cart.svg": "OW2Y",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/twitter.svg": "W5dJ",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/youtube.svg": "ZLUk",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/guitarplayer.jpg": "c+a2",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/blackcat.jpg": "g50Y",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!src/css/whatwedo.scss": "sCxh",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/pinterest.svg": "srgr"
+        },
+        "usedIds": {
+          "FZ+f": "FZ+f",
+          "Iqbb": "Iqbb",
+          "Mvv+": "Mvv+",
+          "OW2Y": "OW2Y",
+          "W5dJ": "W5dJ",
+          "ZLUk": "ZLUk",
+          "c+a2": "c+a2",
+          "g50Y": "g50Y",
+          "sCxh": "sCxh",
+          "srgr": "srgr"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/facebook.svg": "Iqbb",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/instagram.svg": "Mvv+",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/cart.svg": "OW2Y",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!src/css/individual.scss": "S8PX",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/twitter.svg": "W5dJ",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/youtube.svg": "ZLUk",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/blackcat.jpg": "g50Y",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/pinterest.svg": "srgr"
+        },
+        "usedIds": {
+          "FZ+f": "FZ+f",
+          "Iqbb": "Iqbb",
+          "Mvv+": "Mvv+",
+          "OW2Y": "OW2Y",
+          "S8PX": "S8PX",
+          "W5dJ": "W5dJ",
+          "ZLUk": "ZLUk",
+          "g50Y": "g50Y",
+          "srgr": "srgr"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/facebook.svg": "Iqbb",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/instagram.svg": "Mvv+",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/cart.svg": "OW2Y",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/twitter.svg": "W5dJ",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/youtube.svg": "ZLUk",
+          "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!src/css/coorporate.scss": "b8oQ",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/blackcat.jpg": "g50Y",
+          "node_modules/file-loader/index.js??ref--4-0!public/imgs/pinterest.svg": "srgr"
+        },
+        "usedIds": {
+          "FZ+f": "FZ+f",
+          "Iqbb": "Iqbb",
+          "Mvv+": "Mvv+",
+          "OW2Y": "OW2Y",
+          "W5dJ": "W5dJ",
+          "ZLUk": "ZLUk",
+          "b8oQ": "b8oQ",
+          "g50Y": "g50Y",
+          "srgr": "srgr"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
     }
   ],
   "modules": {
@@ -14179,7 +14522,13 @@
       "node_modules/extract-text-webpack-plugin/loader.js??ref--6-0!node_modules/style-loader/index.js!node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js??ref--6-3!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js??ref--1!src/css/whatwedo.scss": "0W4j",
       "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{}!src/css/whatwedo.scss": "TRyL",
       "node_modules/babel-loader/lib/index.js??ref--3!node_modules/eslint-loader/index.js!src/whatWeDo.js": "oTwy",
-      "node_modules/file-loader/index.js??ref--4-0!public/imgs/guitarplayer.jpg": "c+a2"
+      "node_modules/file-loader/index.js??ref--4-0!public/imgs/guitarplayer.jpg": "c+a2",
+      "node_modules/extract-text-webpack-plugin/loader.js??ref--6-0!node_modules/style-loader/index.js!node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js??ref--6-3!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js??ref--1!src/css/individual.scss": "A6qm",
+      "node_modules/extract-text-webpack-plugin/loader.js??ref--6-0!node_modules/style-loader/index.js!node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js??ref--6-3!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js??ref--1!src/css/coorporate.scss": "DvMc",
+      "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{}!src/css/individual.scss": "V6qv",
+      "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{}!node_modules/sass-loader/lib/loader.js!node_modules/postcss-loader/lib/index.js?{}!src/css/coorporate.scss": "Vji1",
+      "node_modules/babel-loader/lib/index.js??ref--3!node_modules/eslint-loader/index.js!src/coorporate.js": "pOFX",
+      "node_modules/babel-loader/lib/index.js??ref--3!node_modules/eslint-loader/index.js!src/individual.js": "vNB9"
     },
     "usedIds": {
       "7t+N": "7t+N",
@@ -14386,7 +14735,13 @@
       "0W4j": "0W4j",
       "TRyL": "TRyL",
       "oTwy": "oTwy",
-      "c+a2": "c+a2"
+      "c+a2": "c+a2",
+      "A6qm": "A6qm",
+      "DvMc": "DvMc",
+      "V6qv": "V6qv",
+      "Vji1": "Vji1",
+      "pOFX": "pOFX",
+      "vNB9": "vNB9"
     }
   },
   "chunks": {
@@ -14401,7 +14756,9 @@
       "involvement": 5,
       "nunu": 6,
       "events": 6,
-      "whatWeDo": 7
+      "whatWeDo": 7,
+      "individual": 8,
+      "coorporate": 9
     },
     "byBlocks": {},
     "usedIds": {
@@ -14412,7 +14769,9 @@
       "4": 4,
       "5": 5,
       "6": 6,
-      "7": 7
+      "7": 7,
+      "8": 8,
+      "9": 9
     }
   },
   "html-webpack-plugin for \"another/index.html\"": [
@@ -14441,6 +14800,29 @@
     }
   ],
   "html-webpack-plugin for \"about/index.html\"": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": "3IRH",
+          "node_modules/webpack/buildin/global.js": "DuR2",
+          "node_modules/lodash/lodash.js": "M4fF",
+          "node_modules/html-webpack-plugin/lib/loader.js!src/pages/about.html": "nRaA"
+        },
+        "usedIds": {
+          "3IRH": "3IRH",
+          "DuR2": "DuR2",
+          "M4fF": "M4fF",
+          "nRaA": "nRaA"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
     {
       "modules": {
         "byIdentifier": {
@@ -16719,9 +17101,55 @@
           "0": 0
         }
       }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": "3IRH",
+          "node_modules/webpack/buildin/global.js": "DuR2",
+          "node_modules/html-webpack-plugin/lib/loader.js!src/pages/contact.html": "Ia/0",
+          "node_modules/lodash/lodash.js": "M4fF"
+        },
+        "usedIds": {
+          "3IRH": "3IRH",
+          "DuR2": "DuR2",
+          "Ia/0": "Ia/0",
+          "M4fF": "M4fF"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
     }
   ],
   "html-webpack-plugin for \"involvement/index.html\"": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": "3IRH",
+          "node_modules/webpack/buildin/global.js": "DuR2",
+          "node_modules/lodash/lodash.js": "M4fF",
+          "node_modules/html-webpack-plugin/lib/loader.js!src/pages/involvement.html": "P0ui"
+        },
+        "usedIds": {
+          "3IRH": "3IRH",
+          "DuR2": "DuR2",
+          "M4fF": "M4fF",
+          "P0ui": "P0ui"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
     {
       "modules": {
         "byIdentifier": {
@@ -17996,6 +18424,29 @@
           "0": 0
         }
       }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": "3IRH",
+          "node_modules/html-webpack-plugin/lib/loader.js!src/pages/events.html": "4uLv",
+          "node_modules/webpack/buildin/global.js": "DuR2",
+          "node_modules/lodash/lodash.js": "M4fF"
+        },
+        "usedIds": {
+          "3IRH": "3IRH",
+          "4uLv": "4uLv",
+          "DuR2": "DuR2",
+          "M4fF": "M4fF"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
     }
   ],
   "html-webpack-plugin for \"about/what-we-do/index.html\"": [
@@ -18129,6 +18580,79 @@
           "DuR2": "DuR2",
           "M4fF": "M4fF",
           "WWSz": "WWSz"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": "3IRH",
+          "node_modules/webpack/buildin/global.js": "DuR2",
+          "node_modules/lodash/lodash.js": "M4fF",
+          "node_modules/html-webpack-plugin/lib/loader.js!src/pages/whatWeDo.html": "WWSz"
+        },
+        "usedIds": {
+          "3IRH": "3IRH",
+          "DuR2": "DuR2",
+          "M4fF": "M4fF",
+          "WWSz": "WWSz"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    }
+  ],
+  "html-webpack-plugin for \"individual/index.html\"": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": "3IRH",
+          "node_modules/webpack/buildin/global.js": "DuR2",
+          "node_modules/lodash/lodash.js": "M4fF",
+          "node_modules/html-webpack-plugin/lib/loader.js!src/pages/individual.html": "Zch4"
+        },
+        "usedIds": {
+          "3IRH": "3IRH",
+          "DuR2": "DuR2",
+          "M4fF": "M4fF",
+          "Zch4": "Zch4"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    }
+  ],
+  "html-webpack-plugin for \"coorporate/index.html\"": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": "3IRH",
+          "node_modules/webpack/buildin/global.js": "DuR2",
+          "node_modules/lodash/lodash.js": "M4fF",
+          "node_modules/html-webpack-plugin/lib/loader.js!src/pages/coorporate.html": "RMM6"
+        },
+        "usedIds": {
+          "3IRH": "3IRH",
+          "DuR2": "DuR2",
+          "M4fF": "M4fF",
+          "RMM6": "RMM6"
         }
       },
       "chunks": {

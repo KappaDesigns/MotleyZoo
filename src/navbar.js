@@ -212,7 +212,8 @@ function getLink(path, link) {
 	path = path.toLowerCase();
 	link = link.toLowerCase();
 	link = link.replace(/\s+/g, '-');
-	return `/${link}`;
+	console.log(`${path}/${link}`);
+	return `./${link}`;
 }
 
 function getHeadPathLink(isMobile, path) {

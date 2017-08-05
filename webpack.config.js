@@ -18,6 +18,7 @@ const PATHS = {
 		whatWeDo: path.join(__dirname, 'src', 'pages', 'whatWeDo.html'),
 		individual: path.join(__dirname, 'src', 'pages', 'individual.html'),
 		coorporate: path.join(__dirname, 'src', 'pages', 'coorporate.html'),
+		sponsors: path.join(__dirname, 'src', 'pages', 'sponsors.html'),
 	},
 	JS: {
 		home: path.join(__dirname, 'src', 'home.js'),
@@ -28,6 +29,7 @@ const PATHS = {
 		whatWeDo: path.join(__dirname, 'src', 'whatWeDo.js'),
 		individual: path.join(__dirname, 'src', 'individual.js'),
 		coorporate: path.join(__dirname, 'src', 'coorporate.js'),
+		sponsors: path.join(__dirname, 'src', 'sponsors.js'),
 	},
 };
 
@@ -201,6 +203,15 @@ module.exports = (env) => {
 				coorporate: PATHS.JS.coorporate,
 			},
 			chunks: ['coorporate', 'manifest', 'vendor'],
+		}),
+		parts.page({
+			title: 'Motley Zoo: Sponsors',
+			template: PATHS.HTML.sponsors,
+			path: 'sponsors',
+			entry: {
+				sponsors: PATHS.JS.sponsors,
+			},
+			chunks: ['sponsors', 'manifest', 'vendor'],
 		}),
 	];
 	const config = env === 'production' ?

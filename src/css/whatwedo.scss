@@ -20,7 +20,10 @@
 	text-align: center;
 	text-transform: capitalize;
 	.what-we-do-container {
-		padding-top: 40vh;
+		padding-top: 20vh;
+		@media all and (min-width: 780px) {
+			padding-top: 40vh;
+		}
 		.desc {
 			line-height: 200%;
 			width: 100%;

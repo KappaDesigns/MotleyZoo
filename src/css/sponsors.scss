@@ -13,7 +13,7 @@
 
 .art-background {
 	height: 100vh;
-	background-image: url('http://pre12.deviantart.net/f707/th/pre/f/2012/232/4/7/4711fa5eaf2897184b1e8a23a9a9e4c3-d5brtu9.jpg');
+	background-image: url('../../public/imgs/beattles.jpg');
 	background-size: cover;
 	background-position: center top;
 	background-repeat: no-repeat;
@@ -55,6 +55,9 @@
 			padding-top: 50px;
 		}
 		.logo {
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
 			width: 300px;
 			height: 200px;
 			display: block;
@@ -71,5 +74,28 @@
 			text-align: center;
 			padding: 25px 0 50px;
 		}
+	}
+	#logo-1 {
+		background-image: url('../../public/imgs/logo-1.jpg');	
+	}
+
+	#logo-2 {
+		background-image: url('../../public/imgs/logo-2.jpg');
+	}
+
+	#logo-3 {
+		background-image: url('../../public/imgs/logo-3.png');
+	}
+
+	#logo-4 {
+		background-image: url('../../public/imgs/logo-4.jpg');
+	}
+
+	#logo-5 {
+		background-image: url('../../public/imgs/logo-5.png');
+	}
+
+	#logo-6 {
+		background-image: url('../../public/imgs/logo-6.jpg');
 	}
 }

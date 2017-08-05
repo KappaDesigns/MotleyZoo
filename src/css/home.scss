@@ -45,7 +45,7 @@
 }
 
 .before-after-background {
-    background-color: rgb(31, 31, 31);
+    background-image: url('../../public/imgs/dark-triangles.png');
     padding: 50px 0;
     .before,
     .after {
@@ -107,6 +107,7 @@
     height: 100vh;
     max-height: 800px;
     background-image: url('../../public/imgs/diamonpattern.jpg');
+    background-attachment: fixed;
     padding-bottom: 50px;
     .header {
         font-size: 70px;
@@ -214,23 +215,18 @@
     }
 }
 
-.resource-icon {
-    @media all and (min-width: 1220px) {
-        width: 300px;
-        height: 300px;
-    }
-}
-
 .resource-background {
     height: auto;
 }
 
 .resource-icon {
-    width: 100px;
-    height: 100px;
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
     @media all and (min-width: 1220px) {
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
     }
 }
 
@@ -241,18 +237,24 @@
         text-align: center;
         color: white;
     }
-    @media all and (max-width: 768px) {
-        .resource-row {
-            display: flex;
-            .resource-col {
-                margin-top: 50px;
+    .resource-row {
+        width:100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .resource-column {
+            display: block;
+            margin-top: 50px;
+            width: 100%;
+            @media all and (min-width: 780px) {
                 width: 50%;
-                .motley-btn-main {
-                    font-size: 18px;
-                    height: 50px;
-                    width: 75%;
-                    min-width: 100px;
-                }
+            }
+            .motley-btn-main {
+                font-size: 18px;
+                height: 50px;
+                width: 75%;
+                min-width: 75px;
+                max-width: 300px;
             }
         }
     }

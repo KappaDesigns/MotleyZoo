@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster+Two');
+@import "index";
+@import './components/tab';
+@import './components/buttons';
+@import './components/header';
+@import './components/footer';
+
+.page-header {
+	.animal-image {
+		background-image: url('../../public/imgs/blackpuppy.jpg');
+	}
+}
+
+.art-background {
+	height: 100vh;
+	background-image: url('../../public/imgs/hendrix-clapton.jpg');
+	background-size: cover;
+	background-position: center top;
+	background-repeat: no-repeat;
+	.container {
+		padding-top: 20vh;
+		.comment {
+			text-transform: capitalize;
+			line-height: 200%;
+			width: 100%;
+			background: black;
+			color: white;
+			text-align: center;
+			margin: 0 auto;
+			@media all and (min-width: 760px) {
+				max-width: 700px;
+			}
+		}
+	}
+}
+
+.pet-finder-background {
+    .pet-finder-container {
+        padding-top: 25px;
+        .search-tools {
+            display: flex;
+            flex-wrap: wrap;
+            .search {
+                width: 100%;
+                text-align: center;
+                @media all and (min-width: 780px) {
+                    width: 30%;
+                }
+                .search-input {
+                    margin: 25px auto;
+                    transition: all 0.1s linear;
+                    width: 100%;
+                    border: none;
+                    border-bottom: 1px solid black;
+                    max-width: 250px;
+                    &:hover {
+                        border-bottom: 3px solid black;
+                    }
+                    &:focus {
+                        border-bottom: 3px solid teal;
+                        outline: none;
+                    }
+                }
+                i {
+                    padding: 9px;
+                    background-color: black;
+                    color: white;
+                }
+            }
+            .categories {
+                display: flex;
+                flex-wrap: wrap;
+                text-align: center;
+                width: 100%;
+                @media all and (min-width: 780px) {
+                    width: 70%;
+                }
+                .dropdown-btn {
+                    margin: 10px 2.5%;
+                    width: 100%;
+                    @media all and (min-width: 780px) {
+                        width: 20%;
+                        margin: 25px 2.5%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster+Two');
+@import "index";
+@import './components/tab';
+@import './components/buttons';
+@import './components/header';
+@import './components/footer';
+
+.page-header {
+	.animal-image {
+		background-image: url('../../public/imgs/blackeagle.jpg');
+	}
+}
+
+.art-background {
+	height: 100vh;
+	background-image: url('http://pre12.deviantart.net/f707/th/pre/f/2012/232/4/7/4711fa5eaf2897184b1e8a23a9a9e4c3-d5brtu9.jpg');
+	background-size: cover;
+	background-position: center top;
+	background-repeat: no-repeat;
+	.container {
+		padding-top: 20vh;
+		.comment {
+			text-transform: capitalize;
+			line-height: 200%;
+			width: 100%;
+			background: black;
+			color: white;
+			text-align: center;
+			margin: 0 auto;
+			@media all and (min-width: 760px) {
+				max-width: 700px;
+			}
+		}
+	}
+}
+
+.bg-white {
+	background-color: white;
+	.title, .info {
+		color: black;
+	}
+}
+
+.bg-black {
+	background-color: black;
+	.title, .info {
+		color: white;
+	}
+}
+
+.sponsor-background {
+	.sponsor-container {
+		.title {
+			text-align: center;
+			padding-top: 50px;
+		}
+		.logo {
+			width: 300px;
+			height: 200px;
+			display: block;
+			margin: 25px auto;
+			@media all and (min-width: 780px) {
+				width: 800px;
+				height: 600px;
+			}
+		}
+		.info {
+			font-size: 20px;
+			line-height: 200%;
+			margin: 0;
+			text-align: center;
+			padding: 25px 0 50px;
+		}
+	}
+}

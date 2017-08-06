@@ -135,6 +135,7 @@ $(document).ready(() => {
 	const $backgroundImage = $('.animal-image');
 	const $searchInput = $('.search-input');
 	const $selected = $('.selected');
+	const $reset = $('.motley-btn-main');
 
 	let filters = {
 		name: '',
@@ -145,6 +146,7 @@ $(document).ready(() => {
 	};
 
 	setDropDownValues(fakeData, filters);
+	displayPets(fakeData, filters);
 	handleHeaderAnimations($siteTitle, $navbar, $backgroundImage);
 
 	$(window).scroll(() => {
@@ -160,10 +162,33 @@ $(document).ready(() => {
 		displayPets(fakeData, filters);
 	});
 
+	$reset.click(() => {
+		$searchInput.val('');
+		$('#age').parent().find('.selected').text('Choose Age');
+		$('#breed').parent().find('.selected').text('Choose Breed');
+		$('#color'.parent()).find('.selected').text('Choose Color');
+		$('#size').parent().find('.selected').text('Choose Size');
+		filters.name = '';
+		filters.color = '';
+		filters.age = Infinity;
+		filters.breed = '';
+		filters.size = '';
+		displayPets(fakeData, filters);
+	});
+
 	$selected.click((e) => {
-		$selected.parent().find('.dropdown-options').slideUp();
+		let ref = $('.active');
+		let id = '';
+		if (ref) {
+			ref.slideUp();
+			ref.removeClass('active');
+			id = ref.prop('id');
+		}
 		let options = $(e.target).parent().find('.dropdown-options');
-		options.slideDown();
+		if (id != options.prop('id')) {
+			options.addClass('active');
+			options.slideDown();
+		}
 	});
 });
 
@@ -247,7 +272,11 @@ function displayPets(data, filters) {
 	$('.pet-container').empty();
 	let pets = filterPets(data, filters);
 	let components = pets.reduce((x, pet) => {
-		return x + '\n' + JSON.stringify(pet);
+		return x + createPet(pet);
 	}, '');
 	$('.pet-container').append(components);
+}
+
+function createPet(data) {
+	return `<div class="pet"><div class="data"><h1 class="name">${data.name}</h1><h6 class="breed">${data.breed}</h6><h6 class="color">${data.color}</h6><h6 class="age">${data.age}</h6><h6 class="size">${data.size}</h6></div></div>`;
 }

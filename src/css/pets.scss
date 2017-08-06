@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster+Two');
+@import "index";
+@import './components/tab';
+@import './components/buttons';
+@import './components/header';
+@import './components/footer';
+
+.page-header {
+	.animal-image {
+        background-image: url('../../public/imgs/blackpuppy.jpg');
+	}
+}
+
+.art-background {
+	height: 100vh;
+	background-image: url('../../public/imgs/hendrix-clapton.jpg');
+	background-size: cover;
+	background-position: center top;
+	background-repeat: no-repeat;
+	.container {
+		padding-top: 20vh;
+		.comment {
+			text-transform: capitalize;
+			line-height: 200%;
+			width: 100%;
+			background: black;
+			color: white;
+			text-align: center;
+			margin: 0 auto;
+			@media all and (min-width: 760px) {
+				max-width: 700px;
+			}
+		}
+	}
+}
+
+.pet-finder-background {
+    .pet-finder-container {
+        width: 100%;
+        padding-top: 25px;
+        .search-tools {
+            display: flex;
+            flex-wrap: wrap;
+            .search {
+                width: 100%;
+                text-align: center;
+                margin: 0 auto;
+                @media all and (min-width: 1220px) {
+                    width: 30%;
+                }
+                .search-input {
+                    margin: 35px auto;
+                    transition: all 0.1s linear;
+                    width: 100%;
+                    border: none;
+                    border-bottom: 1px solid black;
+                    width: 80%;
+                    max-width: 250px;
+                    &:hover {
+                        border-bottom: 3px solid black;
+                    }
+                    &:focus {
+                        border-bottom: 3px solid teal;
+                        outline: none;
+                    }
+                }
+                i {
+                    padding: 9px;
+                    background-color: black;
+                    color: white;
+                }
+            }
+            .reset {
+                margin: 0 auto;
+                .motley-btn-main {
+                    color: white;
+                    width: 300px;
+                    height: 50px;
+                    font-size: 18px;
+                }
+            }
+            .categories {
+                justify-content: center;
+                display: flex;
+                flex-wrap: wrap;
+                text-align: center;
+                width: 100%;
+                margin: 0 auto;
+                @media all and (min-width: 1220px) {
+                    width: 70%;
+                }
+                .dropdown-btn {
+                    position: relative;
+                    align-self: center;
+                    margin: 25px 2.5%;
+                    width: 100%;
+                    @media all and (min-width: 900px) {
+                        width: 20%;
+                    }
+                    .selected {
+                        margin: 0 auto;
+                        padding: 10px 5px;
+                        display: block;
+                        width:100%;
+                        max-width: 300px;
+                        background-color: black;
+                        color: white;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                    .dropdown-options {
+                        @media all and (min-width: 900px) {
+                            -webkit-box-shadow: 0px 0px 19px 6px rgba(0,0,0,0.75);
+                            -moz-box-shadow: 0px 0px 19px 6px rgba(0,0,0,0.75);
+                            box-shadow: 0px 0px 19px 6px rgba(0,0,0,0.75);
+                            z-index: 2;
+                            position: absolute;
+                        }
+                        display: none;
+                        width:100%;
+                        max-width: 300px;
+                        list-style: none;
+                        padding: 0;
+                        margin: 0 auto;
+                        .dropdown-option {
+                            color: white;
+                            background-color: black;
+                            padding: 7px 5px;
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .pet-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            .pet {
+                margin: 25px;
+                background-image: url('http://via.placeholder.com/300x300');
+                width: 300px;
+                height: 300px;
+                &:hover {
+                    cursor: pointer;
+                    .data {
+                        opacity: 1;
+                    }
+                }
+                .data {
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.8);
+                    transition: all 0.5s ease;
+                    opacity: 0;
+                    padding: 10px;
+                    color: white;
+                    .name {
+                        padding-top: 10px;
+                        text-align: center; 
+                    }
+                    .breed {
+                        &:before {
+                            font-weight: bold;
+                            content: "Breed: "
+                        }
+                    }
+                    .color {
+                        &:before {
+                            font-weight: bold;
+                            content: "Color: "
+                        }
+                    }
+                    .age {
+                        &:before {
+                            font-weight: bold;
+                            content: "Age: "
+                        }
+                    }
+                    .size {
+                        &:before {
+                            font-weight: bold;
+                            content: "Size: "
+                        }
+                    }
+                    .bio {
+                        &:before {
+                            font-weight: bold;
+                            content: "Bio: "
+                        }
+                        font-size:  16px;
+                    }
+                }
+            }
+        }
+    }
+}

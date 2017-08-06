@@ -39,10 +39,7 @@
 		width: 100%;
 		color: rgb(168, 168, 168);
 		transition: color 0.25s ease-in-out;
-		&:before {
-			content: "-";
-			margin-right: 5px;
-		}
+		font-weight: bolder;
 	}
 	@media all and (min-width: 780px) {
 		.nav-link {

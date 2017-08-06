@@ -8,7 +8,7 @@ import {
 
 const subMenuEntries = [{
 	link: 'about',
-	subPaths: ['What We Do', 'People', 'Sponsors', 'Pets'],
+	subPaths: ['What We Do', 'Sponsors', 'Pets'],
 },
 {
 	link: 'involvement',

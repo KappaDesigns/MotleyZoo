@@ -106,25 +106,25 @@
                         max-width: 300px;
                         background-color: black;
                         color: white;
+                        border-bottom: 1px solid white;
                         &:hover {
                             cursor: pointer;
                         }
                     }
                     .dropdown-options {
                         @media all and (min-width: 900px) {
-                            -webkit-box-shadow: 0px 0px 19px 6px rgba(0,0,0,0.75);
-                            -moz-box-shadow: 0px 0px 19px 6px rgba(0,0,0,0.75);
-                            box-shadow: 0px 0px 19px 6px rgba(0,0,0,0.75);
                             z-index: 2;
                             position: absolute;
                         }
                         display: none;
                         width:100%;
-                        max-width: 300px;
                         list-style: none;
                         padding: 0;
                         margin: 0 auto;
                         .dropdown-option {
+                            display: block;
+                            margin: 0 auto;
+                            max-width: 300px;
                             color: white;
                             background-color: black;
                             padding: 7px 5px;

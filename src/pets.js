@@ -166,7 +166,7 @@ $(document).ready(() => {
 		$searchInput.val('');
 		$('#age').parent().find('.selected').text('Choose Age');
 		$('#breed').parent().find('.selected').text('Choose Breed');
-		$('#color'.parent()).find('.selected').text('Choose Color');
+		$('#color').parent().find('.selected').text('Choose Color');
 		$('#size').parent().find('.selected').text('Choose Size');
 		filters.name = '';
 		filters.color = '';

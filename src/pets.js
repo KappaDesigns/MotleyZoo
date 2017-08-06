@@ -2,6 +2,7 @@ import './navbar';
 import './css/bootstrap/bootstrap.min.css';
 import './css/pets.scss';
 import $ from 'jquery';
+import is from 'is-js';
 
 
 const fakeData = [
@@ -43,7 +44,7 @@ const fakeData = [
 	{
 		name: 'cat2',
 		breed: 'cat',
-		color: 'red',
+		color: 'yellow',
 		age: 1,
 		size: 'medium',
 	},
@@ -71,7 +72,7 @@ const fakeData = [
 	{
 		name: 'bunny2',
 		breed: 'rabbit',
-		color: 'red',
+		color: 'yellow',
 		age: 1,
 		size: 'medium',
 	},
@@ -99,7 +100,7 @@ const fakeData = [
 	{
 		name: 'fish2',
 		breed: 'fish',
-		color: 'red',
+		color: 'yellow',
 		age: 1,
 		size: 'medium',
 	},
@@ -133,6 +134,7 @@ $(document).ready(() => {
 	const $navbar = $('.nav-bar');
 	const $backgroundImage = $('.animal-image');
 	const $searchInput = $('.search-input');
+	const $selected = $('.selected');
 
 	let filters = {
 		name: '',
@@ -142,6 +144,7 @@ $(document).ready(() => {
 		size: '',
 	};
 
+	setDropDownValues(fakeData, filters);
 	handleHeaderAnimations($siteTitle, $navbar, $backgroundImage);
 
 	$(window).scroll(() => {
@@ -154,10 +157,14 @@ $(document).ready(() => {
 
 	$searchInput.keyup((e) => {
 		filters.name = e.target.value;
-		console.log(filters);
 		displayPets(fakeData, filters);
 	});
-	
+
+	$selected.click((e) => {
+		$selected.parent().find('.dropdown-options').slideUp();
+		let options = $(e.target).parent().find('.dropdown-options');
+		options.slideDown();
+	});
 });
 
 function handleHeaderAnimations(siteTitle, navbar, backgroundImage) {
@@ -166,14 +173,74 @@ function handleHeaderAnimations(siteTitle, navbar, backgroundImage) {
 	handleNavbarAnimation(navbar);
 }
 
+function setDropDownValues(data, filters) {
+	let obj = {
+		breed: [],
+		color: [],
+		age: [],
+		size: [],
+	};
+	data.forEach((x) => {
+		if (obj.breed.indexOf(x.breed) == -1) {
+			obj.breed.push(x.breed);
+		}
+		if (obj.color.indexOf(x.color) == -1) {
+			obj.color.push(x.color);
+		}
+		if (obj.age.indexOf(x.age) == -1) {
+			obj.age.push(x.age);
+		}
+		if (obj.size.indexOf(x.size) == -1) {
+			obj.size.push(x.size);	
+		}
+	});
+	for (let key in obj) {
+		let components = obj[key].reduce((x, value) => {
+			let plural = key == 'age' && value > 1 ? 's' : '';
+			let postfix = key == 'age' ? `Year${plural} Old` : '';
+			let prefix = key == 'age' ? 'Less Than' : '';
+			return x + `<li class="dropdown-option">${prefix} ${capitalize(value)} ${postfix}</li>`;
+		}, '');
+		components += '<li class="dropdown-option">None</li>';
+		$(`#${key}`).append(components);
+	}
+	setTimeout(() => {
+		$('.dropdown-options').click((e) => {
+			let text = e.target.innerText;
+			let menu = $(e.target).parent();
+			let selected = menu.parent().find('.selected');
+			let value = text;
+
+			if (text.includes('Less Than') && menu.prop('id') == 'age') {
+				value = text.split(' ')[2];
+			}
+			if (text == 'None') {
+				value = menu.prop('id') == 'age' ? Infinity : '';
+				text = `Choose ${capitalize(menu.prop('id'))}`;
+			}
+			filters[menu.prop('id')] = value;
+			selected.text(text);
+			menu.slideUp();
+			displayPets(data, filters);
+		});
+	}, 200);
+}
+
 function filterPets(pets, filters) {
 	return pets.filter((pet) => {
-		return pet.name.includes(filters.name) &&
-				pet.color.includes(filters.color) &&
-				pet.breed.includes(filters.breed) &&
-				pet.size.includes(filters.size) && 
+		return pet.name.includes(filters.name.toLowerCase()) &&
+				pet.color.includes(filters.color.toLowerCase()) &&
+				pet.breed.includes(filters.breed.toLowerCase()) &&
+				pet.size.includes(filters.size.toLowerCase()) && 
 				pet.age <= filters.age;
 	});
+}
+
+function capitalize(string) {
+	if (is.string(string)) {
+		return string.substring(0,1).toUpperCase() + string.substring(1,string.length);
+	}
+	return string;
 }
 
 function displayPets(data, filters) {

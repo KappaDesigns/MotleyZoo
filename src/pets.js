@@ -268,7 +268,8 @@ function filterPets(pets, filters) {
 function hidePets(data, filters, container) {
 	let pets = filterPets(data, filters);
 	if (pets.length == data.length) {
-		container.append('<h1 class="none">No Pets Match These Filters</h1>');
+		container.find('.none').remove();
+		container.append('<h1 class="none">No Pets Match These Filters  <i class="fa fa-paw fa-2x" aria-hidden="true"></i></h1>');
 	}
 	data.forEach((pet) => {	
 		let html = container.find(`[data-name=${pet.name}]`);

@@ -225,7 +225,7 @@ function displayYoutubeVideos($videoContainer, next) {
 										'</div>';
 			}, '');
 			str += '<div class="btn-container">'+
-								'<a href="../pets" class="motley-btn-main">See All Pets</a>'+
+								'<a href="pets" class="motley-btn-main">See All Pets</a>'+
 							'</div>';
 			$videoContainer.append(str);
 			let timer = setInterval(function () {

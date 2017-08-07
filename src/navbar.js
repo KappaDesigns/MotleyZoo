@@ -211,7 +211,7 @@ function getLink(path, link) {
 	path = path.toLowerCase();
 	link = link.toLowerCase();
 	link = link.replace(/\s+/g, '-');
-	return `../${link}`;
+	return `${link}`;
 }
 
 function getHeadPathLink(isMobile, path) {
@@ -219,7 +219,7 @@ function getHeadPathLink(isMobile, path) {
 		let text = path;
 		path = path.toLowerCase();
 		path = path.replace(/\s+/g, '-');
-		return `<a href="../${path}" id="nav-link-${0}" class="nav-link"> ${text}</a>`;
+		return `<a href="${path}" id="nav-link-${0}" class="nav-link"> ${text}</a>`;
 	}
 	return '';
 }

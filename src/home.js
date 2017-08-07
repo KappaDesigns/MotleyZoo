@@ -2,7 +2,7 @@ import './navbar';
 import './css/bootstrap/bootstrap.min.css';
 import './css/home.scss';
 
-import $ from 'jquery';
+// import $ from 'jquery';
 
 import {
 	handleSiteTitleAnimation,

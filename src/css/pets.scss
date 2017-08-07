@@ -137,62 +137,89 @@
             }
         }
         .pet-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            .pet {
-                margin: 25px;
-                background-image: url('http://via.placeholder.com/300x300');
-                width: 300px;
-                height: 300px;
-                &:hover {
-                    cursor: pointer;
+            .pet-wrapper {
+                width: 1050px;
+                margin: 0 auto;
+                .pet {
+                    display: inline-block;
+                    box-sizing: border-box;
+                    transition: all 0.5s ease;
+                    margin: 25px;
+                    background-image: url('http://via.placeholder.com/300x300');
+                    width: 300px;
+                    height: 300px;
+                    &:hover {
+                        cursor: pointer;
+                        .data {
+                            opacity: 1;
+                        }
+                    }
                     .data {
-                        opacity: 1;
+                        height: 100%;
+                        background-color: rgba(0, 0, 0, 0.8);
+                        transition: all 0.5s ease;
+                        opacity: 0;
+                        padding: 10px;
+                        color: white;
+                        .name {
+                            text-transform: capitalize;
+                            padding-top: 10px;
+                            text-align: center; 
+                        }
+                        .breed {
+                            &:before {
+                                font-weight: bold;
+                                content: "Breed: "
+                            }
+                        }
+                        .color {
+                            &:before {
+                                font-weight: bold;
+                                content: "Color: "
+                            }
+                        }
+                        .age {
+                            &:before {
+                                font-weight: bold;
+                                content: "Age: "
+                            }
+                        }
+                        .size {
+                            &:before {
+                                font-weight: bold;
+                                content: "Size: "
+                            }
+                        }
+                        .bio {
+                            &:before {
+                                font-weight: bold;
+                                content: "Bio: "
+                            }
+                            font-size:  16px;
+                        }
                     }
                 }
-                .data {
-                    height: 100%;
-                    background-color: rgba(0, 0, 0, 0.8);
-                    transition: all 0.5s ease;
-                    opacity: 0;
-                    padding: 10px;
-                    color: white;
-                    .name {
-                        padding-top: 10px;
-                        text-align: center; 
-                    }
-                    .breed {
-                        &:before {
-                            font-weight: bold;
-                            content: "Breed: "
+            }
+            @media all and (max-width: 350px) {
+                .pet-wrapper {
+                    width: 250px;
+                    .pet {
+                        width: 200px;
+                        height: 200px;
+                        .bio {
+                            display: none;
                         }
                     }
-                    .color {
-                        &:before {
-                            font-weight: bold;
-                            content: "Color: "
-                        }
-                    }
-                    .age {
-                        &:before {
-                            font-weight: bold;
-                            content: "Age: "
-                        }
-                    }
-                    .size {
-                        &:before {
-                            font-weight: bold;
-                            content: "Size: "
-                        }
-                    }
-                    .bio {
-                        &:before {
-                            font-weight: bold;
-                            content: "Bio: "
-                        }
-                        font-size:  16px;
-                    }
+                }
+            }
+            @media all and (min-width: 351px) and (max-width: 775px) {
+                .pet-wrapper {
+                    width: 350px;
+                }
+            }
+            @media all and (min-width: 776px) and (max-width: 1150px) {
+                .pet-wrapper {
+                    width: 700px;
                 }
             }
         }

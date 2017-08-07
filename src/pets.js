@@ -136,6 +136,7 @@ $(document).ready(() => {
 	const $searchInput = $('.search-input');
 	const $selected = $('.selected');
 	const $reset = $('.motley-btn-main');
+	const $container = $('.pet-wrapper');
 
 	let filters = {
 		name: '',
@@ -145,8 +146,8 @@ $(document).ready(() => {
 		size: '',
 	};
 
-	setDropDownValues(fakeData, filters);
-	displayPets(fakeData, filters);
+	setDropDownValues(fakeData, filters, $container);
+	displayPets(fakeData, $container);
 	handleHeaderAnimations($siteTitle, $navbar, $backgroundImage);
 
 	$(window).scroll(() => {
@@ -159,7 +160,7 @@ $(document).ready(() => {
 
 	$searchInput.keyup((e) => {
 		filters.name = e.target.value;
-		displayPets(fakeData, filters);
+		hidePets(fakeData, filters, $container);
 	});
 
 	$reset.click(() => {
@@ -173,7 +174,7 @@ $(document).ready(() => {
 		filters.age = Infinity;
 		filters.breed = '';
 		filters.size = '';
-		displayPets(fakeData, filters);
+		hidePets(fakeData, filters, $container);
 	});
 
 	$selected.click((e) => {
@@ -198,7 +199,7 @@ function handleHeaderAnimations(siteTitle, navbar, backgroundImage) {
 	handleNavbarAnimation(navbar);
 }
 
-function setDropDownValues(data, filters) {
+function setDropDownValues(data, filters, container) {
 	let obj = {
 		breed: [],
 		color: [],
@@ -246,18 +247,45 @@ function setDropDownValues(data, filters) {
 			filters[menu.prop('id')] = value;
 			selected.text(text);
 			menu.slideUp();
-			displayPets(data, filters);
+			hidePets(fakeData, filters, container);
 		});
 	}, 200);
 }
 
 function filterPets(pets, filters) {
-	return pets.filter((pet) => {
-		return pet.name.includes(filters.name.toLowerCase()) &&
-				pet.color.includes(filters.color.toLowerCase()) &&
-				pet.breed.includes(filters.breed.toLowerCase()) &&
-				pet.size.includes(filters.size.toLowerCase()) && 
-				pet.age <= filters.age;
+	let petsToHide = pets.filter((pet) => {
+		return !pet.name.includes(filters.name.toLowerCase()) ||
+				!pet.color.includes(filters.color.toLowerCase()) ||
+				!pet.breed.includes(filters.breed.toLowerCase()) ||
+				!pet.size.includes(filters.size.toLowerCase()) ||
+				pet.age > filters.age;
+	});
+	return petsToHide.map((x) => {
+		return x.name;
+	});
+}
+
+function hidePets(data, filters, container) {
+	let pets = filterPets(data, filters);
+	if (pets.length == data.length) {
+		container.append('<h1 class="none">No Pets Match These Filters</h1>');
+	}
+	data.forEach((pet) => {	
+		let html = container.find(`[data-name=${pet.name}]`);
+		if (pets.indexOf(pet.name) != -1) {
+			html.css({
+				opacity: 0,
+			});
+			setTimeout(() => {
+				html.hide();
+			}, 500);
+		} else {
+			container.find('.none').remove();
+			html.show();
+			html.css({
+				opacity: 1,
+			});
+		}
 	});
 }
 
@@ -268,15 +296,14 @@ function capitalize(string) {
 	return string;
 }
 
-function displayPets(data, filters) {
-	$('.pet-container').empty();
-	let pets = filterPets(data, filters);
+function displayPets(pets, container) {
+	container.empty();
 	let components = pets.reduce((x, pet) => {
 		return x + createPet(pet);
 	}, '');
-	$('.pet-container').append(components);
+	container.append(components);
 }
 
 function createPet(data) {
-	return `<div class="pet"><div class="data"><h1 class="name">${data.name}</h1><h6 class="breed">${data.breed}</h6><h6 class="color">${data.color}</h6><h6 class="age">${data.age}</h6><h6 class="size">${data.size}</h6></div></div>`;
+	return `<div class="pet" data-name=${data.name}><div class="data"><h1 class="name">${data.name}</h1><h6 class="breed">${data.breed}</h6><h6 class="color">${data.color}</h6><h6 class="age">${data.age}</h6><h6 class="size">${data.size}</h6></div></div>`;
 }

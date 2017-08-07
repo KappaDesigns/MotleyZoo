@@ -111,6 +111,7 @@ const productionConfig = merge([
 		'production'
 	),
 	parts.copyPublic(),
+	parts.copyCNAME(),
 ]);
 
 const developmentConfig = merge([

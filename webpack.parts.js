@@ -250,3 +250,14 @@ exports.copyPublic = () => ({
 		]),
 	],
 });
+
+exports.copyCNAME = () => ({
+	plugins: [
+		new WebpackCopyPlugin([
+			{
+				from: path.join(__dirname, 'CNAME'),
+				to: path.join(__dirname, 'build'),
+			},
+		]),
+	],
+});

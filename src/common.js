@@ -1,4 +1,4 @@
-import $ from 'jquery';
+import jQuery from 'jquery';
 import axios from 'axios';
 const petangoURL = 'https://crossorigin.me/http://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimals.aspx?species=All&sex=A&agegroup=All&onhold=A&orderby=ID&colnum=3&AuthKey=4blm62x1v45atcg3s05c1f5jclaov1j8p6n50d85jve44b6bp8';
 
@@ -19,10 +19,10 @@ const navbarStaticCSS = {
 	'position': 'static',
 };
 
-$(document).ready(() => {
-	const $donate = $('.motley-donate-btn');
+jQuery(document).ready(() => {
+	const $donate = jQuery('.motley-donate-btn');
 	handleDonateButton($donate);
-	$(window).resize(() => {
+	jQuery(window).resize(() => {
 		handleDonateButton($donate);
 	});
 });
@@ -70,7 +70,7 @@ function handleBackgroundAnimation(backgroundImage) {
 function handleNavbarPosition(navbar, bottom) {
 	if (window.innerWidth > navbarMobileWidth) {
 		let navbarTop = bottom - navbar.height();
-		if ($(window).scrollTop() > navbarTop) {
+		if (jQuery(window).scrollTop() > navbarTop) {
 			navbar.css(navbarFixedCSS);
 		} else {
 			navbar.css(navbarStaticCSS);
@@ -102,7 +102,7 @@ function animate(elem, property, value, duration, options) {
 	let css = {};
 	css[property] = value;
 	css['transition'] = getTransitionStr(transitions),
-	$(elem).css(css);
+	jQuery(elem).css(css);
 }
 
 function addTransition(transitions, obj) {
@@ -140,7 +140,7 @@ function getTransitionStr(transitions) {
 
 // returns an array of all transitions on an element
 function getTransition(elem) {
-	let transitions = $(elem).css('transition') ;
+	let transitions = jQuery(elem).css('transition') ;
 	if (!transitions || transitions == 'all 0s ease 0s') {
 		transitions = [];
 	}
@@ -176,11 +176,11 @@ function getPets(next) {
 			return res.data;
 		})
 		.then((html) => {
-			return Array.from($($(html)[20]).find('.list-table').find('tbody').find('tr'));
+			return Array.from(jQuery(jQuery(html)[20]).find('.list-table').find('tbody').find('tr'));
 		})
 		.then((rows) => {
 			return rows.reduce((x, row) => {
-				const cells = Array.from($(row).find('td'));
+				const cells = Array.from(jQuery(row).find('td'));
 				cells.forEach((cell) => {
 					x.push(cell);
 				});
@@ -189,18 +189,18 @@ function getPets(next) {
 		})
 		.then((cells) => {
 			return cells.filter((cell) => {
-				return $(cell).children().length > 0;
+				return jQuery(cell).children().length > 0;
 			});
 		})
 		.then((cells) => {
 			return cells.reduce((x, cell) => {
 				x.push({
-					name: $(cell).find('.list-animal-name').text(),
-					species: $(cell).find('.list-anima-species').text(),
-					sex: $(cell).find('.list-animal-sexSN').text(),
-					breed: $(cell).find('.list-animal-breed').text(),
-					age: $(cell).find('.list-animal-age').text(),
-					img: $(cell).find('img').prop('src'),
+					name: jQuery(cell).find('.list-animal-name').text(),
+					species: jQuery(cell).find('.list-anima-species').text(),
+					sex: jQuery(cell).find('.list-animal-sexSN').text(),
+					breed: jQuery(cell).find('.list-animal-breed').text(),
+					age: jQuery(cell).find('.list-animal-age').text(),
+					img: jQuery(cell).find('img').prop('src'),
 				});
 				return x;
 			}, []);

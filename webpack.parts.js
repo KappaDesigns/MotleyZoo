@@ -51,7 +51,7 @@ exports.loadCSS = ({ include, exclude } = {}) => ({
 				include,
 				exclude,
 				use: ['style-loader', 'css-loader?sourceMap'],
-			}
+			},
 		],
 	},
 });

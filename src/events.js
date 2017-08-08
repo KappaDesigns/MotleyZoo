@@ -23,7 +23,7 @@ $(document).ready(() => {
 	const $backgroundImage = $('.animal-image');
 
 	handleHeaderAnimations($siteTitle, $navbar, $backgroundImage);
-	displayDate();
+	displayEvents();
 
 	$(window).scroll(() => {
 		handleNavbarPosition($navbar, headerSizeRatio);
@@ -45,19 +45,55 @@ function handleHeaderAnimations(siteTitle, navbar, backgroundImage) {
 	handleNavbarAnimation(navbar);
 }
 
-function displayDate() {
-	fakeRequest();
-	let date = moment().format('MMMM do YYYY');
-	$('.date').text(date);
+function displayEvents() {
+	$.ajax({
+		url: 'http://localhost:3000/api/event',
+		method: 'GET',
+		crossDomain: true,
+		success: (events) => {
+			state.events = events;
+			renderEvents();
+			handleCarousel(state.events);
+			if (window.innerWidth > 780) {
+				hideCarousel();
+			}
+		},
+	});
 }
 
-function fakeRequest() {
-	console.log('fake request');
-	state.events = Array.from($('.featured-event'));
-	handleCarousel(state.events);
-	if (window.innerWidth > 780) {
-		hideCarousel();
-	}
+function renderEvents() {
+	let featured = state.events.filter((event) => {
+		event.featured = true;
+		return event.featured;
+	});
+	displayFeaturedEvents(featured);
+	displayAllEvents();
+}
+
+
+function displayFeaturedEvents(events) {
+	let components = events.reduce((x, event, i) => {
+		return x + `<div data-event-id="${i}" class="featured-event event" id="event-${i}"><h3 class="event-title">${event.title}</h3><div class="date-container"><span class="date">${moment(event.date).format('MM DD YYYY')}</span></div></div>`;
+	}, '');
+	$('.featured-event-row').append(components);
+	events.forEach((event, i) => {
+		$('.featured-event-row').find(`#event-${i}`).css({
+			'background-image': `url('${event.src}')`,
+		});
+	});
+}
+
+function displayAllEvents() {
+	let components = state.events.reduce((x, event, i) => {
+		let html = `<div data-event-id="0" class="event" background id="event-${i}"><div class="event-header"><span class="day">${moment(event.date).format('D')}</span><h3 class="event-title">${event.title}</h3></div><p class="event-desc">${event.desc}</p><div class="date-container"><span class="date">${moment(event.date).format('MM DD YYYY')}</span></div></div>`;
+		return x + html;
+	}, '');
+	$('.main-event-row').append(components);
+	state.events.forEach((event, i) => {
+		$('.main-event-row').find(`#event-${i}`).css({
+			'background-image': `url('${event.src}')`,
+		});
+	});
 }
 
 function handleCarousel(events) {

@@ -38,7 +38,7 @@
 		position: relative;
 		margin: 10px;
 		text-align: center;
-		background-color: rgba(0, 0, 0, 0.4);
+		background-size: cover;
 		height: 300px;
 		width: 100%;
 		@media all and (min-width: 780px) {
@@ -57,6 +57,7 @@
 			opacity: 0.8;
 		}
 		.date-container {
+			background-color: black;
 			position: absolute;
 			bottom: 0;
 			width: 100%;
@@ -103,7 +104,6 @@
 	.featured-event {
 		display: none;
 		color: black;
-		background-color: rgba(255, 255, 255, 0.4);
 		.event-title {
 			color: white;
 		}

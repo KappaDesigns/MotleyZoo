@@ -25,7 +25,7 @@ $(document).ready(() => {
 	const $backgroundImage = $('.animal-image');
 
 	handleHeaderAnimations($siteTitle, $navbar, $backgroundImage);
-	displayEvents();
+	getEvents();
 
 	$(window).scroll(() => {
 		handleNavbarPosition($navbar, headerSizeRatio);
@@ -47,7 +47,7 @@ function handleHeaderAnimations(siteTitle, navbar, backgroundImage) {
 	handleNavbarAnimation(navbar);
 }
 
-function displayEvents() {
+function getEvents() {
 	$.ajax({
 		url: 'http://localhost:3000/api/event',
 		method: 'GET',
@@ -68,23 +68,8 @@ function renderEvents() {
 		return event.featured;
 	});
 	displayFeaturedEvents(featured);
-	let i = 0;
-	let currentMonthIndex = parseInt(moment().format('M'));
-	while(i < state.events.length) {
-		$('.events-container').append(`<h3 class="month-header">${months[currentMonthIndex - 1]}</h3>`);
-		let index = displayAllEventsInMonth(currentMonthIndex, i);
-		currentMonthIndex++;
-		i += index;
-	}
+	displayEvents();
 }
-
-function getEventsInMonth(month, index) {
-	return state.events.filter((event, i) => {
-		let date = parseInt(moment(event.date).format('M'));
-		return i >= index && date == month;
-	});
-}
-
 
 function displayFeaturedEvents(events) {
 	let components = events.reduce((x, event, i) => {
@@ -98,19 +83,38 @@ function displayFeaturedEvents(events) {
 	});
 }
 
-function displayAllEventsInMonth(month, index) {
-	let events = getEventsInMonth(month, index);
-	let components = events.reduce((x, event, i) => {
-		let html = `<div data-event-id="0" class="event" background id="event-${i}"><div class="event-header"><span class="day">${moment(event.date).format('D')}</span><h3 class="event-title">${event.title}</h3></div><p class="event-desc">${event.desc}</p><div class="date-container"><span class="date">${moment(event.date).format('MM/DD/YYYY')}</span></div></div>`;
-		return x + html;
-	}, '');
-	$('.events-container').append(`<div id="row-${index}" class="main-event-row event-row">${components}</div>`);
-	events.forEach((event, i) => {
-		$('.events-container').find(`#row-${index} > #event-${i}`).css({
+function addEventRow(month, year) {
+	$('.events-container').append(`<h1 class="month-header">${months[month - 1]} ${year}</h1>`);
+	$('.events-container').append(`<div id="row-${month}-${year}" class="main-event-row event-row"></div>`);
+}
+
+function displayEvents() {
+	let currentDate = moment().format('M-Y');
+	let currentMonth = currentDate[0];
+	let currentYear = currentDate[1];
+
+	state.events.forEach((event, i) => {
+		let addRow = false;
+		let html = `<div data-event-id="${i}" class="event" background id="event-${i}"><div class="event-header"><span class="day">${moment(event.date).format('D')}</span><h3 class="event-title">${event.title}</h3></div><p class="event-desc">${event.desc}</p><div class="date-container"><span class="date">${moment(event.date).format('MM/DD/YYYY')}</span></div></div>`;
+		let date = moment(event.date).format('M-Y').split('-');
+		let dateM = date[0];
+		let dateY = date[1];
+		if (dateY > currentYear) {
+			currentYear = dateY;
+			addRow = true;
+		}
+		if (dateM != currentMonth) {
+			currentMonth = dateM;
+			addRow = true;
+		}
+		if (addRow) {
+			addEventRow(currentMonth, currentYear);
+		}
+		$(`#row-${currentMonth}-${currentYear}`).append(html);
+		$('.events-container').find(`#row-${currentMonth}-${currentYear} > #event-${i}`).css({
 			'background-image': `url('${event.src}')`,
 		});
 	});
-	return index + events.length;
 }
 
 function handleCarousel(events) {

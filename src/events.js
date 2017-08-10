@@ -65,7 +65,7 @@ function getEvents() {
 
 function renderEvents() {
 	let featured = state.events.filter((event) => {
-		return event.featured == "true";
+		return event.featured == 'true';
 	});
 	displayFeaturedEvents(featured);
 	displayEvents();

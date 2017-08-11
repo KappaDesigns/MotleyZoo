@@ -73,7 +73,7 @@ function renderEvents() {
 
 function displayFeaturedEvents(events) {
 	let components = events.reduce((x, event, i) => {
-		return x + `<div data-event-id="${i}" class="featured-event event" id="event-${i}"><h3 class="event-title">${event.title}</h3><div class="date-container"><span class="date">${moment(event.date).format('MM/DD/YYYY')}</span></div></div>`;
+		return x + `<a href=${event.link} data-event-id="${i}" class="featured-event event" id="event-${i}"><h3 class="event-title">${event.title}</h3><div class="date-container"><span class="date">${moment(event.date).format('MM/DD/YYYY')}</span></div></a>`;
 	}, '');
 	$('.featured-event-row').append(components);
 	events.forEach((event, i) => {
@@ -95,7 +95,7 @@ function displayEvents() {
 
 	state.events.forEach((event, i) => {
 		let addRow = false;
-		let html = `<div data-event-id="${i}" class="event" background id="event-${i}"><div class="event-header"><span class="day">${moment(event.date).format('D')}</span><h3 class="event-title">${event.title}</h3></div><p class="event-desc">${event.desc}</p><div class="date-container"><span class="date">${moment(event.date).format('MM/DD/YYYY')}</span></div></div>`;
+		let html = `<a href=${event.link} data-event-id="${i}" class="event" background id="event-${i}"><div class="event-header"><span class="day">${moment(event.date).format('D')}</span><h3 class="event-title">${event.title}</h3></div><p class="event-desc">${event.desc}</p><div class="date-container"><span class="date">${moment(event.date).format('MM/DD/YYYY')}</span></div></a>`;
 		let date = moment(event.date).format('M-Y').split('-');
 		let dateM = date[0];
 		let dateY = date[1];

@@ -34,6 +34,9 @@
 
 .featured-events-container, .event-background {
 	.event {
+		text-decoration: none;
+		box-sizing: border-box;
+		display: block;
 		color: rgb(255, 255, 255);
 		position: relative;
 		margin: 10px;

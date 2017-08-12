@@ -60,6 +60,9 @@ function getEvents() {
 				hideCarousel();
 			}
 		},
+		error: (e) => {
+			console.error(e);
+		},
 	});
 }
 
@@ -73,7 +76,7 @@ function renderEvents() {
 
 function displayFeaturedEvents(events) {
 	let components = events.reduce((x, event, i) => {
-		return x + `<a href=${event.link} data-event-id="${i}" class="featured-event event" id="event-${i}"><h3 class="event-title">${event.title}</h3><div class="date-container"><span class="date">${moment(event.date).format('MM/DD/YYYY')}</span></div></a>`;
+		return x + `<a href=${event.link} data-event-id="${i}" class="featured-event event" id="event-${i}"><h3 class="event-title">${event.title}</h3><div class="date-container"><span class="date">${moment(event.date, 'MM-DD-YYYY').format('MM/DD/YYYY')}</span></div></a>`;
 	}, '');
 	$('.featured-event-row').append(components);
 	events.forEach((event, i) => {
@@ -89,16 +92,16 @@ function addEventRow(month, year) {
 }
 
 function displayEvents() {
-	let currentDate = moment().format('M-Y');
+	let currentDate = moment().format('M-Y').split('-');
 	let currentMonth = currentDate[0];
 	let currentYear = currentDate[1];
-
+	addEventRow(currentMonth, currentYear);
 	state.events.forEach((event, i) => {
 		let addRow = false;
-		let html = `<a href=${event.link} data-event-id="${i}" class="event" background id="event-${i}"><div class="event-header"><span class="day">${moment(event.date).format('D')}</span><h3 class="event-title">${event.title}</h3></div><p class="event-desc">${event.desc}</p><div class="date-container"><span class="date">${moment(event.date).format('MM/DD/YYYY')}</span></div></a>`;
-		let date = moment(event.date).format('M-Y').split('-');
-		let dateM = date[0];
-		let dateY = date[1];
+		let html = `<a href=${event.link} data-event-id="${i}" class="event" background id="event-${i}"><div class="event-header"><span class="day">${moment(event.date, 'MM-DD-YYYY').format('D')}</span><h3 class="event-title">${event.title}</h3></div><p class="event-desc">${event.desc}</p><div class="date-container"><span class="date">${moment(event.date, 'MM-DD-YYYY').format('MM/DD/YYYY')}</span></div></a>`;
+		let date = moment(event.date, 'MM-DD-YYYY').format('M-Y').split('-');
+		let dateM = parseInt(date[0]);
+		let dateY = parseInt(date[1]);
 		if (dateY > currentYear) {
 			currentYear = dateY;
 			addRow = true;
@@ -111,6 +114,7 @@ function displayEvents() {
 			addEventRow(currentMonth, currentYear);
 		}
 		$(`#row-${currentMonth}-${currentYear}`).append(html);
+		console.log($(`#row-${currentMonth}-${currentYear}`), html);
 		$('.events-container').find(`#row-${currentMonth}-${currentYear} > #event-${i}`).css({
 			'background-image': `url('${event.src}')`,
 		});

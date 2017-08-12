@@ -19,26 +19,24 @@ import {
 	handleNavbarPosition,
 } from './common';
 
-$(document).ready(() => {
-	const $siteTitle = $('.site-title');
-	const $navbar = $('.nav-bar');
-	const $backgroundImage = $('.animal-image');
+const $siteTitle = $('.site-title');
+const $navbar = $('.nav-bar');
+const $backgroundImage = $('.animal-image');
 
-	handleHeaderAnimations($siteTitle, $navbar, $backgroundImage);
-	getEvents();
+handleHeaderAnimations($siteTitle, $navbar, $backgroundImage);
+getEvents();
 
-	$(window).scroll(() => {
-		handleNavbarPosition($navbar, headerSizeRatio);
-	});
+$(window).scroll(() => {
+	handleNavbarPosition($navbar, headerSizeRatio);
+});
 
-	$(window).resize(() => {
-		handleNavbarPosition($navbar, headerSizeRatio);
-		if (window.innerWidth > 780) {
-			hideCarousel();
-		} else {
-			showCarousel();
-		}
-	});
+$(window).resize(() => {
+	handleNavbarPosition($navbar, headerSizeRatio);
+	if (window.innerWidth > 780) {
+		hideCarousel();
+	} else {
+		showCarousel();
+	}
 });
 
 function handleHeaderAnimations(siteTitle, navbar, backgroundImage) {

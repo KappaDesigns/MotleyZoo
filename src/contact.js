@@ -13,22 +13,20 @@ import {
 	animate,
 } from './common';
 
-$(document).ready(() => {
-	const $siteTitle = $('.site-title');
-	const $navbar = $('.nav-bar');
-	const $backgroundImage = $('.animal-image');
-	const $categorySelector = $('.category-selector');
-	handleHeaderAnimations($siteTitle, $navbar, $backgroundImage);
+const $siteTitle = $('.site-title');
+const $navbar = $('.nav-bar');
+const $backgroundImage = $('.animal-image');
+const $categorySelector = $('.category-selector');
+handleHeaderAnimations($siteTitle, $navbar, $backgroundImage);
+handleCategoryDropdown($categorySelector);
+
+$(window).scroll(() => {
+	handleNavbarPosition($navbar, headerSizeRatio);
+});
+
+$(window).resize(() => {
 	handleCategoryDropdown($categorySelector);
-
-	$(window).scroll(() => {
-		handleNavbarPosition($navbar, headerSizeRatio);
-	});
-
-	$(window).resize(() => {
-		handleCategoryDropdown($categorySelector);
-		handleNavbarPosition($navbar, headerSizeRatio);
-	});
+	handleNavbarPosition($navbar, headerSizeRatio);
 });
 
 function handleHeaderAnimations(siteTitle, navbar, backgroundImage) {

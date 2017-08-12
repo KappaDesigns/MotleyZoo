@@ -129,68 +129,66 @@ import {
 	handleNavbarPosition,
 } from './common';
 
-$(document).ready(() => {
-	const $siteTitle = $('.site-title');
-	const $navbar = $('.nav-bar');
-	const $backgroundImage = $('.animal-image');
-	const $searchInput = $('.search-input');
-	const $selected = $('.selected');
-	const $reset = $('.motley-btn-main');
-	const $container = $('.pet-wrapper');
+const $siteTitle = $('.site-title');
+const $navbar = $('.nav-bar');
+const $backgroundImage = $('.animal-image');
+const $searchInput = $('.search-input');
+const $selected = $('.selected');
+const $reset = $('.motley-btn-main');
+const $container = $('.pet-wrapper');
 
-	let filters = {
-		name: '',
-		color: '',
-		age: Infinity,
-		breed: '',
-		size: '',
-	};
+let filters = {
+	name: '',
+	color: '',
+	age: Infinity,
+	breed: '',
+	size: '',
+};
 
-	setDropDownValues(fakeData, filters, $container);
-	displayPets(fakeData, $container);
-	handleHeaderAnimations($siteTitle, $navbar, $backgroundImage);
+setDropDownValues(fakeData, filters, $container);
+displayPets(fakeData, $container);
+handleHeaderAnimations($siteTitle, $navbar, $backgroundImage);
 
-	$(window).scroll(() => {
-		handleNavbarPosition($navbar, headerSizeRatio);
-	});
+$(window).scroll(() => {
+	handleNavbarPosition($navbar, headerSizeRatio);
+});
 
-	$(window).resize(() => {
-		handleNavbarPosition($navbar, headerSizeRatio);
-	});
+$(window).resize(() => {
+	handleNavbarPosition($navbar, headerSizeRatio);
+});
 
-	$searchInput.keyup((e) => {
-		filters.name = e.target.value;
-		hidePets(fakeData, filters, $container);
-	});
+$searchInput.keyup((e) => {
+	filters.name = e.target.value;
+	hidePets(fakeData, filters, $container);
+});
 
-	$reset.click(() => {
-		$searchInput.val('');
-		$('#age').parent().find('.selected').text('Choose Age');
-		$('#breed').parent().find('.selected').text('Choose Breed');
-		$('#color').parent().find('.selected').text('Choose Color');
-		$('#size').parent().find('.selected').text('Choose Size');
-		filters.name = '';
-		filters.color = '';
-		filters.age = Infinity;
-		filters.breed = '';
-		filters.size = '';
-		hidePets(fakeData, filters, $container);
-	});
+$reset.click(() => {
+	$searchInput.val('');
+	$('#age').parent().find('.selected').text('Choose Age');
+	$('#breed').parent().find('.selected').text('Choose Breed');
+	$('#color').parent().find('.selected').text('Choose Color');
+	$('#size').parent().find('.selected').text('Choose Size');
+	filters.name = '';
+	filters.color = '';
+	filters.age = Infinity;
+	filters.breed = '';
+	filters.size = '';
+	hidePets(fakeData, filters, $container);
+});
 
-	$selected.click((e) => {
-		let ref = $('.active');
-		let id = '';
-		if (ref) {
-			ref.slideUp();
-			ref.removeClass('active');
-			id = ref.prop('id');
-		}
-		let options = $(e.target).parent().find('.dropdown-options');
-		if (id != options.prop('id')) {
-			options.addClass('active');
-			options.slideDown();
-		}
-	});
+$selected.click((e) => {
+	let ref = $('.active');
+	let id = '';
+	if (ref) {
+		ref.slideUp();
+		ref.removeClass('active');
+		id = ref.prop('id');
+	}
+	let options = $(e.target).parent().find('.dropdown-options');
+	if (id != options.prop('id')) {
+		options.addClass('active');
+		options.slideDown();
+	}
 });
 
 function handleHeaderAnimations(siteTitle, navbar, backgroundImage) {

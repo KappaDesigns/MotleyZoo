@@ -1,4 +1,4 @@
-import jQuery from 'jquery';
+import $ from 'jquery';
 import './css/components/navbar.scss';
 
 import {
@@ -6,36 +6,35 @@ import {
 	animate,
 } from './common';
 
-const subMenuEntries = [{
-	link: 'about',
-	subPaths: ['What We Do', 'Sponsors', 'Pets'],
-},
-{
-	link: 'involvement',
-	subPaths: ['Individual', 'Coorporate'],
-},
-{
-	link: 'resources',
-	subPaths: ['What We Do'],
-},
+const subMenuEntries = [
+	{
+		link: 'about',
+		subPaths: ['What We Do', 'Sponsors', 'Pets'],
+	},
+	{
+		link: 'involvement',
+		subPaths: ['Individual', 'Coorporate'],
+	},
+	{
+		link: 'resources',
+		subPaths: ['What We Do'],
+	},
 ];
 
 const navbarMobileWidth = 768;
 const tabletWidth = 1024;
 
-jQuery(document).ready(() => {
-	const navbarSubMenuLinks = createSubMenuMap(subMenuEntries);
-	const $navLinks = jQuery('.nav-link');
-	const $navbar = jQuery('.nav-bar');
+const navbarSubMenuLinks = createSubMenuMap(subMenuEntries);
+const $navLinks = $('.nav-link');
+const $navbar = $('.nav-bar');
+applyNavbarHandler($navLinks, $navbar, navbarSubMenuLinks);
+
+$(window).resize(() => {
+	$('.active').removeClass('active');
+	$('.sub-bar').remove();
+	$navLinks.unbind('click').unbind('mouseenter');
+
 	applyNavbarHandler($navLinks, $navbar, navbarSubMenuLinks);
-
-	jQuery(window).resize(() => {
-		jQuery('.active').removeClass('active');
-		jQuery('.sub-bar').remove();
-		$navLinks.unbind('click').unbind('mouseenter');
-
-		applyNavbarHandler($navLinks, $navbar, navbarSubMenuLinks);
-	});
 });
 
 function applyNavbarHandler($navLinks, $navbar, navbarSubMenuLinks) {
@@ -50,10 +49,10 @@ function applyNavbarHandler($navLinks, $navbar, navbarSubMenuLinks) {
 
 function handleNavbarMobile(navLinks, navbarSubMenuLinks) {
 	navLinks.click((e) => {
-		let $child = ensureIsNavlink(jQuery(e.target));
-		let subBar = jQuery('.sub-bar');
+		let $child = ensureIsNavlink($(e.target));
+		let subBar = $('.sub-bar');
 
-		jQuery('.active').removeClass('active');
+		$('.active').removeClass('active');
 		$child.addClass('active');
 
 		if (shouldPreventDefault($child, navbarSubMenuLinks)) {
@@ -83,8 +82,8 @@ function shouldPreventDefault(child, navbarSubMenuLinks) {
 
 function handleNavbarDesktop(navLinks, navbar, navbarSubMenuLinks) {
 	navLinks.mouseenter((e) => {
-		let $child = ensureIsNavlink(jQuery(e.target));
-		let subBar = jQuery('.sub-bar');
+		let $child = ensureIsNavlink($(e.target));
+		let subBar = $('.sub-bar');
 		if (subMenuExists(subBar)) {
 			hideSubmenu(subBar, false);
 		}
@@ -93,9 +92,9 @@ function handleNavbarDesktop(navLinks, navbar, navbarSubMenuLinks) {
 		}, 100);
 	});
 
-	jQuery(document).mousemove((e) => {
-		let subBar = jQuery('.sub-bar');
-		let $target = jQuery(e.target);
+	$(document).mousemove((e) => {
+		let subBar = $('.sub-bar');
+		let $target = $(e.target);
 		if ($target.is('i')) {
 			$target = $target.parent();
 		}
@@ -114,8 +113,8 @@ function handleNavbarDesktop(navLinks, navbar, navbarSubMenuLinks) {
 
 function handleNavbarTablet(navLinks, navbar, navbarSubMenuLinks) {
 	navLinks.click((e) => {
-		let $child = ensureIsNavlink(jQuery(e.target));
-		let subBar = jQuery('.sub-bar');
+		let $child = ensureIsNavlink($(e.target));
+		let subBar = $('.sub-bar');
 		if (shouldPreventDefault($child, navbarSubMenuLinks)) {
 			e.preventDefault();
 		}
@@ -155,7 +154,7 @@ function appendSubmenu(ele, componentString, next) {
 	if (componentString) {
 		ele.append(componentString);
 		let interval = setInterval(() => {
-			let subBar = jQuery('.sub-bar');
+			let subBar = $('.sub-bar');
 			if (subMenuExists(subBar)) {
 				clearInterval(interval);
 				next(subBar);
@@ -176,9 +175,9 @@ function animateSubMenu(subBar, height, isMobile) {
 
 function addLeaveListener(subBar) {
 	subBar.mouseleave((e) => {
-		let $target = jQuery(e.target);
+		let $target = $(e.target);
 		if ($target.is('div')) {
-			hideSubmenu(jQuery(e.target));
+			hideSubmenu($(e.target));
 		}
 	});
 }
@@ -190,7 +189,7 @@ function hideSubmenu(subBar, isMobile) {
 		transitionType: 'linear',
 	});
 	setTimeout(() => {
-		jQuery('.sub-bar').remove();
+		$('.sub-bar').remove();
 	}, time / 1000);
 
 }

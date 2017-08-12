@@ -6,6 +6,14 @@ import axios from 'axios';
 
 const youtubeURL = 'https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId=UCvou9yaekveOZsyzGQljrNA&maxResults=8&key=AIzaSyB3Z7lmRzaqRwPzoVtzks2ZaSQKABmMGQM';
 
+const employeeData = {
+	James: {
+		photo: '',
+		desc: '',
+	},
+};
+console.log(employeeData);
+
 import {
 	handleSiteTitleAnimation,
 	handleNavbarAnimation,
@@ -21,51 +29,49 @@ import {
 const headerSizeRatio = window.innerHeight;
 const scrollRatio = 4;
 
-$(document).ready(() => {
-	const $siteTitle = $('.site-title');
-	const $navbar = $('.nav-bar');
-	const $backgroundImage = $('.animal-image');
-	const $employeeContainer = $('.our-people');
-	const $sponsorContainer = $('.sponsors-container');
-	const $sponsors = $('.sponsor');
-	const $videoContainer = $('.video-container');
-	const $livestreamContainer = $('.livestream-container');
-	const $flexButtons = $('.flex-btns');
-	let hasColorChanged = false;
+const $siteTitle = $('.site-title');
+const $navbar = $('.nav-bar');
+const $backgroundImage = $('.animal-image');
+const $employeeContainer = $('.our-people');
+const $sponsorContainer = $('.sponsors-container');
+const $sponsors = $('.sponsor');
+const $videoContainer = $('.video-container');
+const $livestreamContainer = $('.livestream-container');
+const $flexButtons = $('.flex-btns');
+let hasColorChanged = false;
 
-	sizeSponsorImages($sponsors);
+sizeSponsorImages($sponsors);
 
-	handleHeaderAnimations($siteTitle, $navbar, $backgroundImage);
-	addSponsorListeners($sponsors);
-	handleVideoView($flexButtons, $videoContainer, $livestreamContainer);
-	displayYoutubeVideos($videoContainer, () => {
-		$(window).scroll(() => {
-			let scrollBottom = $(window).scrollTop() + window.innerHeight;
-			animateContainer($employeeContainer, scrollBottom, '.employee', (child) => {
-				animateOpacity(child, 1, '1s');
-				animateTranslateY(child, '100px', '1.5s');
-			});
-		});
-	});
-
+handleHeaderAnimations($siteTitle, $navbar, $backgroundImage);
+addSponsorListeners($sponsors);
+handleVideoView($flexButtons, $videoContainer, $livestreamContainer);
+displayYoutubeVideos($videoContainer, () => {
 	$(window).scroll(() => {
 		let scrollBottom = $(window).scrollTop() + window.innerHeight;
-		handleNavbarPosition($navbar, headerSizeRatio);
-
-		animateContainer($sponsorContainer, scrollBottom, '.sponsor', (child) => {
+		animateContainer($employeeContainer, scrollBottom, '.employee', (child) => {
 			animateOpacity(child, 1, '1s');
+			animateTranslateY(child, '100px', '1.5s');
 		});
+	});
+});
 
-		if (!hasColorChanged) {
-			hasColorChanged = handleJumbotronColor($siteTitle);
-		}
+$(window).scroll(() => {
+	let scrollBottom = $(window).scrollTop() + window.innerHeight;
+	handleNavbarPosition($navbar, headerSizeRatio);
+
+	animateContainer($sponsorContainer, scrollBottom, '.sponsor', (child) => {
+		animateOpacity(child, 1, '1s');
 	});
 
-	$(window).resize(() => {
-		handleNavbarPosition($navbar, headerSizeRatio);
-		sizeSponsorImages($sponsors);
-		addSponsorListeners($sponsors);
-	});
+	if (!hasColorChanged) {
+		hasColorChanged = handleJumbotronColor($siteTitle);
+	}
+});
+
+$(window).resize(() => {
+	handleNavbarPosition($navbar, headerSizeRatio);
+	sizeSponsorImages($sponsors);
+	addSponsorListeners($sponsors);
 });
 
 function handleJumbotronColor(siteTitle) {

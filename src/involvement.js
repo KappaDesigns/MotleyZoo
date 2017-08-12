@@ -13,27 +13,25 @@ import {
 
 const headerSizeRatio = window.innerHeight;
 
-$(document).ready(() => {
-	const $siteTitle = $('.site-title');
-	const $navbar = $('.nav-bar');
-	const $backgroundImage = $('.animal-image');
-	const carousel = $('.carousel-container');
+const $siteTitle = $('.site-title');
+const $navbar = $('.nav-bar');
+const $backgroundImage = $('.animal-image');
+const carousel = $('.carousel-container');
 
-	handleHeaderAnimations($siteTitle, $navbar, $backgroundImage);
-	getPets((data) => {
-		addCarouselScrollHandler(carousel);
-		stopLoadingAnimation(carousel);
-		createSlides(carousel, data);
-	});
+handleHeaderAnimations($siteTitle, $navbar, $backgroundImage);
+getPets((data) => {
+	addCarouselScrollHandler(carousel);
+	stopLoadingAnimation(carousel);
+	createSlides(carousel, data);
+});
 
-	$(window).scroll(() => {
-		handleNavbarPosition($navbar, headerSizeRatio);
-	});
+$(window).scroll(() => {
+	handleNavbarPosition($navbar, headerSizeRatio);
+});
 
-	$(window).resize(() => {
-		addCarouselScrollHandler(carousel);
-		handleNavbarPosition($navbar, headerSizeRatio);
-	});
+$(window).resize(() => {
+	addCarouselScrollHandler(carousel);
+	handleNavbarPosition($navbar, headerSizeRatio);
 });
 
 function handleHeaderAnimations(siteTitle, navbar, backgroundImage) {

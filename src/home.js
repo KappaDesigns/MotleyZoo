@@ -2,7 +2,7 @@ import './navbar';
 import './css/bootstrap/bootstrap.min.css';
 import './css/home.scss';
 
-import jQuery from 'jquery';
+import $ from 'jquery';
 
 import {
 	handleSiteTitleAnimation,
@@ -16,36 +16,33 @@ import {
 
 // once all html has loaded begin animations
 // ensures that all elements are mounted
-jQuery(document).ready(() => {
-	const $backgroundImage = jQuery('.animal-image');
-	const $siteTitle = jQuery('.site-title');
-	const $navbar = jQuery('.nav-bar');
+const $backgroundImage = $('.animal-image');
+const $siteTitle = $('.site-title');
+const $navbar = $('.nav-bar');
 
-	let hasColorChanged = false;
+let hasColorChanged = false;
 
-	handleJumbotronAnimations(
-		$backgroundImage,
-		$siteTitle,
-		$navbar
-	);
+handleJumbotronAnimations(
+	$backgroundImage,
+	$siteTitle,
+	$navbar
+);
 
-	jQuery(window).scroll(() => {
-		handleNavbarPosition($navbar, window.innerHeight);
-		animateAboutUs();
+$(window).scroll(() => {
+	handleNavbarPosition($navbar, window.innerHeight);
+	animateAboutUs();
 
-		if (!hasColorChanged) {
-			hasColorChanged = handleJumbotronColor($siteTitle);
-		}
-	});
-
-	jQuery(window).resize(() => {
-		handleNavbarPosition($navbar, window.innerHeight);
-	});
+	if (!hasColorChanged) {
+		hasColorChanged = handleJumbotronColor($siteTitle);
+	}
 });
 
+$(window).resize(() => {
+	handleNavbarPosition($navbar, window.innerHeight);
+});
 // animates the jumbotron color on scroll
 function handleJumbotronColor(siteTitle) {
-	if (jQuery(window).scrollTop() >= 0 && jQuery(window).scrollTop() <= window.innerHeight) {
+	if ($(window).scrollTop() >= 0 && $(window).scrollTop() <= window.innerHeight) {
 		animate(siteTitle, 'color', 'rgb(255, 255, 255)', '2s');
 	}
 	return true;
@@ -53,9 +50,9 @@ function handleJumbotronColor(siteTitle) {
 
 // animates about us based of if mobile or desktop animation
 function animateAboutUs() {
-	let before = jQuery('.before').find('img');
-	let after = jQuery('.after').find('img');
-	let scrollBottom = jQuery(window).scrollTop() + window.innerHeight;
+	let before = $('.before').find('img');
+	let after = $('.after').find('img');
+	let scrollBottom = $(window).scrollTop() + window.innerHeight;
 	if (scrollBottom > (after.offset().top + after.height()) / 2) {
 		animateTranslateY(after.parent(), '0px', '2s');
 		animateOpacity(after.parent(), 1, '2s');

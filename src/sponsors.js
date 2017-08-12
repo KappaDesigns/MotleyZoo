@@ -12,22 +12,19 @@ import {
 	handleNavbarPosition,
 } from './common';
 
-$(document).ready(() => {
-	const $siteTitle = $('.site-title');
-	const $navbar = $('.nav-bar');
-	const $backgroundImage = $('.animal-image');
+const $siteTitle = $('.site-title');
+const $navbar = $('.nav-bar');
+const $backgroundImage = $('.animal-image');
 
-	handleHeaderAnimations($siteTitle, $navbar, $backgroundImage);
+handleHeaderAnimations($siteTitle, $navbar, $backgroundImage);
 
-	$(window).scroll(() => {
-		handleNavbarPosition($navbar, headerSizeRatio);
-	});
-
-	$(window).resize(() => {
-		handleNavbarPosition($navbar, headerSizeRatio);
-	});
+$(window).scroll(() => {
+	handleNavbarPosition($navbar, headerSizeRatio);
 });
 
+$(window).resize(() => {
+	handleNavbarPosition($navbar, headerSizeRatio);
+});
 function handleHeaderAnimations(siteTitle, navbar, backgroundImage) {
 	handleBackgroundAnimation(backgroundImage);
 	handleSiteTitleAnimation(siteTitle);

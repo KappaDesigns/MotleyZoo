@@ -6,14 +6,6 @@ import axios from 'axios';
 
 const youtubeURL = 'https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId=UCvou9yaekveOZsyzGQljrNA&maxResults=8&key=AIzaSyB3Z7lmRzaqRwPzoVtzks2ZaSQKABmMGQM';
 
-const employeeData = {
-	James: {
-		photo: '',
-		desc: '',
-	},
-};
-console.log(employeeData);
-
 import {
 	handleSiteTitleAnimation,
 	handleNavbarAnimation,
@@ -24,8 +16,6 @@ import {
 	animateTranslateY,
 } from './common';
 
-
-
 const headerSizeRatio = window.innerHeight;
 const scrollRatio = 4;
 
@@ -33,6 +23,8 @@ const $siteTitle = $('.site-title');
 const $navbar = $('.nav-bar');
 const $backgroundImage = $('.animal-image');
 const $employeeContainer = $('.our-people');
+const $employees = $('.employee');
+const $closeModal = $('.close');
 const $sponsorContainer = $('.sponsors-container');
 const $sponsors = $('.sponsor');
 const $videoContainer = $('.video-container');
@@ -40,7 +32,6 @@ const $livestreamContainer = $('.livestream-container');
 const $flexButtons = $('.flex-btns');
 let hasColorChanged = false;
 
-sizeSponsorImages($sponsors);
 
 handleHeaderAnimations($siteTitle, $navbar, $backgroundImage);
 addSponsorListeners($sponsors);
@@ -50,7 +41,7 @@ displayYoutubeVideos($videoContainer, () => {
 		let scrollBottom = $(window).scrollTop() + window.innerHeight;
 		animateContainer($employeeContainer, scrollBottom, '.employee', (child) => {
 			animateOpacity(child, 1, '1s');
-			animateTranslateY(child, '100px', '1.5s');
+			animateTranslateY(child, '50px', '1.5s');
 		});
 	});
 });
@@ -73,6 +64,25 @@ $(window).resize(() => {
 	sizeSponsorImages($sponsors);
 	addSponsorListeners($sponsors);
 });
+
+$(document).ready(() => { sizeSponsorImages($sponsors); });
+
+$employees.click((e) => {
+	let elem = e.target;
+	if ($(e.target).prop('class') != 'employee') {
+		elem = $(e.target).parent();
+	}
+	displayEmployeeModal($(elem).prop('id'));
+});
+
+$closeModal.click(() => {
+	$('.employee-modal').hide();
+});
+
+function displayEmployeeModal(id) {
+	console.log($(`${id}-modal`), `${id}-modal`);
+	$(`#${id}-modal`).show();
+}
 
 function handleJumbotronColor(siteTitle) {
 	if ($(window).scrollTop() >= 0 && $(window).scrollTop() <= window.innerHeight) {

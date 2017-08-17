@@ -201,7 +201,7 @@ function subMenuExists(subBar) {
 function getNavbarComponents(path, links) {
 	return links.map((link, i) => {
 		return (
-			`<a href="${getLink(path, link)}" id="nav-link-${i+1}" class="nav-link"> ${link}</a>`
+			`<a href="../${getLink(path, link)}" id="nav-link-${i+1}" class="nav-link"> ${link}</a>`
 		);
 	});
 }
@@ -218,7 +218,7 @@ function getHeadPathLink(isMobile, path) {
 		let text = path;
 		path = path.toLowerCase();
 		path = path.replace(/\s+/g, '-');
-		return `<a href="${path}" id="nav-link-${0}" class="nav-link"> ${text}</a>`;
+		return `<a href="../${path}" id="nav-link-${0}" class="nav-link"> ${text}</a>`;
 	}
 	return '';
 }

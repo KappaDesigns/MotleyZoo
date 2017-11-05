@@ -90,7 +90,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-attachment: cover;
+    background-attachment: contain;
     background-image: url('../../public/imgs/heart.svg');
     background-repeat: no-repeat;
     .heart-info {

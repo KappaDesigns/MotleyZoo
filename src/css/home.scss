@@ -87,10 +87,15 @@
     margin: 0 auto;
     width: 100%;
     background-color: teal;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     background-image: url('../../public/imgs/heart.svg');
+    background-repeat: no-repeat;
     .heart-info {
         position: relative;
         margin: 0;

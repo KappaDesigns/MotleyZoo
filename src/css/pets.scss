@@ -4,6 +4,7 @@
 @import './components/buttons';
 @import './components/header';
 @import './components/footer';
+@import './components/loader.scss';
 
 .page-header {
 	.animal-image {
@@ -137,9 +138,15 @@
             }
         }
         .pet-container {
+            .loader-text {
+                text-align: center;
+                padding: 25px;
+            }
             .none {
+                display: block;
                 padding: 35px;
                 text-align: center;
+                margin: 0 auto;
             }
             .pet-wrapper {
                 width: 1050px;
@@ -200,4 +207,10 @@
             }
         }
     }
+}
+
+.disabled {
+    cursor: not-allowed !important;
+    border-bottom: none !important;
+    background-color: gray !important;
 }

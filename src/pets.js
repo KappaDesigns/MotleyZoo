@@ -25,7 +25,7 @@ const $container = $('.pet-wrapper');
 let filters = {
 	name: '',
 	color: '',
-	age: Infinity,
+	age: '',
 	species: '',
 	size: '',
 };
@@ -34,6 +34,9 @@ handleHeaderAnimations($siteTitle, $navbar, $backgroundImage);
 getPets((data) => {
 	setDropDownValues(data, filters, $container);
 	displayPets(data, $container);
+	$('.loader, .loader-text').remove();
+	$('.disabled').removeClass('disabled'); 
+
 	$searchInput.keyup((e) => {
 		filters.name = e.target.value;
 		hidePets(data, filters, $container);
@@ -47,10 +50,25 @@ getPets((data) => {
 		$('#size').parent().find('.selected').text('Choose Size');
 		filters.name = '';
 		filters.color = '';
-		filters.age = Infinity;
+		filters.age = '';
 		filters.species = '';
 		filters.size = '';
 		hidePets(data, filters, $container);
+	});
+
+	$selected.click((e) => {
+		let ref = $('.active');
+		let id = '';
+		if (ref) {
+			ref.slideUp();
+			ref.removeClass('active');
+			id = ref.prop('id');
+		}
+		let options = $(e.target).parent().find('.dropdown-options');
+		if (id != options.prop('id')) {
+			options.addClass('active');
+			options.slideDown();
+		}
 	});
 });
 
@@ -60,21 +78,6 @@ $(window).scroll(() => {
 
 $(window).resize(() => {
 	handleNavbarPosition($navbar, headerSizeRatio);
-});
-
-$selected.click((e) => {
-	let ref = $('.active');
-	let id = '';
-	if (ref) {
-		ref.slideUp();
-		ref.removeClass('active');
-		id = ref.prop('id');
-	}
-	let options = $(e.target).parent().find('.dropdown-options');
-	if (id != options.prop('id')) {
-		options.addClass('active');
-		options.slideDown();
-	}
 });
 
 function handleHeaderAnimations(siteTitle, navbar, backgroundImage) {
@@ -118,7 +121,7 @@ function setDropDownValues(data, filters, container) {
 		let selected = menu.parent().find('.selected');
 		let value = text;
 		if (text == 'None') {
-			value = menu.prop('id') == 'age' ? Infinity : '';
+			value = '';
 			text = `Choose ${capitalize(menu.prop('id'))}`;
 		}
 		filters[menu.prop('id')] = value;

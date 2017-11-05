@@ -15,10 +15,6 @@ const subMenuEntries = [
 		link: 'involvement',
 		subPaths: ['Individual', 'Coorporate'],
 	},
-	{
-		link: 'resources',
-		subPaths: ['What We Do'],
-	},
 ];
 
 const navbarMobileWidth = 768;

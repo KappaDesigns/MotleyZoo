@@ -1,6 +1,8 @@
 import $ from 'jquery';
 import axios from 'axios';
-const petangoURL = 'https://crossorigin.me/http://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimals.aspx?species=All&sex=A&agegroup=All&onhold=A&orderby=ID&colnum=3&AuthKey=4blm62x1v45atcg3s05c1f5jclaov1j8p6n50d85jve44b6bp8';
+const rescueGroupsUrl = 'https://api.rescuegroups.org/http/';
+const rescueGroupApiKey = 'punkDGhl';
+const rescureGroupsJSONString = `{"apikey":"${rescueGroupApiKey}","objectType":"animals","objectAction":"publicSearch","search":{"resultStart": "0", "resultLimit": "100", "resultSort": "animalID","resultOrder": "desc","filters":[{"fieldName": "animalStatus","operation": "equals","criteria": "Available"},{"fieldName": "animalOrgID", "operation": "equals", "criteria":"4850"}],"fields":["animalID","animalOrgID","animalActivityLevel","animalAdoptedDate","animalAdoptionFee","animalAgeString","animalAltered","animalAvailableDate","animalBirthdate","animalBirthdateExact","animalBreed","animalCoatLength","animalColor","animalColorID","animalColorDetails","animalCourtesy","animalDeclawed","animalDescription","animalDescriptionPlain","animalDistinguishingMarks","animalEarType","animalEnergyLevel","animalExerciseNeeds","animalEyeColor","animalFence","animalFound","animalFoundDate","animalFoundPostalcode","animalGeneralAge","animalGeneralSizePotential","animalGroomingNeeds","animalHousetrained","animalIndoorOutdoor","animalKillDate","animalKillReason","animalLocation","animalLocationCoordinates","animalLocationDistance","animalLocationCitystate","animalMicrochipped","animalMixedBreed","animalName","animalSpecialneeds","animalSpecialneedsDescription","animalNeedsFoster","animalNewPeople","animalNotHousetrainedReason","animalObedienceTraining","animalOKWithAdults","animalOKWithCats","animalOKWithDogs","animalOKWithKids","animalOwnerExperience","animalPattern","animalPatternID","animalAdoptionPending","animalPrimaryBreed","animalPrimaryBreedID","animalRescueID","animalSearchString","animalSecondaryBreed","animalSecondaryBreedID","animalSex","animalShedding","animalSizeCurrent","animalSizePotential","animalSizeUOM","animalSpecies","animalSpeciesID","animalSponsorable","animalSponsors","animalSponsorshipDetails","animalSponsorshipMinimum","animalStatus","animalStatusID","animalSummary","animalTailType","animalThumbnailUrl","animalUptodate","animalUpdatedDate","animalUrl","animalVocal","animalYardRequired","animalAffectionate","animalApartment","animalCratetrained","animalDrools","animalEagerToPlease","animalEscapes","animalEventempered","animalFetches","animalGentle","animalGoodInCar","animalGoofy","animalHasAllergies","animalHearingImpaired","animalHypoallergenic","animalIndependent","animalIntelligent","animalLap","animalLeashtrained","animalNeedsCompanionAnimal","animalNoCold","animalNoFemaleDogs","animalNoHeat","animalNoLargeDogs","animalNoMaleDogs","animalNoSmallDogs","animalObedient","animalOKForSeniors","animalOKWithFarmAnimals","animalOlderKidsOnly","animalOngoingMedical","animalPlayful","animalPlaysToys","animalPredatory","animalProtective","animalSightImpaired","animalSkittish","animalSpecialDiet","animalSwims","animalTimid","fosterEmail","fosterFirstname","fosterLastname","fosterName","fosterPhoneCell","fosterPhoneHome","fosterSalutation","locationAddress","locationCity","locationCountry","locationUrl","locationName","locationPhone","locationState","locationPostalcode","animalPictures","animalVideos","animalVideoUrls"]}}`;
 
 //removing magic numbers from handling navbar animation
 const navbarDisplacement = 40;
@@ -169,42 +171,13 @@ function createTransitionObj(parts) {
 //api call to petangoURL
 
 function getPets(next) {
-	axios.get(petangoURL)
+	axios.post(rescueGroupsUrl, rescureGroupsJSONString)
 		.then((res) => {
-			return res.data;
-		})
-		.then((html) => {
-			return Array.from($($(html)[20]).find('.list-table').find('tbody').find('tr'));
-		})
-		.then((rows) => {
-			return rows.reduce((x, row) => {
-				const cells = Array.from($(row).find('td'));
-				cells.forEach((cell) => {
-					x.push(cell);
-				});
-				return x;
-			}, []);
-		})
-		.then((cells) => {
-			return cells.filter((cell) => {
-				return $(cell).children().length > 0;
-			});
-		})
-		.then((cells) => {
-			return cells.reduce((x, cell) => {
-				x.push({
-					name: $(cell).find('.list-animal-name').text(),
-					species: $(cell).find('.list-anima-species').text(),
-					sex: $(cell).find('.list-animal-sexSN').text(),
-					breed: $(cell).find('.list-animal-breed').text(),
-					age: $(cell).find('.list-animal-age').text(),
-					img: $(cell).find('img').prop('src'),
-				});
-				return x;
-			}, []);
-		})
-		.then((data) => {
-			next(data);
+			let data = [];
+			for (let x in res.data.data) {
+				data.push(res.data.data[x]);
+			}
+			return next(data);
 		});
 }
 

@@ -91,9 +91,8 @@ function addEventRow(month, year) {
 
 function displayEvents() {
 	let currentDate = moment().format('M-Y').split('-');
-	let currentMonth = currentDate[0];
-	let currentYear = currentDate[1];
-	addEventRow(currentMonth, currentYear);
+	let currentMonth = currentDate[0] - 1;
+	let currentYear = currentDate[1] - 1;
 	state.events.forEach((event, i) => {
 		let addRow = false;
 		let html = `<a href=${event.link} data-event-id="${i}" class="event" background id="event-${i}"><div class="event-header"><span class="day">${moment(event.date, 'MM-DD-YYYY').format('D')}</span><h3 class="event-title">${event.title}</h3></div><p class="event-desc">${event.desc}</p><div class="date-container"><span class="date">${moment(event.date, 'MM-DD-YYYY').format('MM/DD/YYYY')}</span></div></a>`;

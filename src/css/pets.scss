@@ -144,12 +144,14 @@
             .pet-wrapper {
                 width: 1050px;
                 margin: 0 auto;
+                display: flex;
+                flex-flow: row;
+                flex-direction: row;
+                flex-wrap: wrap;
                 .pet {
-                    display: inline-block;
-                    box-sizing: border-box;
+                    background-position: center;                    
                     transition: all 0.5s ease;
                     margin: 25px;
-                    background-image: url('http://via.placeholder.com/300x300');
                     width: 300px;
                     height: 300px;
                     &:hover {
@@ -160,6 +162,7 @@
                     }
                     .data {
                         height: 100%;
+                        width: 100%;
                         background-color: rgba(0, 0, 0, 0.8);
                         transition: all 0.5s ease;
                         opacity: 0;
@@ -169,37 +172,6 @@
                             text-transform: capitalize;
                             padding-top: 10px;
                             text-align: center; 
-                        }
-                        .breed {
-                            &:before {
-                                font-weight: bold;
-                                content: "Breed: "
-                            }
-                        }
-                        .color {
-                            &:before {
-                                font-weight: bold;
-                                content: "Color: "
-                            }
-                        }
-                        .age {
-                            &:before {
-                                font-weight: bold;
-                                content: "Age: "
-                            }
-                        }
-                        .size {
-                            &:before {
-                                font-weight: bold;
-                                content: "Size: "
-                            }
-                        }
-                        .bio {
-                            &:before {
-                                font-weight: bold;
-                                content: "Bio: "
-                            }
-                            font-size:  16px;
                         }
                     }
                 }

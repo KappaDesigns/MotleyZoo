@@ -42,12 +42,31 @@ function handleHeaderAnimations(siteTitle, navbar, backgroundImage) {
 
 function createSlides(carousel, animalData) {
 	let width = 0;
+	shuffle(animalData);
 	let html = animalData.reduce((x, animal) => {
-		width += 310;
-		return x += `<div class="slide" style="background-image:url('${animal.img}');"></div>`;
+		if (animal.hasOwnProperty('animalPictures') && animal.animalPictures.length > 0) {
+			width += 310;
+			return x += `<div class="slide" style="background-image:url('${animal.animalPictures[0].urlSecureFullsize}');"></div>`;
+		}
 	}, '');
 	carousel.width(width);
 	carousel.append(html);
+}
+
+function shuffle(array) {
+	var currentIndex = array.length, temporaryValue, randomIndex;
+	// While there remain elements to shuffle...
+	while (0 !== currentIndex) {
+		// Pick a remaining element...
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex -= 1;
+  
+		// And swap it with the current element.
+		temporaryValue = array[currentIndex];
+		array[currentIndex] = array[randomIndex];
+		array[randomIndex] = temporaryValue;
+	}
+	return array;
 }
 
 function stopLoadingAnimation(carousel) {

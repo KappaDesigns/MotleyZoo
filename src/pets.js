@@ -125,7 +125,6 @@ function setDropDownValues(data, filters, container) {
 			text = `Choose ${capitalize(menu.prop('id'))}`;
 		}
 		filters[menu.prop('id')] = value;
-		console.log(filters);
 		selected.text(text);
 		menu.slideUp();
 		hidePets(data, filters, container);

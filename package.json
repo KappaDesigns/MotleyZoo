@@ -60,7 +60,7 @@
     "mocha": "^3.4.2",
     "mocha-loader": "^1.1.1",
     "moment": "^2.18.1",
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.9.0",
     "nodemon": "^1.11.0",
     "optimize-css-assets-webpack-plugin": "^2.0.0",
     "phantomjs-prebuilt": "^2.1.14",
